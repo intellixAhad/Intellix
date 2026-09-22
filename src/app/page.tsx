@@ -25,7 +25,7 @@ const page = () => {
           SOFTWARE THAT SHIPS
         </div>
 
-        <div className="grid grid-cols-[1.25fr_0.75fr] gap-14 relative items-center h-full w-full max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-[1.25fr_0.75fr] gap-14 relative items-center h-full w-full max-w-360 mx-auto">
           <div>
             <Badge label="Full-service software Agency" />
             <h1 className="font-playfair font-extrabold leading-[1.06] tracking-[-0.01em] mb-6 text-white-01 text-[58px]">
@@ -228,43 +228,59 @@ const page = () => {
       </section>
 
       {/* STATS / ACHIEVEMENTS */}
-<section className="relative overflow-hidden py-20 px-[clamp(20px,5vw,64px)]">
-  <div
-    aria-hidden="true"
-    className="absolute -top-[60px] right-[8%] w-[340px] h-[340px] rounded-full pointer-events-none blur-[50px]"
-    style={{
-      background:
-        "radial-gradient(circle at 35% 35%, rgba(255,255,255,.1), rgba(255,255,255,0) 65%)",
-    }}
-  />
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-[70px] left-[6%] w-[360px] h-[360px] rounded-full pointer-events-none blur-[50px]"
-    style={{
-      background:
-        "radial-gradient(circle at 40% 40%, rgba(255,255,255,.08), rgba(255,255,255,0) 65%)",
-    }}
-  />
+      <section className="relative overflow-hidden py-20 px-[clamp(20px,5vw,64px)]">
+        <div
+          aria-hidden="true"
+          className="absolute -top-[60px] right-[8%] w-[340px] h-[340px] rounded-full pointer-events-none blur-[50px]"
+          style={{
+            background:
+              "radial-gradient(circle at 35% 35%, rgba(255,255,255,.1), rgba(255,255,255,0) 65%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-[70px] left-[6%] w-[360px] h-[360px] rounded-full pointer-events-none blur-[50px]"
+          style={{
+            background:
+              "radial-gradient(circle at 40% 40%, rgba(255,255,255,.08), rgba(255,255,255,0) 65%)",
+          }}
+        />
 
-  <div className="relative max-w-[1100px] mx-auto grid grid-cols-4 gap-8 text-center">
-    <div>
-      <div className="font-fraunces text-[42px] font-bold text-white">[XX]+</div>
-      <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">Projects Delivered</div>
-    </div>
-    <div>
-      <div className="font-fraunces text-[42px] font-bold text-white">[XX]+</div>
-      <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">Clients Served</div>
-    </div>
-    <div>
-      <div className="font-fraunces text-[42px] font-bold text-white">4</div>
-      <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">Core Service Lines</div>
-    </div>
-    <div>
-      <div className="font-fraunces text-[42px] font-bold text-white">1</div>
-      <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">In-House Product — Verbosa.ai</div>
-    </div>
-  </div>
-</section>
+        <div className="relative max-w-[1100px] mx-auto grid grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="font-fraunces text-[42px] font-bold text-white">
+              [XX]+
+            </div>
+            <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">
+              Projects Delivered
+            </div>
+          </div>
+          <div>
+            <div className="font-fraunces text-[42px] font-bold text-white">
+              [XX]+
+            </div>
+            <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">
+              Clients Served
+            </div>
+          </div>
+          <div>
+            <div className="font-fraunces text-[42px] font-bold text-white">
+              4
+            </div>
+            <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">
+              Core Service Lines
+            </div>
+          </div>
+          <div>
+            <div className="font-fraunces text-[42px] font-bold text-white">
+              1
+            </div>
+            <div className="text-[13.5px] text-[#A6A6A2] mt-2 tracking-[.02em]">
+              In-House Product — Verbosa.ai
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES */}
       <section
@@ -419,6 +435,1570 @@ const page = () => {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </Link>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="relative mx-auto w-full max-w-[1240px] px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
+        <div className="relative mb-12 max-w-[640px] text-left">
+          <div className="mb-[14px] inline-flex items-center gap-[10px]">
+            <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
+
+            <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+              INDUSTRIES WE SUPPORT
+            </p>
+          </div>
+
+          <h2 className="m-0 font-display text-[34px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+            Built for founders and teams across every sector.
+          </h2>
+        </div>
+
+        <div className="relative grid grid-cols-6 gap-4">
+          {/* Startups */}
+          <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 2c2 2 3 5 3 8 0 2-.5 4-1 5l-2 3-2-3c-.5-1-1-3-1-5 0-3 1-6 3-8z" />
+                <circle cx="12" cy="9" r="1.4" />
+                <path d="M8 16l-3 3 1 3 3-1" />
+                <path d="M16 16l3 3-1 3-3-1" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              Startups
+            </span>
+          </div>
+
+          {/* E-commerce */}
+          <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M6 8h12l-1 12H7L6 8z" />
+                <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              E-commerce
+            </span>
+          </div>
+
+          {/* Real Estate */}
+          <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 22h18" />
+                <path d="M6 22V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v18" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="14" y1="9" x2="14.01" y2="9" />
+                <line x1="9" y1="13" x2="9.01" y2="13" />
+                <line x1="14" y1="13" x2="14.01" y2="13" />
+                <line x1="9" y1="17" x2="9.01" y2="17" />
+                <line x1="14" y1="17" x2="14.01" y2="17" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              Real Estate
+            </span>
+          </div>
+
+          {/* Media & Entertainment */}
+          <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 8l1-3 4 1-1 3z" />
+                <path d="M8 6l1-3 4 1-1 3z" />
+                <rect x="3" y="8" width="18" height="12" rx="1" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              Media &amp; Entertainment
+            </span>
+          </div>
+
+          {/* Healthcare */}
+          <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              Healthcare
+            </span>
+          </div>
+
+          {/* Finance */}
+          <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-[22px] text-center">
+            <div className="mx-auto mb-3 h-[26px] w-[26px] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="3" y="12" width="4" height="9" />
+                <rect x="10" y="6" width="4" height="15" />
+                <rect x="17" y="9" width="4" height="12" />
+              </svg>
+            </div>
+
+            <span className="text-[13px] font-semibold text-[#A6A6A2]">
+              Finance
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTS / VERBOSA.AI */}
+      <section
+        id="products"
+        className="mx-auto w-full max-w-[1240px] px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]"
+      >
+        <div className="rounded-none bg-white">
+          <div className="grid grid-cols-2 items-center gap-12 rounded-none bg-transparent px-[clamp(28px,5vw,64px)] py-14">
+            <div>
+              <div className="mb-[14px] inline-flex items-center gap-[10px]">
+                <span className="h-[6px] w-[6px] bg-[#0A0A0A]" />
+
+                <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#0A0A0A]">
+                  OUR PRODUCTS
+                </p>
+              </div>
+
+              <h2 className="mb-[18px] font-display text-[34px] font-semibold tracking-[-0.01em] text-[#0A0A0A]">
+                Meet Verbosa.ai
+              </h2>
+
+              <p className="mb-[26px] text-[15.5px] leading-[1.7] text-black/70">
+                Verbosa.ai is our in-house AI sales automation platform — voice
+                calls, chat, email, and lead generation working together as one
+                AI sales team. It's built and maintained by the same team behind
+                Intellix.
+              </p>
+
+              <div className="mb-[30px] flex flex-wrap gap-[10px]">
+                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#0A0A0A]">
+                  AI-Powered
+                </span>
+
+                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#0A0A0A]">
+                  Built by Intellix
+                </span>
+
+                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#0A0A0A]">
+                  Made in Bangladesh
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-[14px]">
+                <a
+                  href="https://verbosa.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border-[1.5px] border-white bg-[#0A0A0A] px-6 py-[13px] font-mono text-[13.5px] font-semibold uppercase tracking-[0.04em] text-[#F5F5F2]"
+                >
+                  Visit Verbosa.ai
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="15"
+                    height="15"
+                    fill="none"
+                    stroke="#F5F5F2"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+
+                <a
+                  href="/product"
+                  className="inline-flex items-center gap-2 border-[1.5px] border-[#0A0A0A] px-[22px] py-[13px] font-mono text-[13.5px] font-semibold uppercase tracking-[0.04em] text-[#0A0A0A]"
+                >
+                  Full Product Page
+                </a>
+              </div>
+            </div>
+
+            <div className="flex min-h-[260px] flex-col justify-center gap-[14px] border border-white/[0.14] bg-[#0A0A0A] p-[22px]">
+              <div className="flex items-center justify-between">
+                <span className="text-[12.5px] font-semibold text-[#F5F5F2]">
+                  Verbosa.ai — AI Sales Team
+                </span>
+
+                <span className="border border-white/[0.14] px-[9px] py-1 font-mono text-[10.5px] text-[#F5F5F2]">
+                  &lt;500ms
+                </span>
+              </div>
+
+              <div className="grid grid-cols-4 gap-[10px]">
+                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="#F5F5F2"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mx-auto mb-[6px]"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z" />
+                  </svg>
+
+                  <div className="text-[9.5px] font-semibold text-[#6E6E6A]">
+                    Voice
+                  </div>
+                </div>
+
+                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="#F5F5F2"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mx-auto mb-[6px]"
+                  >
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+
+                  <div className="text-[9.5px] font-semibold text-[#6E6E6A]">
+                    Chat
+                  </div>
+                </div>
+
+                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="#F5F5F2"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mx-auto mb-[6px]"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M22 6l-10 7L2 6" />
+                  </svg>
+
+                  <div className="text-[9.5px] font-semibold text-[#6E6E6A]">
+                    Email
+                  </div>
+                </div>
+
+                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="#F5F5F2"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mx-auto mb-[6px]"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+
+                  <div className="text-[9.5px] font-semibold text-[#6E6E6A]">
+                    Leads
+                  </div>
+                </div>
+              </div>
+
+              <p className="m-0 mt-[2px] text-center text-[11.5px] text-[#6E6E6A]">
+                Conceptual visualization, not a live screenshot.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED WORK / PROJECTS TEASER */}
+      <section
+        id="projects"
+        className="mx-auto w-full max-w-[1240px] px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]"
+      >
+        <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
+          <div>
+            <div className="mb-[14px] inline-flex items-center gap-[10px]">
+              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
+
+              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+                FEATURED WORK
+              </p>
+            </div>
+
+            <h2 className="m-0 max-w-[520px] font-display text-[36px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+              A look at what we've been building.
+            </h2>
+          </div>
+
+          <a
+            href="/projects"
+            className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap border-[1.5px] border-white/[0.34] px-[22px] py-3 font-mono text-[12.5px] font-semibold uppercase tracking-[0.04em] text-[#F5F5F2]"
+          >
+            View All Projects
+            <svg
+              viewBox="0 0 24 24"
+              width="15"
+              height="15"
+              fill="none"
+              stroke="#F5F5F2"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-3 gap-[22px]">
+          <a
+            href="/projects"
+            className="block overflow-hidden border border-white/[0.14] bg-[#141414]"
+          >
+            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-[#0A0A0A]">
+              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-[#F5F5F2]">
+                NW
+              </span>
+            </div>
+
+            <div className="p-[22px]">
+              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-white">
+                E-COMMERCE
+              </span>
+
+              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-[#F5F5F2]">
+                Northwind Retail Co.
+              </h3>
+
+              <p className="m-0 text-[13.5px] leading-[1.6] text-[#A6A6A2]">
+                Rebuilt a slow storefront into a fast, mobile-first platform — a
+                42% lift in conversion.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/projects"
+            className="block overflow-hidden border border-white/[0.14] bg-[#141414]"
+          >
+            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-[#0A0A0A]">
+              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-[#F5F5F2]">
+                CO
+              </span>
+            </div>
+
+            <div className="p-[22px]">
+              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">
+                E-COMMERCE
+              </span>
+
+              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-[#F5F5F2]">
+                Cascade Outfitters
+              </h3>
+
+              <p className="m-0 text-[13.5px] leading-[1.6] text-[#A6A6A2]">
+                Stood up a dedicated support desk across chat, email, and order
+                issues — 94% CSAT.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/projects"
+            className="block overflow-hidden border border-white/[0.14] bg-[#141414]"
+          >
+            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-[#0A0A0A]">
+              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-[#F5F5F2]">
+                MM
+              </span>
+            </div>
+
+            <div className="p-[22px]">
+              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">
+                MEDIA &amp; ENTERTAINMENT
+              </span>
+
+              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-[#F5F5F2]">
+                Meridian Media Group
+              </h3>
+
+              <p className="m-0 text-[13.5px] leading-[1.6] text-[#A6A6A2]">
+                A six-video product launch series edited for social — 1.2M+
+                views to date.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <p className="m-0 mt-7 text-center text-[13px] text-[#6E6E6A]">
+          Case studies shown are illustrative examples used for demonstration
+          purposes.
+        </p>
+      </section>
+
+      {/* WHY US */}
+      <section
+        id="why"
+        className="mx-auto w-full max-w-[1240px] px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]"
+      >
+        <div className="mb-14 max-w-[640px] text-left">
+          <div className="mb-[14px] inline-flex items-center gap-[10px]">
+            <span className="h-[6px] w-[6px] bg-white" />
+
+            <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+              WHY INTELLIX
+            </p>
+          </div>
+
+          <h2 className="m-0 font-display text-[36px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+            A team that thinks like a partner, not a vendor.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-5">
+          <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
+            <span className="absolute right-[18px] top-4 font-mono text-[12px] text-[#6E6E6A]">
+              01
+            </span>
+
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-[#F5F5F2]">
+                Full-Stack Expertise
+              </h3>
+
+              <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+                From front-end interfaces to back-end systems, our team covers
+                the entire product lifecycle in-house.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
+            <span className="absolute right-[18px] top-4 font-mono text-[12px] text-[#6E6E6A]">
+              02
+            </span>
+
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-[#F5F5F2]">
+                Design-Led Approach
+              </h3>
+
+              <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+                Every project starts with thoughtful design, because how it
+                looks is as important as how it works.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
+            <span className="absolute right-[18px] top-4 font-mono text-[12px] text-[#6E6E6A]">
+              03
+            </span>
+
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-[#F5F5F2]">
+                Dedicated Teams
+              </h3>
+
+              <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+                You get a consistent team that understands your product, not a
+                rotating cast of freelancers.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
+            <span className="absolute right-[18px] top-4 font-mono text-[12px] text-[#6E6E6A]">
+              04
+            </span>
+
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+            </div>
+
+            <div>
+              <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-[#F5F5F2]">
+                Built to Scale
+              </h3>
+
+              <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+                We build on modern, scalable architecture so your product grows
+                without being rebuilt from scratch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TECH STACK */}
+      <section className="relative overflow-hidden border-y border-white/[0.14] bg-[#0A0A0A] px-[clamp(20px,5vw,64px)] py-[100px]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]"
+        >
+          &lt;/&gt;
+        </div>
+
+        <div className="relative mx-auto max-w-[1240px]">
+          <div className="mb-14 max-w-[640px] text-left">
+            <div className="mb-[14px] inline-flex items-center gap-[10px]">
+              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
+
+              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+                TOOLS &amp; TECHNOLOGIES
+              </p>
+            </div>
+
+            <h2 className="m-0 font-display text-[36px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+              The stack behind every build.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-4 gap-5">
+            {/* Frontend */}
+            <div className="relative border border-white/[0.14] bg-[#141414] px-[22px] py-7">
+              <span className="absolute right-5 top-[18px] font-mono text-[12px] text-[#6E6E6A]">
+                01
+              </span>
+
+              <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+
+              <h3 className="mb-[14px] mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+                Frontend &amp; Web
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {["React", "Next.js", "TypeScript"].map((item) => (
+                  <span
+                    key={item}
+                    className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-[#A6A6A2]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div className="relative border border-white/[0.14] bg-[#141414] px-[22px] py-7">
+              <span className="absolute right-5 top-[18px] font-mono text-[12px] text-[#6E6E6A]">
+                02
+              </span>
+
+              <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="6" rx="1" />
+                  <rect x="2" y="15" width="20" height="6" rx="1" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+              </div>
+
+              <h3 className="mb-[14px] mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+                Backend &amp; Infrastructure
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {["Node.js", "Laravel", "Django"].map((item) => (
+                  <span
+                    key={item}
+                    className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-[#A6A6A2]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Design */}
+            <div className="relative border border-white/[0.14] bg-[#141414] px-[22px] py-7">
+              <span className="absolute right-5 top-[18px] font-mono text-[12px] text-[#6E6E6A]">
+                03
+              </span>
+
+              <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 2a9 9 0 1 0 0 18c1.1 0 2-.7 2-1.8 0-.5-.2-1-.5-1.3-.3-.3-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z" />
+                  <circle cx="7.5" cy="10.5" r="1.1" />
+                  <circle cx="10" cy="7" r="1.1" />
+                  <circle cx="14.5" cy="7.5" r="1.1" />
+                  <circle cx="17" cy="11" r="1.1" />
+                </svg>
+              </div>
+
+              <h3 className="mb-[14px] mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+                Design &amp; Creative
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {["Figma", "Premiere Pro", "After Effects"].map((item) => (
+                  <span
+                    key={item}
+                    className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-[#A6A6A2]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CMS */}
+            <div className="relative border border-white/[0.14] bg-[#141414] px-[22px] py-7">
+              <span className="absolute right-5 top-[18px] font-mono text-[12px] text-[#6E6E6A]">
+                04
+              </span>
+
+              <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-[#F5F5F2]">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7" rx="1" />
+                  <rect x="14" y="3" width="7" height="7" rx="1" />
+                  <rect x="3" y="14" width="7" height="7" rx="1" />
+                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                </svg>
+              </div>
+
+              <h3 className="mb-[14px] mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+                CMS &amp; Platforms
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {["WordPress", "Webflow", "Framer"].map((item) => (
+                  <span
+                    key={item}
+                    className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-[#A6A6A2]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section
+        id="process"
+        className="relative mx-auto w-full max-w-[1240px] overflow-hidden px-[clamp(20px,5vw,64px)] pt-[100px] pb-[110px]"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]"
+        />
+
+        <div className="relative mb-14 max-w-[640px] text-left">
+          <div className="mb-[14px] inline-flex items-center gap-[10px]">
+            <span className="h-[6px] w-[6px] bg-white" />
+
+            <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+              HOW WE WORK
+            </p>
+          </div>
+
+          <h2 className="m-0 font-display text-[36px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+            A clear process, from first call to launch.
+          </h2>
+        </div>
+
+        <svg
+          className="pointer-events-none absolute left-[8%] top-[206px] h-[2px] w-[84%]"
+          viewBox="0 0 100 1"
+          preserveAspectRatio="none"
+        >
+          <line
+            x1="0"
+            y1="0.5"
+            x2="100"
+            y2="0.5"
+            stroke="rgba(255,255,255,.14)"
+            strokeWidth="0.6"
+            strokeDasharray="2,2"
+          />
+        </svg>
+
+        <div className="relative grid grid-cols-4 gap-6">
+          <div>
+            <div className="mb-[14px] font-display text-[38px] font-bold text-white">
+              01
+            </div>
+
+            <h3 className="mb-2 mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+              Discover
+            </h3>
+
+            <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+              We learn your goals, users, and constraints before writing a
+              single line of code.
+            </p>
+          </div>
+
+          <div>
+            <div className="mb-[14px] font-display text-[38px] font-bold text-white">
+              02
+            </div>
+
+            <h3 className="mb-2 mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+              Design
+            </h3>
+
+            <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+              Wireframes and visual design turn ideas into a clear, testable
+              plan.
+            </p>
+          </div>
+
+          <div>
+            <div className="mb-[14px] font-display text-[38px] font-bold text-white">
+              03
+            </div>
+
+            <h3 className="mb-2 mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+              Build
+            </h3>
+
+            <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+              Our developers build your product with clean, maintainable, and
+              scalable code.
+            </p>
+          </div>
+
+          <div>
+            <div className="mb-[14px] font-display text-[38px] font-bold text-white">
+              04
+            </div>
+
+            <h3 className="mb-2 mt-0 font-display text-[16.5px] font-semibold text-[#F5F5F2]">
+              Launch &amp; Support
+            </h3>
+
+            <p className="m-0 text-[14px] leading-[1.6] text-[#A6A6A2]">
+              We ship, monitor, and stay on to support and improve what we
+              built.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM TEASER */}
+      <section
+        id="about"
+        className="
+    relative
+    mx-auto
+    w-full
+    max-w-[1240px]
+    overflow-hidden
+    px-[clamp(20px,5vw,64px)]
+    pt-5
+    pb-[110px]
+  "
+      >
+        <div
+          className="
+      relative
+      grid
+      grid-cols-[1.1fr_.9fr]
+      items-center
+      gap-11
+      overflow-hidden
+      border
+      border-white/[0.14]
+      bg-[#141414]
+      p-[clamp(32px,5vw,56px)]
+    "
+        >
+          {/* Glow - top right */}
+          <div
+            aria-hidden="true"
+            className="
+        pointer-events-none
+        absolute
+        -top-[60px]
+        -right-[60px]
+        h-[320px]
+        w-[320px]
+        rounded-full
+        bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)]
+        blur-[50px]
+      "
+          />
+
+          {/* Glow - bottom left */}
+          <div
+            aria-hidden="true"
+            className="
+        pointer-events-none
+        absolute
+        -bottom-[70px]
+        -left-[50px]
+        h-[340px]
+        w-[340px]
+        rounded-full
+        bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)]
+        blur-[50px]
+      "
+          />
+
+          {/* Left Content */}
+          <div className="relative z-10">
+            <div className="mb-[14px] inline-flex items-center gap-2.5">
+              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
+
+              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+                WHO WE ARE
+              </p>
+            </div>
+
+            <h2 className="mb-4 font-display text-[32px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+              A small, focused team building real products.
+            </h2>
+
+            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-[#A6A6A2]">
+              Intellix is a remote-first team of developers, designers, and
+              editors working out of Dhaka, Bangladesh — covering everything
+              from client projects to our own product, Verbosa.ai.
+            </p>
+
+            <div className="mb-7 flex flex-wrap gap-2.5">
+              <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#A6A6A2]">
+                Remote-First
+              </span>
+
+              <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#A6A6A2]">
+                Based in Dhaka
+              </span>
+
+              <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-[#A6A6A2]">
+                4 Core Service Lines
+              </span>
+            </div>
+
+            <a
+              href="/about"
+              className="
+          inline-flex
+          items-center
+          gap-2
+          border-[1.5px]
+          border-white/[0.34]
+          px-[22px]
+          py-3
+          font-mono
+          text-[12.5px]
+          font-semibold
+          uppercase
+          tracking-[0.04em]
+          text-[#F5F5F2]
+        "
+            >
+              Meet the Team
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="#F5F5F2"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Team Photos */}
+          <div className="relative z-10 grid grid-cols-3 gap-2.5">
+            <div className="aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=11"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-[18px] aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=32"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=47"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="-mt-[18px] aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=5"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=22"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-[18px] aspect-square overflow-hidden border border-white/[0.14]">
+              <img
+                src="https://i.pravatar.cc/200?img=14"
+                alt="Portrait of a team member"
+                className="block h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section
+        className="
+    mx-auto
+    w-full
+    max-w-[1240px]
+    px-[clamp(20px,5vw,64px)]
+    pt-5
+    pb-[110px]
+  "
+      >
+        <div className="mb-14 max-w-[640px] text-left">
+          <div className="mb-[14px] inline-flex items-center gap-2.5">
+            <span className="h-[6px] w-[6px] bg-white" />
+
+            <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+              CLIENT VOICES
+            </p>
+          </div>
+
+          <h2 className="m-0 font-display text-[36px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+            What partners say about working with us.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-3 gap-5">
+          {/* Testimonial 1 */}
+          <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
+            <svg
+              className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]"
+              viewBox="0 0 24 24"
+              width="56"
+              height="56"
+              fill="none"
+              stroke="#F5F5F2"
+              strokeWidth="1.4"
+            >
+              <path d="M7 15h3l2-4V7H5v6h3z" />
+              <path d="M15 15h3l2-4V7h-7v6h3z" />
+            </svg>
+
+            <p className="relative mb-[22px] text-[14.5px] leading-[1.7] text-[#A6A6A2]">
+              "[Add a short quote from your client about the results Intellix
+              delivered.]"
+            </p>
+
+            <div className="relative flex items-center gap-3">
+              <span className="flex h-[38px] w-[38px] items-center justify-center border border-white/[0.14] text-[12px] font-bold text-[#A6A6A2]">
+                [?]
+              </span>
+
+              <div>
+                <div className="text-[14px] font-semibold text-[#F5F5F2]">
+                  [Client Name]
+                </div>
+
+                <div className="text-[12.5px] text-[#6E6E6A]">
+                  [Role, Company]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
+            <svg
+              className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]"
+              viewBox="0 0 24 24"
+              width="56"
+              height="56"
+              fill="none"
+              stroke="#F5F5F2"
+              strokeWidth="1.4"
+            >
+              <path d="M7 15h3l2-4V7H5v6h3z" />
+              <path d="M15 15h3l2-4V7h-7v6h3z" />
+            </svg>
+
+            <p className="relative mb-[22px] text-[14.5px] leading-[1.7] text-[#A6A6A2]">
+              "[Add a short quote from your client about the results Intellix
+              delivered.]"
+            </p>
+
+            <div className="relative flex items-center gap-3">
+              <span className="flex h-[38px] w-[38px] items-center justify-center border border-white/[0.14] text-[12px] font-bold text-[#A6A6A2]">
+                [?]
+              </span>
+
+              <div>
+                <div className="text-[14px] font-semibold text-[#F5F5F2]">
+                  [Client Name]
+                </div>
+
+                <div className="text-[12.5px] text-[#6E6E6A]">
+                  [Role, Company]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 3 */}
+          <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
+            <svg
+              className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]"
+              viewBox="0 0 24 24"
+              width="56"
+              height="56"
+              fill="none"
+              stroke="#F5F5F2"
+              strokeWidth="1.4"
+            >
+              <path d="M7 15h3l2-4V7H5v6h3z" />
+              <path d="M15 15h3l2-4V7h-7v6h3z" />
+            </svg>
+
+            <p className="relative mb-[22px] text-[14.5px] leading-[1.7] text-[#A6A6A2]">
+              "[Add a short quote from your client about the results Intellix
+              delivered.]"
+            </p>
+
+            <div className="relative flex items-center gap-3">
+              <span className="flex h-[38px] w-[38px] items-center justify-center border border-white/[0.14] text-[12px] font-bold text-[#A6A6A2]">
+                [?]
+              </span>
+
+              <div>
+                <div className="text-[14px] font-semibold text-[#F5F5F2]">
+                  [Client Name]
+                </div>
+
+                <div className="text-[12.5px] text-[#6E6E6A]">
+                  [Role, Company]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section
+        id="faq"
+        className="
+    relative
+    mx-auto
+    w-full
+    max-w-[1180px]
+    px-[clamp(20px,5vw,64px)]
+    pt-5
+    pb-[120px]
+  "
+      >
+        <div className="relative grid grid-cols-[.85fr_1.15fr] items-start gap-14">
+          {/* FAQ Aside */}
+          <div className="sticky top-[100px]">
+            <div className="mb-[14px] inline-flex items-center gap-2.5">
+              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
+
+              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-[#A6A6A2]">
+                FAQ
+              </p>
+            </div>
+
+            <h2 className="mb-4 font-display text-[38px] font-semibold tracking-[-0.01em] text-[#F5F5F2]">
+              Questions, answered.
+            </h2>
+
+            <p className="mb-7 max-w-[340px] text-[15px] leading-[1.7] text-[#A6A6A2]">
+              Everything you might want to know before starting a project with
+              us. Can't find it here?
+            </p>
+
+            <a
+              href="/contact"
+              className="
+          inline-flex
+          items-center
+          gap-2
+          border-[1.5px]
+          border-white/[0.34]
+          px-5
+          py-3
+          font-mono
+          text-[12.5px]
+          font-semibold
+          uppercase
+          tracking-[0.04em]
+          text-[#F5F5F2]
+        "
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="#F5F5F2"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 4h16v12H7l-3 3V4z" />
+              </svg>
+              Contact Us
+            </a>
+          </div>
+
+          {/* FAQ Items */}
+          <div className="flex flex-col gap-3">
+            {/* FAQ 1 - Open */}
+            <div className="overflow-hidden border border-white bg-[#1C1C1C]">
+              <button
+                type="button"
+                aria-expanded="true"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                What services does Intellix provide?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+
+                  <span
+                    className="
+                absolute
+                left-0
+                top-1/2
+                h-[2px]
+                w-4
+                -translate-y-1/2
+                rotate-90
+                scale-y-0
+                bg-[#A6A6A2]
+              "
+                  />
+                </span>
+              </button>
+
+              <div className="overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  We offer web development, graphic design, video editing, and
+                  BPO (back-office) services, along with our own in-house
+                  products like Verbosa.ai.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <button
+                type="button"
+                aria-expanded="false"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                Do you work with startups as well as established businesses?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 rotate-90 bg-[#A6A6A2]" />
+                </span>
+              </button>
+
+              <div className="hidden overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  Yes. We work with early-stage startups, growing businesses,
+                  and established companies — tailoring our process and team
+                  size to fit your budget and timeline.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <button
+                type="button"
+                aria-expanded="false"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                What does your project process look like?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 rotate-90 bg-[#A6A6A2]" />
+                </span>
+              </button>
+
+              <div className="hidden overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  We follow four stages: Discover, Design, Build, and Launch
+                  &amp; Support — with regular check-ins so you always know
+                  where your project stands.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <button
+                type="button"
+                aria-expanded="false"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                Do you work with clients outside Bangladesh?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 rotate-90 bg-[#A6A6A2]" />
+                </span>
+              </button>
+
+              <div className="hidden overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  Yes. We're a remote-first team based in Dhaka, and we
+                  regularly work with clients around the world over video calls,
+                  chat, and shared project boards.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 5 */}
+            <div className="overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <button
+                type="button"
+                aria-expanded="false"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                How do I get a quote for my project?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 rotate-90 bg-[#A6A6A2]" />
+                </span>
+              </button>
+
+              <div className="hidden overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  Fill out the contact form below with a bit of detail about
+                  your project, and our team will get back to you with next
+                  steps and a proposal.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 6 */}
+            <div className="overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <button
+                type="button"
+                aria-expanded="false"
+                className="
+            flex
+            w-full
+            items-center
+            justify-between
+            gap-4
+            border-none
+            bg-transparent
+            px-[22px]
+            py-5
+            text-left
+            text-[15.5px]
+            font-semibold
+            text-[#F5F5F2]
+          "
+              >
+                Do you offer support after launch?
+                <span className="relative h-4 w-4 shrink-0">
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-[#A6A6A2]" />
+                  <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 rotate-90 bg-[#A6A6A2]" />
+                </span>
+              </button>
+
+              <div className="hidden overflow-hidden px-[22px] pb-[22px]">
+                <p className="m-0 text-[14px] leading-[1.65] text-[#A6A6A2]">
+                  Yes — our team stays engaged after launch for bug fixes,
+                  improvements, and ongoing support so your product keeps
+                  running smoothly.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
