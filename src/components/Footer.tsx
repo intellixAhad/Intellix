@@ -9,12 +9,11 @@ export default function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-2.5">
               <Link href="#top" className="flex items-center gap-2.5 shrink-0">
-                <Image src="./assets/brand-logo.png" alt="" width={50} />
-                <span className="font-playfair font-bold text-[20px] tracking-[-0.01em] text-white-01">
-                  Intellix
+                <Image src="/transparent_logo.png" alt="" width={50}  height={50}/>
+                <span className="font-playfair font-bold text-[20px] tracking-[-0.01em] leading-[100%] text-white-01">
+                  Intellix<br /> Solutions
                 </span>
               </Link>
-              <span className="font-display text-[18px] font-semibold text-white-01">Intellix</span>
             </div>
 
             <p className="mb-5.5 max-w-70 text-[14px] leading-[1.65] text-gray-00">
