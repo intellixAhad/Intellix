@@ -14,19 +14,12 @@ function parseColor(input: string): RGB {
   if (s.charAt(0) === "#") {
     let hex = s.slice(1);
     if (hex.length === 3)
-      hex =
-        hex.charAt(0) +
-        hex.charAt(0) +
-        hex.charAt(1) +
-        hex.charAt(1) +
-        hex.charAt(2) +
-        hex.charAt(2);
+      hex = hex.charAt(0) + hex.charAt(0) + hex.charAt(1) + hex.charAt(1) + hex.charAt(2) + hex.charAt(2);
     const v = parseInt(hex.slice(0, 6), 16);
     return { r: (v >> 16) & 255, g: (v >> 8) & 255, b: v & 255 };
   }
   const m = s.match(/-?\d+(\.\d+)?/g);
-  if (m && m.length >= 3)
-    return { r: Number(m[0]), g: Number(m[1]), b: Number(m[2]) };
+  if (m && m.length >= 3) return { r: Number(m[0]), g: Number(m[1]), b: Number(m[2]) };
   return { r: 255, g: 255, b: 255 };
 }
 
@@ -51,15 +44,7 @@ function mix(a: RGB, b: RGB, t: number): RGB {
 function css(c: RGB, a: number): string {
   const k = a > 1 ? 1 : a < 0 ? 0 : a;
   return (
-    "rgba(" +
-    Math.round(c.r) +
-    "," +
-    Math.round(c.g) +
-    "," +
-    Math.round(c.b) +
-    "," +
-    Math.round(k * 1000) / 1000 +
-    ")"
+    "rgba(" + Math.round(c.r) + "," + Math.round(c.g) + "," + Math.round(c.b) + "," + Math.round(k * 1000) / 1000 + ")"
   );
 }
 
@@ -158,8 +143,7 @@ export default function AuraField(props: AuraFieldProps) {
     if (!ctx) return;
 
     const reduced =
-      typeof window.matchMedia === "function" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let w = 0;
     let h = 0;
@@ -181,12 +165,7 @@ export default function AuraField(props: AuraFieldProps) {
 
     const ink: number[] = [];
     for (let i = 0; i < INK_BLOBS; i++) {
-      ink.push(
-        Math.random() * TAU,
-        0.18 + Math.random() * 0.22,
-        0.14 + Math.random() * 0.2,
-        0.5 + Math.random() * 0.6,
-      );
+      ink.push(Math.random() * TAU, 0.18 + Math.random() * 0.22, 0.14 + Math.random() * 0.2, 0.5 + Math.random() * 0.6);
     }
 
     // If the host sits inside a scaled/transformed ancestor, a bounding
@@ -235,13 +214,10 @@ export default function AuraField(props: AuraFieldProps) {
     const spawnAmbient = (now: number) => {
       const c = cfg.current;
       const turb = c.turbulence!;
-      const vary = (base: number, range: number) =>
-        base * (1 + (Math.random() * 2 - 1) * range * turb);
+      const vary = (base: number, range: number) => base * (1 + (Math.random() * 2 - 1) * range * turb);
       const side = Math.floor(Math.random() * 4);
-      const x =
-        side === 0 ? -w * 0.15 : side === 1 ? w * 1.15 : Math.random() * w;
-      const y =
-        side === 2 ? -h * 0.15 : side === 3 ? h * 1.15 : Math.random() * h;
+      const x = side === 0 ? -w * 0.15 : side === 1 ? w * 1.15 : Math.random() * w;
+      const y = side === 2 ? -h * 0.15 : side === 3 ? h * 1.15 : Math.random() * h;
       const speed = vary(110, 0.55);
       rings.push({
         x: x,
@@ -356,9 +332,7 @@ export default function AuraField(props: AuraFieldProps) {
           const sp = ink[o + 3];
           bx.push(cx + Math.sin(t * 0.16 * sp + ph) * w * ink[o + 1]);
           by.push(cy + Math.cos(t * 0.13 * sp + ph * 1.7) * h * ink[o + 2]);
-          br.push(
-            Math.min(w, h) * (0.3 + 0.12 * Math.sin(t * 0.22 * sp + ph * 2.3)),
-          );
+          br.push(Math.min(w, h) * (0.3 + 0.12 * Math.sin(t * 0.22 * sp + ph * 2.3)));
         }
       }
 
@@ -420,17 +394,11 @@ export default function AuraField(props: AuraFieldProps) {
           const s3 = Math.sin(p3);
           x += (s1 * 0.55 + s2 * 0.3 + s3 * 0.35) * amp;
           y +=
-            (Math.cos(p1 * 0.8) * 0.5 +
-              Math.cos(p2 * 1.1) * 0.3 * (0.5 + turb * 0.5) +
-              Math.cos(p3) * 0.3) *
-            amp *
-            0.8;
+            (Math.cos(p1 * 0.8) * 0.5 + Math.cos(p2 * 1.1) * 0.3 * (0.5 + turb * 0.5) + Math.cos(p3) * 0.3) * amp * 0.8;
           energy = 0.5 + 0.5 * (s1 * 0.5 + s2 * 0.3 + s3 * 0.2);
         } else if (kind === "flow") {
           const ang =
-            (Math.sin(gx * (TAU / 780) + t * 0.36) +
-              Math.cos(gy * (TAU / 640) - t * 0.28) * (0.6 + turb)) *
-            Math.PI;
+            (Math.sin(gx * (TAU / 780) + t * 0.36) + Math.cos(gy * (TAU / 640) - t * 0.28) * (0.6 + turb)) * Math.PI;
           x += Math.cos(ang) * amp;
           y += Math.sin(ang) * amp * 0.9;
           energy = 0.5 + 0.5 * Math.sin(ang);
@@ -438,9 +406,7 @@ export default function AuraField(props: AuraFieldProps) {
           const dx = gx - cx;
           const dy = gy - cy;
           const d = Math.sqrt(dx * dx + dy * dy) + 0.0001;
-          const s = Math.sin(
-            d * (TAU / (520 + 260 * Math.sin(t * 0.21))) - t * 0.9,
-          );
+          const s = Math.sin(d * (TAU / (520 + 260 * Math.sin(t * 0.21))) - t * 0.9);
           x += (dx / d) * s * amp;
           y += (dy / d) * s * amp;
           energy = 0.5 + 0.5 * s;
@@ -454,13 +420,7 @@ export default function AuraField(props: AuraFieldProps) {
             if (q > r0 * r0 * 6) continue;
             let d = Math.sqrt(q) + 0.0001;
             const ang = Math.atan2(dy, dx);
-            d =
-              d *
-              (1 +
-                turb *
-                  0.32 *
-                  Math.sin(ang * 3 + t * 0.5 + bi) *
-                  Math.sin(ang * 5 - t * 0.31));
+            d = d * (1 + turb * 0.32 * Math.sin(ang * 3 + t * 0.5 + bi) * Math.sin(ang * 5 - t * 0.31));
             const v = Math.exp(-(d * d) / (r0 * r0));
             cover += v;
             const push = v * amp * 0.9;
@@ -509,7 +469,7 @@ export default function AuraField(props: AuraFieldProps) {
         lit += rip;
         if (lit > 1) lit = 1;
         if (rip > 1) rip = 1;
-        let blend = energy < 0 ? 0 : energy > 1 ? 1 : energy;
+        const blend = energy < 0 ? 0 : energy > 1 ? 1 : energy;
 
         // Soften everything as it nears the container edge.
         let eF = 1;
@@ -548,8 +508,7 @@ export default function AuraField(props: AuraFieldProps) {
         ctx.fillStyle = css(base, a);
         if (useRects) {
           const s = rad0 * 2;
-          for (let k = 0; k < arr.length; k += 2)
-            ctx.fillRect(arr[k] - rad0, arr[k + 1] - rad0, s, s);
+          for (let k = 0; k < arr.length; k += 2) ctx.fillRect(arr[k] - rad0, arr[k + 1] - rad0, s, s);
         } else {
           ctx.beginPath();
           for (let k = 0; k < arr.length; k += 2) {
@@ -568,20 +527,12 @@ export default function AuraField(props: AuraFieldProps) {
         const blend = litList[k + 3];
         const rip = litList[k + 4];
         const eF = litList[k + 5];
-        let hue = trio
-          ? blend < 0.5
-            ? mix(A, B, blend * 2)
-            : mix(B, C, (blend - 0.5) * 2)
-          : mix(A, B, blend);
+        let hue = trio ? (blend < 0.5 ? mix(A, B, blend * 2) : mix(B, C, (blend - 0.5) * 2)) : mix(A, B, blend);
         // A ripple pulls the colour toward the first accent and adds
         // opacity of its own, so the wave reads as colour, not just light.
         if (rip > 0.002) hue = mix(hue, A, rip > 1 ? 1 : rip);
         const col = mix(base, hue, lit);
-        const a =
-          (baseA * (0.62 + 0.38 * blend) +
-            lit * c.brightness! +
-            rip * c.brightness! * 0.55) *
-          eF;
+        const a = (baseA * (0.62 + 0.38 * blend) + lit * c.brightness! + rip * c.brightness! * 0.55) * eF;
         const r = rad0 * (1 + lit * 0.35 + rip * 0.3);
         ctx.fillStyle = css(col, a);
         if (useRects) {
@@ -624,13 +575,7 @@ export default function AuraField(props: AuraFieldProps) {
           height: p.style?.height ?? "100%",
           background: p.background,
           backgroundImage:
-            "radial-gradient(circle at center, " +
-            p.dotColor +
-            " " +
-            r +
-            "px, rgba(0,0,0,0) " +
-            (r + 0.6) +
-            "px)",
+            "radial-gradient(circle at center, " + p.dotColor + " " + r + "px, rgba(0,0,0,0) " + (r + 0.6) + "px)",
           backgroundSize: p.spacing + "px " + p.spacing + "px",
         }}
       />
