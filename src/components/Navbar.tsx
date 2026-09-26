@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import BrandLogo from "./BrandLogo";
+import Button from "@/components/Button"
 
 interface NavLink {
   label: string;
@@ -42,10 +43,8 @@ export default function Navbar() {
       if (Math.abs(delta) < SCROLL_DELTA_THRESHOLD) return;
 
       if (delta > 0 && currentY > HIDE_AFTER_PX) {
-        
         setHidden(true);
       } else {
-        
         setHidden(false);
       }
 
@@ -104,25 +103,24 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`relative text-[14px] font-medium tracking-wider py-1 transition-colors duration-200 ${
-                  isActive(link.href) ? "text-white-01" : "text-white-01/70 hover:text-white-01 font-jetbrain"
+                  isActive(link.href)
+                    ? "text-white-01"
+                    : "text-white-01/70 hover:text-white-01 font-jetbrain"
                 } group`}
               >
                 {link.label}
                 <span
                   className={`absolute left-0 -bottom-0.5 h-px bg-white-01 transition-transform duration-300 ease-out origin-left ${
-                    isActive(link.href) ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
+                    isActive(link.href)
+                      ? "w-full scale-x-100"
+                      : "w-full scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
               </Link>
             ))}
           </nav>
 
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.75 bg-white border-[1.5px] border-white text-black-01 font-jetbrain uppercase tracking-[.04em] font-semibold text-[12.5px] whitespace-nowrap shrink-0 transition-all duration-300 hover:bg-transparent hover:text-white active:scale-[0.97]"
-          >
-            Let&apos;s Talk
-          </Link>
+          <Button title="let's talk" link="/contact" variant="primary" />
 
           <button
             onClick={() => setIsOpen((v) => !v)}
@@ -155,7 +153,9 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
         className={`fixed inset-0 z-90 bg-black/60 transition-opacity duration-300 md:hidden ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       />
 
@@ -206,13 +206,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          onClick={() => setIsOpen(false)}
-          className="mx-8 sm:mx-10 mb-10 text-center px-5 py-3.5 bg-white border-[1.5px] border-white text-black-01 font-jetbrain uppercase tracking-[.04em] font-semibold text-sm transition-transform duration-300 active:scale-[0.97]"
-        >
-          Let&apos;s Talk
-        </Link>
+<Button title="let's talk" link="/contact" variant="primary"/>
       </div>
     </>
   );

@@ -34,13 +34,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="relative min-h-screen bg-black-01">
           <main className="relative z-10">
             <Navbar />
-            <IntellixIntro>
+            {/* <IntellixIntro> */}
               <div
                 className="pointer-events-none fixed inset-0 -z-100 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1.5px)] bg-size-[40px_40px]"
                 aria-hidden="true"
               />
               {children}
-            </IntellixIntro>
+            {/* </IntellixIntro> */}
             <Footer />
           </main>
         </div>
