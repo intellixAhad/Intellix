@@ -2,14 +2,12 @@
 
 import { motion } from "framer-motion";
 
-type ServiceCardProps = {
-        number: string;
-        icon: React.ReactNode;
+type IndustryCardProps = {
         title: string;
-        description: string;
+        icon: React.ReactNode;
 };
 
-const ServiceCard = ({ number, icon, title, description }: ServiceCardProps) => {
+const IndustryCard = ({ title, icon }: IndustryCardProps) => {
         return (
                 <motion.div
                         initial="rest"
@@ -28,9 +26,8 @@ const ServiceCard = ({ number, icon, title, description }: ServiceCardProps) => 
                                 duration: 0.35,
                                 ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="group relative overflow-hidden border bg-[#141414] rounded-none py-7 px-6"
+                        className="group relative overflow-hidden border bg-[#141414] rounded-none py-7 px-6 flex flex-col items-center gap-4"
                 >
-                        {/* Background glow */}
                         <motion.div
                                 variants={{
                                         rest: {
@@ -46,31 +43,8 @@ const ServiceCard = ({ number, icon, title, description }: ServiceCardProps) => 
                                         duration: 0.5,
                                         ease: "easeOut",
                                 }}
-                                className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-white/[0.06] blur-3xl"
+                                className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-white/6 blur-3xl"
                         />
-
-                        {/* Number */}
-                        <motion.span
-                                variants={{
-                                        rest: {
-                                                opacity: 0.02,
-                                                x: 0,
-                                        },
-                                        hover: {
-                                                opacity: 0.1,
-                                                x: -2,
-                                        },
-                                }}
-                                transition={{
-                                        duration: 0.3,
-                                        ease: "easeOut",
-                                }}
-                                className="absolute -top-3 right-3 font-plex text-white font-black text-9xl italic"
-                        >
-                                {number}
-                        </motion.span>
-
-                        {/* Icon */}
                         <motion.div
                                 variants={{
                                         rest: {
@@ -86,12 +60,9 @@ const ServiceCard = ({ number, icon, title, description }: ServiceCardProps) => 
                                         duration: 0.35,
                                         ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="relative mb-5 flex h-11.5 w-11.5 items-center justify-center rounded-none border border-white/14 bg-transparent text-white-01"
                         >
                                 {icon}
                         </motion.div>
-
-                        {/* Title */}
                         <motion.h3
                                 variants={{
                                         rest: {
@@ -105,35 +76,12 @@ const ServiceCard = ({ number, icon, title, description }: ServiceCardProps) => 
                                         duration: 0.35,
                                         ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="relative mb-2.5 text-2xl font-jetbrain font-semibold text-white-01"
+                                className="relative mb-2.5 text-[13px] font-jetbrain text-gray-02"
                         >
                                 {title}
                         </motion.h3>
-
-                        {/* Description */}
-                        <p className="relative m-0 text-[14.5px] leading-[1.65] text-gray-02">{description}</p>
-
-                        {/* Bottom accent */}
-                        <motion.div
-                                variants={{
-                                        rest: {
-                                                scaleX: 0,
-                                                opacity: 0,
-                                        },
-                                        hover: {
-                                                scaleX: 1,
-                                                opacity: 1,
-                                        },
-                                }}
-                                transition={{
-                                        duration: 0.4,
-                                        ease: [0.22, 1, 0.36, 1],
-                                }}
-                                style={{ transformOrigin: "left" }}
-                                className="absolute bottom-0 left-0 h-px w-full bg-white/30"
-                        />
                 </motion.div>
         );
 };
 
-export default ServiceCard;
+export default IndustryCard;

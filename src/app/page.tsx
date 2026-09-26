@@ -5,6 +5,9 @@ import CircuitBackground from "@/components/CircuitBackground";
 import ClientTicker from "@/components/ClientTicker";
 import ServiceCard from "@/components/ServiceCard";
 import { serviceIcons } from "@/data/serviceIcons";
+import IndustryCard from "@/components/IndustryCard";
+import { IndustryIcons } from "@/data/IndustryIcons";
+import ProductAnimation from "@/components/ProductAnimation";
 
 const page = () => {
   return (
@@ -105,8 +108,7 @@ const page = () => {
         </div>
       </section>
 
-      {/* STATS / ACHIEVEMENTS */}
-      <section className="relative overflow-visible p-[92px_clamp(20px,5vw,64px)_92px]">
+      <section className="p-[92px_clamp(20px,5vw,64px)_92px]">
         <div className="relative max-w-7xl mx-auto grid grid-cols-4 gap-8 text-center">
           <div>
             <div className="font-fraunces text-[42px] font-bold text-white">[XX]+</div>
@@ -127,7 +129,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section id="services" className="p-[92px_clamp(20px,5vw,64px)_92px]">
         <div className="max-w-360 mx-auto">
           <div className="mb-15 text-left">
@@ -149,7 +150,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* INDUSTRIES */}
       <section className="p-[92px_clamp(20px,5vw,64px)_92px]">
         <div className="max-w-360 mx-auto">
           <div className="mb-15 text-left">
@@ -158,265 +158,96 @@ const page = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-            {/* Startups */}
-            <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2c2 2 3 5 3 8 0 2-.5 4-1 5l-2 3-2-3c-.5-1-1-3-1-5 0-3 1-6 3-8z" />
-                  <circle cx="12" cy="9" r="1.4" />
-                  <path d="M8 16l-3 3 1 3 3-1" />
-                  <path d="M16 16l3 3-1 3-3-1" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">Startups</span>
-            </div>
-
-            {/* E-commerce */}
-            <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 8h12l-1 12H7L6 8z" />
-                  <path d="M9 8V6a3 3 0 0 1 6 0v2" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">E-commerce</span>
-            </div>
-
-            {/* Real Estate */}
-            <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 22h18" />
-                  <path d="M6 22V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v18" />
-                  <line x1="9" y1="9" x2="9.01" y2="9" />
-                  <line x1="14" y1="9" x2="14.01" y2="9" />
-                  <line x1="9" y1="13" x2="9.01" y2="13" />
-                  <line x1="14" y1="13" x2="14.01" y2="13" />
-                  <line x1="9" y1="17" x2="9.01" y2="17" />
-                  <line x1="14" y1="17" x2="14.01" y2="17" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">Real Estate</span>
-            </div>
-
-            {/* Media & Entertainment */}
-            <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 8l1-3 4 1-1 3z" />
-                  <path d="M8 6l1-3 4 1-1 3z" />
-                  <rect x="3" y="8" width="18" height="12" rx="1" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">Media &amp; Entertainment</span>
-            </div>
-
-            {/* Healthcare */}
-            <div className="border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="9" />
-                  <line x1="12" y1="8" x2="12" y2="16" />
-                  <line x1="8" y1="12" x2="16" y2="12" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">Healthcare</span>
-            </div>
-
-            {/* Finance */}
-            <div className="mt-[18px] border border-white/[0.14] bg-[#141414] px-[14px] py-5.5 text-center">
-              <div className="mx-auto mb-3 h-[26px] w-[26px] text-white-01">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="12" width="4" height="9" />
-                  <rect x="10" y="6" width="4" height="15" />
-                  <rect x="17" y="9" width="4" height="12" />
-                </svg>
-              </div>
-
-              <span className="text-[13px] font-semibold text-gray-02">Finance</span>
-            </div>
+            {IndustryIcons.map(({ title, icon }, index) => (
+              <IndustryCard key={index} title={title} icon={icon} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* PRODUCTS / VERBOSA.AI */}
-      <section id="products" className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
-        <div className="rounded-none bg-white">
-          <div className="grid grid-cols-2 items-center gap-12 rounded-none bg-transparent px-[clamp(28px,5vw,64px)] py-14">
+      <section id="products" className="p-[92px_clamp(20px,5vw,64px)_92px]">
+        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 rounded-none bg-transparent px-[clamp(28px,5vw,64px)] py-14">
             <div>
-              <div className="mb-[14px] inline-flex items-center gap-[10px]">
-                <span className="h-[6px] w-[6px] bg-black-01" />
-
-                <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-black-01bg-black-01">OUR PRODUCTS</p>
-              </div>
-
-              <h2 className="mb-[18px] font-display text-[34px] font-semibold tracking-[-0.01em] text-black-01bg-black-01">Meet Verbosa.ai</h2>
-
-              <p className="mb-[26px] text-[15.5px] leading-[1.7] text-black/70">
+              <Badge label="our product" />
+              <h2 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 m-0 max-w-2xl leading-[105%] italic">Meet Verbosa.ai</h2>
+              <p className="my-6.5 text-[16px] text-gray-02">
                 Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same
                 team behind Intellix.
               </p>
-
-              <div className="mb-[30px] flex flex-wrap gap-[10px]">
-                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-black-01bg-black-01">AI-Powered</span>
-
-                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-black-01bg-black-01">Built by Intellix</span>
-
-                <span className="border border-black/[0.35] px-[14px] py-[7px] text-[12.5px] font-semibold text-black-01bg-black-01">Made in Bangladesh</span>
+              <div className="mb-7.5 flex gap-5 flex-wrap">
+                <span className="text-[12px] text-gray-01">AI-Powered</span>
+                <span className="text-[12px] text-gray-01">Built by Intellix</span>
+                <span className="text-[12px] text-gray-01">Made in Bangladesh</span>
               </div>
-
-              <div className="flex flex-wrap gap-[14px]">
-                <a
-                  href="https://verbosa.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border-[1.5px] border-white bg-black-01 px-6 py-[13px] font-mono text-[13.5px] font-semibold uppercase tracking-[0.04em] text-white-01"
-                >
-                  Visit Verbosa.ai
-                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#F5F5F2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                </a>
-
-                <a
-                  href="/product"
-                  className="inline-flex items-center gap-2 border-[1.5px] border-black-01bg-black-01 px-5.5 py-[13px] font-mono text-[13.5px] font-semibold uppercase tracking-[0.04em] text-black-01bg-black-01"
-                >
-                  Full Product Page
-                </a>
+              <div className="flex flex-wrap gap-3.5">
+                <Button title="Visit Verbosa.ai" link="https://verbosa.ai/" variant="primary" />
+                <Button title="Full Product Page" link="/contact" variant="secondary" />
               </div>
             </div>
 
-            <div className="flex min-h-[260px] flex-col justify-center gap-[14px] border border-white/[0.14] bg-black-01 p-5.5">
-              <div className="flex items-center justify-between">
-                <span className="text-[12.5px] font-semibold text-white-01">Verbosa.ai — AI Sales Team</span>
-
-                <span className="border border-white/[0.14] px-[9px] py-1 font-mono text-[10.5px] text-white-01">&lt;500ms</span>
-              </div>
-
-              <div className="grid grid-cols-4 gap-[10px]">
-                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F5F5F2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-[6px]">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z" />
-                  </svg>
-
-                  <div className="text-[9.5px] font-semibold text-gray-00">Voice</div>
-                </div>
-
-                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F5F5F2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-[6px]">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                  </svg>
-
-                  <div className="text-[9.5px] font-semibold text-gray-00">Chat</div>
-                </div>
-
-                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F5F5F2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-[6px]">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M22 6l-10 7L2 6" />
-                  </svg>
-
-                  <div className="text-[9.5px] font-semibold text-gray-00">Email</div>
-                </div>
-
-                <div className="border border-white/[0.14] bg-[#141414] px-[6px] py-3 text-center">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F5F5F2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-[6px]">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
-
-                  <div className="text-[9.5px] font-semibold text-gray-00">Leads</div>
-                </div>
-              </div>
-
-              <p className="m-0 mt-[2px] text-center text-[11.5px] text-gray-00">Conceptual visualization, not a live screenshot.</p>
-            </div>
+            <ProductAnimation />
           </div>
         </div>
       </section>
 
-      {/* FEATURED WORK / PROJECTS TEASER */}
-      <section id="projects" className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
-        <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
-          <div>
-            <div className="mb-[14px] inline-flex items-center gap-[10px]">
-              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
-
-              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">FEATURED WORK</p>
+      <section id="projects" className="p-[92px_clamp(20px,5vw,64px)_92px]">
+        <div className="max-w-360 mx-auto">
+          <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <Badge label="recent projects" />
+              <h2 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 m-0 max-w-2xl leading-[105%] italic">A look at what we've been building.</h2>
             </div>
-
-            <h2 className="m-0 max-w-[520px] font-display text-[36px] font-semibold tracking-[-0.01em] text-white-01">A look at what we've been building.</h2>
+            <Button title="view all project" link="/projects" variant="primary" />
           </div>
 
-          <a
-            href="/projects"
-            className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap border-[1.5px] border-white/[0.34] px-5.5 py-3 font-mono text-[12.5px] font-semibold uppercase tracking-[0.04em] text-white-01"
-          >
-            View All Projects
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#F5F5F2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </a>
+          <div className="grid grid-cols-3 gap-5.5">
+            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
+                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">NW</span>
+              </div>
+
+              <div className="p-5.5">
+                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-white">E-COMMERCE</span>
+
+                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Northwind Retail Co.</h3>
+
+                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Rebuilt a slow storefront into a fast, mobile-first platform — a 42% lift in conversion.</p>
+              </div>
+            </a>
+
+            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
+                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">CO</span>
+              </div>
+
+              <div className="p-5.5">
+                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">E-COMMERCE</span>
+
+                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Cascade Outfitters</h3>
+
+                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Stood up a dedicated support desk across chat, email, and order issues — 94% CSAT.</p>
+              </div>
+            </a>
+
+            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
+              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
+                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">MM</span>
+              </div>
+
+              <div className="p-5.5">
+                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">MEDIA &amp; ENTERTAINMENT</span>
+
+                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Meridian Media Group</h3>
+
+                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">A six-video product launch series edited for social — 1.2M+ views to date.</p>
+              </div>
+            </a>
+          </div>
         </div>
-
-        <div className="grid grid-cols-3 gap-5.5">
-          <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">NW</span>
-            </div>
-
-            <div className="p-5.5">
-              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-white">E-COMMERCE</span>
-
-              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Northwind Retail Co.</h3>
-
-              <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Rebuilt a slow storefront into a fast, mobile-first platform — a 42% lift in conversion.</p>
-            </div>
-          </a>
-
-          <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">CO</span>
-            </div>
-
-            <div className="p-5.5">
-              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">E-COMMERCE</span>
-
-              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Cascade Outfitters</h3>
-
-              <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Stood up a dedicated support desk across chat, email, and order issues — 94% CSAT.</p>
-            </div>
-          </a>
-
-          <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-            <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-              <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">MM</span>
-            </div>
-
-            <div className="p-5.5">
-              <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">MEDIA &amp; ENTERTAINMENT</span>
-
-              <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Meridian Media Group</h3>
-
-              <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">A six-video product launch series edited for social — 1.2M+ views to date.</p>
-            </div>
-          </a>
-        </div>
-
-        <p className="m-0 mt-7 text-center text-[13px] text-gray-00">Case studies shown are illustrative examples used for demonstration purposes.</p>
       </section>
 
-      {/* WHY US */}
-      <section id="why" className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
+      <section id="why" className="p-[92px_clamp(20px,5vw,64px)_92px]">
         <div className="mb-14 max-w-[640px] text-left">
           <div className="mb-[14px] inline-flex items-center gap-[10px]">
             <span className="h-[6px] w-[6px] bg-white" />
@@ -502,7 +333,7 @@ const page = () => {
       </section>
 
       {/* TECH STACK */}
-      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 px-[clamp(20px,5vw,64px)] py-[100px]">
+      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 p-[92px_clamp(20px,5vw,64px)_92px]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
@@ -624,7 +455,7 @@ const page = () => {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="relative mx-auto w-full max-w-360 overflow-hidden px-[clamp(20px,5vw,64px)] pt-[100px] pb-[110px]">
+      <section id="process" className="relative overflow-hidden p-[92px_clamp(20px,5vw,64px)_92px]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]"
@@ -1147,7 +978,7 @@ const page = () => {
       </section>
 
       <section id="careers" className="p-[92px_clamp(20px,5vw,64px)_92px]">
-        <div className="rounded-none bg-[#141414] max-w-300 mx-auto">
+        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
           <div className="rounded-none bg-transparent py-14 px-[clamp(28px,5vw,64px)] grid grid-cols-[1.1fr_.9fr] gap-11 items-center">
             <div>
               <Badge label="WE are hiring" />
@@ -1177,7 +1008,7 @@ const page = () => {
       </section>
 
       <section id="contact" className="p-[92px_clamp(20px,5vw,64px)_92px]">
-        <div className="rounded-none bg-[#141414] max-w-300 mx-auto">
+        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
           <div className="relative overflow-hidden rounded-none bg-transparent py-14 px-[clamp(24px,5vw,64px)] grid grid-cols-[1.1fr_.9fr] gap-13 items-center">
             <div className="relative">
               <Badge label="Get in touch" />
