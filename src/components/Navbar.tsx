@@ -88,11 +88,11 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full border-b bg-black-01/85 backdrop-blur-md transition-transform transition-shadow duration-300 ease-out ${
+        className={`sticky top-0 z-50 w-full border-b bg-black-01/85 backdrop-blur-md transition-transform transition-shadow duration-300 ease-out px-[clamp(20px,5vw,64px)] ${
           hidden && !isOpen ? "-translate-y-full" : "translate-y-0"
         } ${scrolled ? "border-white/20 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.6)]" : "border-white/[0.14] shadow-none"}`}
       >
-        <div className="max-w-360 mx-auto flex items-center justify-between gap-5 px-5 sm:px-8 lg:px-16 py-4.5">
+        <div className="max-w-360 mx-auto flex items-center justify-between gap-5 py-4.5">
           <div className="flex items-center gap-2.5 shrink-0 group">
             <BrandLogo />
           </div>
@@ -102,15 +102,15 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-[14px] font-medium tracking-wider py-1 transition-colors duration-200 ${
+                className={`relative text-[14px] font-medium tracking-wider py-1 transition-colors duration-200 font-jetbrain ${
                   isActive(link.href)
                     ? "text-white-01"
-                    : "text-white-01/70 hover:text-white-01 font-jetbrain"
+                    : "text-white-01/70 hover:text-white-01"
                 } group`}
               >
                 {link.label}
                 <span
-                  className={`absolute left-0 -bottom-0.5 h-px bg-white-01 transition-transform duration-300 ease-out origin-left ${
+                  className={`absolute left-0 -bottom-0.5 h-[1.5px] bg-white-01 transition-transform duration-300 ease-out origin-left rounded ${
                     isActive(link.href)
                       ? "w-full scale-x-100"
                       : "w-full scale-x-0 group-hover:scale-x-100"
