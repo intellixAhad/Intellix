@@ -10,18 +10,53 @@ import { IndustryIcons } from "@/data/IndustryIcons";
 import ProductAnimation from "@/components/ProductAnimation";
 
 const page = () => {
+  const infoCards = [
+    {
+      label: "EMAIL",
+      value: "hello@intellixsolutions.co",
+      icon: (
+        <>
+          <path d="M22 6c0 1.1-.9 2-2 2H4a2 2 0 0 1-2-2" />
+          <path d="M2 6l10 7L22 6" />
+          <rect x={2} y={4} width={20} height={16} rx={0} />
+        </>
+      ),
+    },
+    {
+      label: "PHONE",
+      value: "01973336001",
+      icon: (
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+      ),
+    },
+    {
+      label: "LOCATION",
+      value: "Dhaka, Bangladesh",
+      icon: (
+        <>
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx={12} cy={10} r={3} />
+        </>
+      ),
+    },
+    {
+      label: "RESPONSE TIME",
+      value: "Within 1 business day",
+      icon: (
+        <>
+          <circle cx={12} cy={12} r={10} />
+          <polyline points="12 6 12 12 16 14" />
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
-      <section id="top" className="relative overflow-visible h-screen p-[0px_clamp(20px,5vw,64px)_64px] flex flex-col justify-between items-center">
+      <section id="top" className="relative overflow-hidden h-screen p-[0px_clamp(20px,5vw,64px)_64px] flex flex-col justify-between items-center">
         <CircuitBackground className="-z-10" />
-        <div
-          aria-hidden="true"
-          className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
+        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div className="absolute top-30 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">BUILD · DESIGN · AUTOMATE</div>
         <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">SOFTWARE THAT SHIPS</div>
 
@@ -35,8 +70,7 @@ const page = () => {
               for real growth.
             </h1>
             <p className="text-[18px] leading-[1.65] text-gray-02 max-w-155 mb-9">
-              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of
-              intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
+              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
             </p>
             <div className="flex flex-wrap gap-3.5 mb-7">
               <Button title="start a project" link="/contact" variant="primary" />
@@ -55,8 +89,7 @@ const page = () => {
 
               <div className="px-6 py-6.5 font-jetbrain text-[13.5px] leading-[1.9]">
                 <div>
-                  <span className="text-white">const</span> <span className="text-[#D8D8D2]">Intellix</span> <span className="text-[#A8A8A2]">=</span> <span className="text-[#A8A8A2]">()</span>{" "}
-                  <span className="text-[#A8A8A2]">=&gt;</span> <span className="text-[#A8A8A2]">{"{"}</span>
+                  <span className="text-white">const</span> <span className="text-[#D8D8D2]">Intellix</span> <span className="text-[#A8A8A2]">=</span> <span className="text-[#A8A8A2]">()</span> <span className="text-[#A8A8A2]">=&gt;</span> <span className="text-[#A8A8A2]">{"{"}</span>
                 </div>
                 <div className="pl-5">
                   <span className="text-white">return</span> <span className="text-[#A8A8A2]">(</span>
@@ -133,9 +166,7 @@ const page = () => {
         <div className="max-w-360 mx-auto">
           <div className="mb-15 text-left">
             <Badge label="what we do" />
-            <h2 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 m-0 max-w-2xl leading-[105%] italic">
-              Everything you need to launch, look great, and scale operations.
-            </h2>
+            <h2 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 m-0 max-w-2xl leading-[105%] italic">Everything you need to launch, look great, and scale operations.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -171,10 +202,7 @@ const page = () => {
             <div>
               <Badge label="our product" />
               <h2 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 m-0 max-w-2xl leading-[105%] italic">Meet Verbosa.ai</h2>
-              <p className="my-6.5 text-[16px] text-gray-02">
-                Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same
-                team behind Intellix.
-              </p>
+              <p className="my-6.5 text-[16px] text-gray-02">Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same team behind Intellix.</p>
               <div className="mb-7.5 flex gap-5 flex-wrap">
                 <span className="text-[12px] text-gray-01">AI-Powered</span>
                 <span className="text-[12px] text-gray-01">Built by Intellix</span>
@@ -334,10 +362,7 @@ const page = () => {
 
       {/* TECH STACK */}
       <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 p-[92px_clamp(20px,5vw,64px)_92px]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
 
         <div aria-hidden="true" className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]">
           &lt;/&gt;
@@ -456,15 +481,9 @@ const page = () => {
 
       {/* PROCESS */}
       <section id="process" className="relative overflow-hidden p-[92px_clamp(20px,5vw,64px)_92px]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
         <div className="relative mb-14 max-w-[640px] text-left">
           <div className="mb-[14px] inline-flex items-center gap-[10px]">
@@ -585,9 +604,7 @@ const page = () => {
 
             <h2 className="mb-4 font-display text-[32px] font-semibold tracking-[-0.01em] text-white-01">A small, focused team building real products.</h2>
 
-            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">
-              Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.
-            </p>
+            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.</p>
 
             <div className="mb-7 flex flex-wrap gap-2.5">
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">Remote-First</span>
@@ -793,9 +810,7 @@ const page = () => {
               </button>
 
               <div className="overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.</p>
               </div>
             </div>
 
@@ -828,9 +843,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.</p>
               </div>
             </div>
 
@@ -863,9 +876,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.</p>
               </div>
             </div>
 
@@ -898,9 +909,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.</p>
               </div>
             </div>
 
@@ -933,9 +942,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.</p>
               </div>
             </div>
 
@@ -968,9 +975,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.</p>
               </div>
             </div>
           </div>
@@ -983,9 +988,7 @@ const page = () => {
             <div>
               <Badge label="WE are hiring" />
               <h2 className="font-playfair text-[38px] font-semibold tracking-[-0.01em] text-black-01bg-black-01 mb-4">Build the future with us.</h2>
-              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">
-                We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.
-              </p>
+              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.</p>
               <Button title="Open Positions" link="/contact" />
             </div>
 
@@ -1036,32 +1039,19 @@ const page = () => {
             </div>
 
             <div className="relative flex flex-col gap-4">
-              <div className="flex items-center gap-3 py-3.5 px-4 rounded-none border border-white/14 bg-black-01 hover:bg-white-01/8 cursor-pointer">
-                <span className="w-9 h-9 rounded-none bg-transparent border border-white/14 flex items-center justify-center text-white-01 shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16v16H4z" />
-                    <path d="M4 4l8 9 8-9" />
-                  </svg>
-                </span>
-                <span className="text-sm text-white-01">[EMAIL ADDRESS]</span>
-              </div>
-              <div className="flex items-center gap-3 py-3.5 px-4 rounded-none border border-white/14 bg-black-01 hover:bg-white-01/8 cursor-pointer">
-                <span className="w-9 h-9 rounded-none bg-transparent border border-white/14 flex items-center justify-center text-white-01 shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z" />
-                  </svg>
-                </span>
-                <span className="text-sm text-white-01">[PHONE NUMBER]</span>
-              </div>
-              <div className="flex items-center gap-3 py-3.5 px-4 rounded-none border border-white/14 bg-black-01 hover:bg-white-01/8 cursor-pointer">
-                <span className="w-9 h-9 rounded-none bg-transparent border border-white/14 flex items-center justify-center text-white-01 shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </span>
-                <span className="text-sm text-white-01">Dhaka, Bangladesh</span>
-              </div>
+              {infoCards.map((card) => (
+                <div key={card.label} className="flex items-center gap-3 py-3.5 px-4 rounded-none border border-white/14 bg-black-01 hover:bg-white-01/9 cursor-pointer">
+                  <span className="w-10 h-10 rounded-none bg-[#141414] border border-white/14 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="#F5F5F2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      {card.icon}
+                    </svg>
+                  </span>
+                  <div>
+                    <div className="font-jetbrain text-[11px] tracking-[0.06em] text-gray-00 font-semibold mb-1">{card.label}</div>
+                    <div className="text-[15px] text-white-01 font-medium">{card.value}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

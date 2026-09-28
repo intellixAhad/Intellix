@@ -1,14 +1,8 @@
 "use client";
 
+import Badge from "@/components/Badge";
 import Link from "next/link";
 import { useState } from "react";
-
-const stats = [
-  { value: "4", label: "Open Roles" },
-  { value: "Remote", label: "-Friendly" },
-  { value: "4", label: "Departments" },
-  { value: "Dhaka", label: "HQ" },
-];
 
 type RoleTag = "eng" | "creative" | "ops";
 
@@ -70,46 +64,46 @@ const roles: {
   tags: string[];
   icon: React.ReactNode;
 }[] = [
-    {
-      tag: "eng",
-      title: "Frontend Developer",
-      tags: ["Engineering", "Remote · Full-time", "2+ yrs"],
-      icon: (
-        <>
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-        </>
-      ),
-    },
-    {
-      tag: "creative",
-      title: "Graphic Designer",
-      tags: ["Creative", "Dhaka · Full-time", "1+ yrs"],
-      icon: (
-        <>
-          <circle cx={12} cy={12} r={10} />
-          <circle cx={12} cy={12} r={4} />
-        </>
-      ),
-    },
-    {
-      tag: "creative",
-      title: "Video Editor",
-      tags: ["Creative", "Remote · Full-time", "1+ yrs"],
-      icon: (
-        <>
-          <polygon points="23 7 16 12 23 17 23 7" />
-          <rect x={1} y={5} width={15} height={14} rx={2} />
-        </>
-      ),
-    },
-    {
-      tag: "ops",
-      title: "BPO Associate",
-      tags: ["Operations", "Dhaka · Full-time", "Entry-level"],
-      icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
-    },
-  ];
+  {
+    tag: "eng",
+    title: "Frontend Developer",
+    tags: ["Engineering", "Remote · Full-time", "2+ yrs"],
+    icon: (
+      <>
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </>
+    ),
+  },
+  {
+    tag: "creative",
+    title: "Graphic Designer",
+    tags: ["Creative", "Dhaka · Full-time", "1+ yrs"],
+    icon: (
+      <>
+        <circle cx={12} cy={12} r={10} />
+        <circle cx={12} cy={12} r={4} />
+      </>
+    ),
+  },
+  {
+    tag: "creative",
+    title: "Video Editor",
+    tags: ["Creative", "Remote · Full-time", "1+ yrs"],
+    icon: (
+      <>
+        <polygon points="23 7 16 12 23 17 23 7" />
+        <rect x={1} y={5} width={15} height={14} rx={2} />
+      </>
+    ),
+  },
+  {
+    tag: "ops",
+    title: "BPO Associate",
+    tags: ["Operations", "Dhaka · Full-time", "Entry-level"],
+    icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
+  },
+];
 
 const hiringSteps = [
   { label: "STEP 01", title: "Apply", desc: "Send your CV and a couple of work samples through our Contact page." },
@@ -124,57 +118,27 @@ const page = () => {
 
   return (
     <>
-      <section id="top" className="relative overflow-visible p-[64px_clamp(20px,5vw,64px)_92px] flex flex-col justify-between items-center">
+      <section id="top" className="relative overflow-visible p-[64px_clamp(20px,5vw,64px)_92px] flex flex-col justify-center items-center">
+        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div
           aria-hidden="true"
-          className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
+          className="absolute inset-0 pointer-events-none bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.07)_0px,rgba(255,255,255,.07)_1px,transparent_1px,transparent_64px),repeating-linear-gradient(90deg,rgba(255,255,255,.07)_0px,rgba(255,255,255,.07)_1px,transparent_1px,transparent_64px)]"
         />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
-        <div className="absolute top-30 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">BUILD · DESIGN · AUTOMATE</div>
-        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">SOFTWARE THAT SHIPS</div>
 
-        <div className="relative w-full max-w-360 mx-auto text-left">
-          <p className="text-[13px] text-[#6E6E6A] mb-5">
-            <Link href="/" className="text-[#6E6E6A] hover:text-[#A6A6A2] transition-colors">
-              Home
-            </Link>
-            <span className="mx-2 text-[#6E6E6A]">/</span>
-            <span className="text-[#A6A6A2]">Careers</span>
-          </p>
-
-          <div className="inline-flex items-center gap-2 mb-5.5">
-            <span className="w-[7px] h-[7px] rounded-none bg-white" />
-            <span className="font-jetbrain text-xs tracking-[.08em] font-semibold text-[#A6A6A2] uppercase">WE&apos;RE HIRING</span>
-          </div>
-
-          <h1 className="font-fraunces font-bold text-[50px] leading-[1.1] tracking-[-0.02em] mb-5.5 text-[#F5F5F2]">
-            Build the work, <span className="italic font-medium text-white">not just a job.</span>
+        <div className="relative w-full max-w-360 mx-auto flex flex-col items-center justify-center gap-4">
+<Badge label="we are hiring" />
+          <h1 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 max-w-2xl leading-[105%] italic text-center">
+            Build the work, not just a job.
           </h1>
 
-          <p className="text-[16.5px] leading-[1.7] text-[#A6A6A2] max-w-[620px] mb-10">
-            We&apos;re a small, remote-friendly team out of Dhaka shipping real products for real clients. If you like ownership over busywork, we&apos;d like to hear from you.
-          </p>
-
-          <div className="grid grid-cols-4 gap-4 max-w-[680px]">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-none border border-white/14 bg-[#141414] py-4 px-2.5">
-                <div className="font-fraunces text-2xl font-bold text-[#F5F5F2]">{stat.value}</div>
-                <div className="text-[11.5px] text-[#6E6E6A] mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          <p className="text-[16.5px] leading-[1.7] text-gray-02 max-w-160 text-center">We&apos;re a small, remote-friendly team out of Dhaka shipping real products for real clients. If you like ownership over busywork, we&apos;d like to hear from you.</p>
         </div>
       </section>
 
       {/* CULTURE / WHY JOIN */}
       <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[90px]">
-        <div
-          aria-hidden="true"
-          className="absolute z-[-1] -top-[60px] -right-[70px] w-[360px] h-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
+        <div aria-hidden="true" className="absolute z-[-1] -top-[60px] -right-[70px] w-[360px] h-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div className="max-w-360 mx-auto">
           <div className="text-left max-w-[640px] mb-10">
             <h2 className="font-fraunces text-[30px] font-bold tracking-[-0.01em] text-[#F5F5F2] mb-3.5">Why people stay</h2>
@@ -261,18 +225,13 @@ const page = () => {
             </div>
           )}
 
-          <p className="text-center text-[13px] text-[#6E6E6A] mt-9">
-            Open roles shown are illustrative examples for demonstration purposes. To apply or ask about a role, get in touch through our Contact page.
-          </p>
+          <p className="text-center text-[13px] text-[#6E6E6A] mt-9">Open roles shown are illustrative examples for demonstration purposes. To apply or ask about a role, get in touch through our Contact page.</p>
         </div>
       </section>
 
       {/* APPLICATION PROCESS */}
       <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[100px]">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 z-[-1] pointer-events-none bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
-        />
+        <div aria-hidden="true" className="absolute inset-0 z-[-1] pointer-events-none bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
         <div className="max-w-360 mx-auto">
           <div className="text-left max-w-[600px] mb-10">
             <h2 className="font-fraunces text-[28px] font-bold tracking-[-0.01em] text-[#F5F5F2] mb-3">How hiring works here</h2>
@@ -292,35 +251,21 @@ const page = () => {
 
       {/* CTA */}
       <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[130px]">
-        <div
-          aria-hidden="true"
-          className="absolute z-[-1] -top-[50px] -left-[60px] w-[340px] h-[340px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute z-[-1] -bottom-[60px] -right-[70px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
+        <div aria-hidden="true" className="absolute z-[-1] -top-[50px] -left-[60px] w-[340px] h-[340px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute z-[-1] -bottom-[60px] -right-[70px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div className="max-w-360 mx-auto">
           <div className="bg-white rounded-none py-16 px-[clamp(24px,6vw,64px)] text-center relative overflow-hidden">
             <h2 className="relative font-fraunces text-4xl font-bold tracking-[-0.01em] text-[#0A0A0A] mb-4">Don&apos;t see the right role?</h2>
-            <p className="relative text-[15.5px] text-[#0A0A0A]/70 max-w-[480px] mx-auto mb-[30px]">
-              We&apos;re growing quickly. Reach out anyway — tell us what you&apos;re good at and we&apos;ll keep you in mind.
-            </p>
+            <p className="relative text-[15.5px] text-[#0A0A0A]/70 max-w-[480px] mx-auto mb-[30px]">We&apos;re growing quickly. Reach out anyway — tell us what you&apos;re good at and we&apos;ll keep you in mind.</p>
             <div className="relative flex flex-wrap justify-center gap-3.5">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 py-3.5 px-7 rounded-none border-[1.5px] border-[#0A0A0A] bg-[#0A0A0A] text-[#F5F5F2] font-jetbrain uppercase tracking-[0.04em] font-semibold text-[13.5px]"
-              >
+              <Link href="/contact" className="inline-flex items-center gap-2 py-3.5 px-7 rounded-none border-[1.5px] border-[#0A0A0A] bg-[#0A0A0A] text-[#F5F5F2] font-jetbrain uppercase tracking-[0.04em] font-semibold text-[13.5px]">
                 Get in Touch
                 <svg viewBox="0 0 24 24" width={16} height={16} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
                   <line x1={5} y1={12} x2={19} y2={12} />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 py-3.5 px-6.5 rounded-none border-[1.5px] border-[#0A0A0A] text-[#0A0A0A] font-jetbrain uppercase tracking-[0.04em] font-semibold text-[13.5px]"
-              >
+              <Link href="/about" className="inline-flex items-center gap-2 py-3.5 px-6.5 rounded-none border-[1.5px] border-[#0A0A0A] text-[#0A0A0A] font-jetbrain uppercase tracking-[0.04em] font-semibold text-[13.5px]">
                 Meet the Team
               </Link>
             </div>
