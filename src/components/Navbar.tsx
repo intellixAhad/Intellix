@@ -13,7 +13,7 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/services" },
-  { label: "Product", href: "/product" },
+  { label: "Product", href: "/products" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
@@ -92,7 +92,7 @@ export default function Navbar() {
           hidden && !isOpen ? "-translate-y-full" : "translate-y-0"
         } ${scrolled ? "border-white/20 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.6)]" : "border-white/[0.14] shadow-none"}`}
       >
-        <div className="max-w-360 mx-auto flex items-center justify-between gap-5 py-4.5">
+        <div className="mx-auto flex items-center justify-between gap-5 py-4.5">
           <div className="flex items-center gap-2.5 shrink-0 group">
             <BrandLogo />
           </div>

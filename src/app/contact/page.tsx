@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Badge from "@/components/Badge";
 import Link from "next/link";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";
-import Reveal from "@/components/contact/reveal";
+import Reveal from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Contact | Intellix",
@@ -41,7 +40,7 @@ const page = () => {
       <ContactHero />
 
       <section className="px-[clamp(20px,5vw,64px)] py-16 md:py-24">
-        <div className="mx-auto grid max-w-360 grid-cols-1 items-start gap-7 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-7 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="min-w-0">
             <ContactForm />
           </Reveal>
@@ -50,7 +49,7 @@ const page = () => {
       </section>
 
       <section className="px-[clamp(20px,5vw,64px)] pb-16 md:pb-24">
-        <div className="mx-auto max-w-360">
+        <div className="mx-auto max-w-7xl">
           <Reveal>
             <h2 className="mb-2 font-fraunces text-2xl font-bold text-white-01 sm:text-[26px]">Before you reach out</h2>
             <p className="mb-5 text-sm text-gray-00">A few quick answers. See the full FAQ on our homepage for more.</p>

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Reveal from "@/components/contact/reveal";
+import Reveal from "@/components/reveal";
 
 interface InfoItem {
   label: string;

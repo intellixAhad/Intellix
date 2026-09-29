@@ -1,8 +1,10 @@
+import ProductHero from "@/components/products/ProductHero"
+
 const page = () => {
   return (
-    <div className="h-screen flex flex-col gap-5 items-center justify-center">
-      <h1 className='text-9xl font-playfair font-bold'>Products</h1>
-    </div>
+    <>
+      <ProductHero />
+    </>
   )
 }
 

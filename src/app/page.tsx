@@ -60,16 +60,15 @@ const page = () => {
         <div className="absolute top-30 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">BUILD · DESIGN · AUTOMATE</div>
         <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] [writing-mode:vertical-rl] tracking-[0.35em] text-[11px] font-semibold text-gray-01 font-jetbrain">SOFTWARE THAT SHIPS</div>
 
-        <div className="grid grid-cols-[1.25fr_0.75fr] gap-14 relative items-center h-full w-full max-w-360 mx-auto">
-          <div>
+        <div className="flex justify-center gap-14 relative items-center h-full w-full max-w-360 mx-auto">
+          <div className="flex justify-center items-center flex-col">
             <Badge label="Full-service software Agency" />
-            <h1 className="font-plex font-extrabold leading-[1.06] tracking-[-0.01em] mb-6 text-white-01 text-[58px]">
-              Software, design
-              <br /> & media - engineered
+            <h1 className="font-plex font-extrabold leading-[1.06] tracking-[-0.01em] mb-6 text-white-01 text-[58px] text-center">
+              Software, design & media
               <br />
-              for real growth.
+              engineered for real growth.
             </h1>
-            <p className="text-[18px] leading-[1.65] text-gray-02 max-w-155 mb-9">
+            <p className="text-[18px] leading-[1.65] text-gray-02 mb-9 text-center max-w-[900]">
               Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
             </p>
             <div className="flex flex-wrap gap-3.5 mb-7">
@@ -78,7 +77,7 @@ const page = () => {
             </div>
             <p className="text-[13px] text-gray-00 tracking-[0.02em] font-jetbrain">Remote-first team · Based in Dhaka, Bangladesh</p>
           </div>
-          <div className="relative">
+          {/* <div className="relative">
             <div className="relative rounded-none border border-white/14 bg-[#141414] overflow-hidden">
               <div className="flex items-center gap-2 px-4.5 py-3.5 border-b border-white/14">
                 <span className="w-2.75 h-2.75 rounded-full bg-[#F5F5F0]" />
@@ -132,7 +131,7 @@ const page = () => {
               <span className="w-2 h-2 rounded-none bg-white" />
               <span className="text-[12.5px] text-white-01 font-semibold font-jetbrain">Verbosa.ai · AI Product</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="py-8.5 max-w-360 mx-auto w-full">
