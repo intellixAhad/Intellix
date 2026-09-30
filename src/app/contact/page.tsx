@@ -5,6 +5,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";
 import Reveal from "@/components/reveal";
+import Orb from "@/components/Orb";
 
 export const metadata: Metadata = {
   title: "Contact | Intellix",
@@ -49,12 +50,13 @@ const page = () => {
       </section>
 
       <section className="px-[clamp(20px,5vw,64px)] pb-16 md:pb-24">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
+        <div className="mx-auto max-w-7xl flex gap-10 flex-col justify-between md:flex-row">
+          <Reveal className="w-full flex flex-col items-center md:items-start">
             <h2 className="mb-2 font-fraunces text-2xl font-bold text-white-01 sm:text-[26px]">Before you reach out</h2>
             <p className="mb-5 text-sm text-gray-00">A few quick answers. See the full FAQ on our homepage for more.</p>
+            <Orb width={320} height={320} />
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="w-full">
             <ContactFaq items={FAQS} />
           </Reveal>
         </div>

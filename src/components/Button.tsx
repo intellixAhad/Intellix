@@ -10,7 +10,7 @@ const Button = ({ title, link, variant = "primary" }: ButtonProps) => {
   return (
     <Link
       href={link}
-      className={`group hidden md:inline-flex items-center gap-2 px-5 py-2.75 border-[1.5px] font-jetbrain uppercase tracking-[.04em] font-semibold text-[12.5px] whitespace-nowrap shrink-0 overflow-hidden transition-all duration-300 ease-out active:scale-[0.96] active:duration-150 ${
+      className={`group inline-flex items-center justify-center w-full sm:w-fit gap-2 px-5 py-2.75 border-[1.5px] font-jetbrain uppercase tracking-[.04em] font-semibold text-[12.5px] whitespace-nowrap shrink-0 overflow-hidden transition-all duration-300 ease-out active:scale-[0.96] active:duration-150 ${
         variant === "primary"
           ? "bg-white border-white text-black-01 hover:bg-[#141414] hover:text-gray-03"
           : "bg-[#141414] border-white text-gray-03 hover:bg-white-01 hover:text-black-01"

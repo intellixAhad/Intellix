@@ -1,55 +1,10 @@
 "use client";
-
-import Badge from "@/components/Badge";
+import CareerHero from "@/components/careers/CareerHero";
+import CareerReasonSection from "@/components/careers/CareerReasonSection";
 import Link from "next/link";
 import { useState } from "react";
 
 type RoleTag = "eng" | "creative" | "ops";
-
-const perks = [
-  {
-    title: "Remote-friendly",
-    desc: "Work from home or our Dhaka office — whichever gets your best work out of you.",
-    icon: (
-      <>
-        <rect x={2} y={7} width={20} height={14} rx={2} />
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      </>
-    ),
-  },
-  {
-    title: "Real ownership",
-    desc: "You'll talk to clients and own outcomes early — not just tickets handed down.",
-    icon: (
-      <>
-        <path d="M12 2v4" />
-        <path d="m16.2 7.8 2.9-2.9" />
-        <path d="M18 12h4" />
-        <path d="m16.2 16.2 2.9 2.9" />
-        <path d="M12 18v4" />
-        <path d="m4.9 19.1 2.9-2.9" />
-        <path d="M2 12h4" />
-        <path d="m4.9 4.9 2.9 2.9" />
-      </>
-    ),
-  },
-  {
-    title: "Growth track",
-    desc: "Clear paths from associate to lead, with mentoring built into how we work.",
-    icon: (
-      <>
-        <path d="M12 20V10" />
-        <path d="M18 20V4" />
-        <path d="M6 20v-4" />
-      </>
-    ),
-  },
-  {
-    title: "Paid time off",
-    desc: "Festival holidays plus annual leave, because rested people do better work.",
-    icon: <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />,
-  },
-];
 
 const filterOptions: { key: "all" | RoleTag; label: string }[] = [
   { key: "all", label: "All" },
@@ -118,51 +73,10 @@ const page = () => {
 
   return (
     <>
-      <section id="top" className="relative overflow-visible p-[64px_clamp(20px,5vw,64px)_92px] flex flex-col justify-center items-center">
-        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none bg-[repeating-linear-gradient(0deg,rgba(255,255,255,.07)_0px,rgba(255,255,255,.07)_1px,transparent_1px,transparent_64px),repeating-linear-gradient(90deg,rgba(255,255,255,.07)_0px,rgba(255,255,255,.07)_1px,transparent_1px,transparent_64px)]"
-        />
+      <CareerHero />
+      <CareerReasonSection />
 
-        <div className="relative w-full max-w-360 mx-auto flex flex-col items-center justify-center gap-4">
-<Badge label="we are hiring" />
-          <h1 className="font-playfair text-[48px] font-bold tracking-[-0.01em] text-white-01 max-w-2xl leading-[105%] italic text-center">
-            Build the work, not just a job.
-          </h1>
-
-          <p className="text-[16.5px] leading-[1.7] text-gray-02 max-w-160 text-center">We&apos;re a small, remote-friendly team out of Dhaka shipping real products for real clients. If you like ownership over busywork, we&apos;d like to hear from you.</p>
-        </div>
-      </section>
-
-      {/* CULTURE / WHY JOIN */}
-      <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[90px]">
-        <div aria-hidden="true" className="absolute z-[-1] -top-[60px] -right-[70px] w-[360px] h-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div className="max-w-360 mx-auto">
-          <div className="text-left max-w-[640px] mb-10">
-            <h2 className="font-fraunces text-[30px] font-bold tracking-[-0.01em] text-[#F5F5F2] mb-3.5">Why people stay</h2>
-            <p className="text-[15px] leading-[1.7] text-[#A6A6A2]">No layers of process between you and the work. Small teams, direct client exposure, and room to grow past your job title.</p>
-          </div>
-
-          <div className="grid grid-cols-4 gap-5">
-            {perks.map((perk) => (
-              <div key={perk.title} className="border border-white/14 bg-[#141414] rounded-none py-[30px] px-6.5">
-                <span className="w-11 h-11 rounded-none bg-[#141414] border border-white/14 flex items-center justify-center mb-4 text-[#F5F5F2]">
-                  <svg viewBox="0 0 24 24" width={20} height={20} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    {perk.icon}
-                  </svg>
-                </span>
-                <h3 className="font-fraunces text-[16.5px] font-semibold text-[#F5F5F2] mb-2">{perk.title}</h3>
-                <p className="text-[13.5px] leading-[1.6] text-[#A6A6A2]">{perk.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OPEN POSITIONS */}
-      <section className="relative z-[1] px-[clamp(20px,5vw,64px)] pt-5 pb-15">
+      <section className="relative z-1 px-[clamp(20px,5vw,64px)] pt-5 pb-15">
         <div className="max-w-360 mx-auto">
           <div className="flex flex-wrap items-center justify-between gap-5 mb-8">
             <h2 className="font-fraunces text-[26px] font-bold tracking-[-0.01em] text-[#F5F5F2]">Open positions</h2>
@@ -229,8 +143,7 @@ const page = () => {
         </div>
       </section>
 
-      {/* APPLICATION PROCESS */}
-      <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[100px]">
+      <section className="relative z-1 overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[100px]">
         <div aria-hidden="true" className="absolute inset-0 z-[-1] pointer-events-none bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
         <div className="max-w-360 mx-auto">
           <div className="text-left max-w-[600px] mb-10">
@@ -249,8 +162,7 @@ const page = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative z-[1] overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[130px]">
+      <section className="relative z-1 overflow-hidden px-[clamp(20px,5vw,64px)] pt-5 pb-[130px]">
         <div aria-hidden="true" className="absolute z-[-1] -top-[50px] -left-[60px] w-[340px] h-[340px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div aria-hidden="true" className="absolute z-[-1] -bottom-[60px] -right-[70px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
         <div className="max-w-360 mx-auto">

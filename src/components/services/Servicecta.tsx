@@ -2,7 +2,7 @@ import Reveal from "../reveal";
 
 export default function ServiceCta() {
   return (
-    <section className="mx-auto max-w-[1240px] px-[clamp(20px,5vw,64px)] pb-24 pt-5 sm:pb-32">
+    <section className="mx-auto max-w-7xl px-[clamp(20px,5vw,64px)] pb-24 pt-5 sm:pb-32">
       <Reveal>
         <div className="bg-white px-6 py-14 text-center sm:px-[clamp(24px,6vw,64px)] sm:py-16">
           <h2 className="mx-auto mb-4 max-w-xl font-fraunces text-[28px] font-semibold tracking-[-0.01em] text-black-01 sm:text-[36px]">
