@@ -19,14 +19,14 @@ const workTags = [
 
 export default function LifeAtIntellixSection() {
   return (
-    <section className="section-pad relative z-1 overflow-hidden px-[clamp(20px,5vw,64px)] py-[110px]">
+    <section className="relative z-1 overflow-hidden p-[0px_clamp(20px,5vw,64px)_92px]">
       <FloatingBlob className="absolute -top-10 -left-10 w-[320px] h-[320px] bg-white/5 blur-3xl" />
       <FloatingBlob
         className="absolute -bottom-16 -right-10 w-[280px] h-[280px] bg-white/5 blur-3xl"
         duration={13}
       />
 
-      <div className="relative max-w-360 mx-auto">
+      <div className="max-w-7xl mx-auto">
         <FadeIn className="max-w-[640px] mb-10">
           <Badge label="Life at Intellix"/>
           <h2 className="font-fraunces text-[34px] font-bold tracking-[-0.01em] text-[#F5F5F2] m-0">

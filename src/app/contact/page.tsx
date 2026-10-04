@@ -52,8 +52,8 @@ const page = () => {
       <section className="px-[clamp(20px,5vw,64px)] pb-16 md:pb-24">
         <div className="mx-auto max-w-7xl flex gap-10 flex-col justify-between md:flex-row">
           <Reveal className="w-full flex flex-col items-center md:items-start">
-            <h2 className="mb-2 font-fraunces text-2xl font-bold text-white-01 sm:text-[26px]">Before you reach out</h2>
-            <p className="mb-5 text-sm text-gray-00">A few quick answers. See the full FAQ on our homepage for more.</p>
+            <h2 className="mb-3 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Before you reach out</h2>
+            <p className="mb-5 text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-115 font-light tracking-wide text-start">A few quick answers. See the full FAQ on our homepage for more.</p>
             <Orb width={320} height={320} />
           </Reveal>
           <Reveal delay={0.1} className="w-full">

@@ -1,40 +1,40 @@
-"use client";
-
 import TeamMemberCard from "@/components/about/TeamMemberCard";
 import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../Badge";
+import Reveal from "../reveal";
 
 const team = [
-  { photo: "/images/team/member-1.jpg", name: "Arif Rahman", role: "Founder & CEO" },
-  { photo: "/images/team/member-2.jpg", name: "Nusrat Jahan", role: "Head of Engineering" },
-  { photo: "/images/team/member-3.jpg", name: "Tanvir Ahmed", role: "Lead Voice AI Engineer" },
-  { photo: "/images/team/member-4.jpg", name: "Sadia Islam", role: "Product Design" },
-  { photo: "/images/team/member-5.jpg", name: "Imran Chowdhury", role: "Client Success" },
-  { photo: "/images/team/member-6.jpg", name: "Farhana Haque", role: "Operations" },
-  { photo: "/images/team/member-7.jpg", name: "Rakib Hasan", role: "Backend Engineer" },
-  { photo: "/images/team/member-8.jpg", name: "Mehnaz Karim", role: "Growth & Partnerships" },
+  { photo: "/default_image_02.jpg", name: "Arif Rahman", role: "Founder & CEO" },
+  { photo: "/default_image_02.jpg", name: "Nusrat Jahan", role: "Head of Engineering" },
+  { photo: "/default_image_02.jpg", name: "Tanvir Ahmed", role: "Lead Voice AI Engineer" },
+  { photo: "/default_image_02.jpg", name: "Sadia Islam", role: "Product Design" },
+  { photo: "/default_image_02.jpg", name: "Imran Chowdhury", role: "Client Success" },
+  { photo: "/default_image_02.jpg", name: "Farhana Haque", role: "Operations" },
+  { photo: "/default_image_02.jpg", name: "Rakib Hasan", role: "Backend Engineer" },
+  { photo: "/default_image_02.jpg", name: "Mehnaz Karim", role: "Growth & Partnerships" },
 ];
 
 export default function TeamSection() {
   return (
-    <section className="section-pad relative z-1 px-[clamp(20px,5vw,64px)] pb-[110px]">
-      <div className="relative max-w-360 mx-auto">
-        <FadeIn className="max-w-[640px] mb-12">
-          <Badge label="Team"/>
-          <h2 className="font-fraunces text-[34px] font-bold tracking-[-0.01em] text-[#F5F5F2] m-0">
-            The people behind the product.
-          </h2>
-        </FadeIn>
+    <section className="p-[92px_clamp(20px,5vw,64px)_92px]">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-15 gap-2 md:gap-4 w-full mx-auto flex flex-col">
+          <Reveal y={12}>
+            <Badge label="Our team" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">The people behind Intellix.</h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-175 font-light tracking-wide text-start">A small, focused team of developers, designers, and editors working remotely from Dhaka.</p>
+          </Reveal>
+        </div>
 
         <StaggerGroup className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
           {team.map((member) => (
             <StaggerItem key={member.name} className="h-full">
-              <TeamMemberCard
-                photo={member.photo}
-                name={member.name}
-                role={member.role}
-              />
+              <TeamMemberCard photo={member.photo} name={member.name} role={member.role} />
             </StaggerItem>
           ))}
         </StaggerGroup>
