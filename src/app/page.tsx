@@ -240,15 +240,15 @@ const page = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-5.5 sm:grid-cols-2 lg:grid-cols-3">
-            {projectData.map((projectData) => (
-              <ProjectCard key={projectData.title} {...projectData} />
+            {projectData.slice(0, 3).map((projectData) => (
+              <ProjectCard key={projectData.title} category={projectData.category} title={projectData.title} description={projectData.description} liveUrl={projectData.liveUrl} />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="why" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="max-w-360 mx-auto">
+      <section id="why" className="p-[46px_clamp(20px,5vw,64px)_92px]">
+        <div className="max-w-7xl mx-auto">
           <div>
             <Badge label="why intellix" />
             <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A team that thinks like a partner, not a vendor.</h2>
@@ -329,13 +329,13 @@ const page = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
+      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 p-[92px_clamp(20px,5vw,64px)]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
         <div aria-hidden="true" className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]">
           &lt;/&gt;
         </div>
 
-        <div className="relative mx-auto max-w-360">
+        <div className="mx-auto max-w-7xl">
           <div className="max-w-360 mx-auto">
             <div>
               <Badge label="tools & technologies" />
@@ -451,7 +451,7 @@ const page = () => {
           <line x1="0" y1="0.5" x2="100" y2="0.5" stroke="rgba(255,255,255,.08)" strokeWidth="0.6" strokeDasharray="2,2" />
         </svg>
 
-        <div className="max-w-360 mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div>
             <Badge label="how we work" />
             <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A clear process, from first call to launch.</h2>
@@ -562,24 +562,12 @@ const page = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section
-        className="
-    mx-auto
-    w-full
-    max-w-360
-    px-[clamp(20px,5vw,64px)]
-    py-12
-    md:py-[92px]
-  "
-      >
+      <section className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)]">
         <div className="mb-14 max-w-[640px] text-left">
           <div className="mb-[14px] inline-flex items-center gap-2.5">
             <span className="h-[6px] w-[6px] bg-white" />
-
             <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">CLIENT VOICES</p>
           </div>
-
           <h2 className="m-0 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-semibold text-white-01">What partners say about working with us.</h2>
         </div>
 
@@ -646,9 +634,8 @@ const page = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="relative mx-auto grid w-full max-w-300 grid-cols-1 items-start gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
+      <section id="faq" className="p-[46px_clamp(20px,5vw,64px)]">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
           <div className="lg:sticky lg:top-[100px]">
             <div className="mb-[14px] inline-flex items-center gap-2.5">
               <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
@@ -875,8 +862,8 @@ const page = () => {
         </div>
       </section>
 
-      <section id="careers" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+      <section id="careers" className="p-[46px_clamp(20px,5vw,64px)]">
+        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 items-center gap-8 bg-transparent px-[clamp(24px,5vw,64px)] py-10 md:gap-11 md:py-14 lg:grid-cols-[1.1fr_.9fr]">
             <div>
               <Badge label="WE are hiring" />
@@ -903,8 +890,8 @@ const page = () => {
         </div>
       </section>
 
-      <section id="contact" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+      <section id="contact" className="p-[46px_clamp(20px,5vw,64px)_92px]">
+        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
           <div className="relative grid grid-cols-1 items-center gap-8 overflow-hidden rounded-none bg-transparent px-[clamp(24px,5vw,64px)] py-10 md:gap-13 md:py-14 lg:grid-cols-[1.1fr_.9fr]">
             <div className="relative">
               <Badge label="Get in touch" />
