@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 
 type CareerReasonProps = {
         number: string;
-        icon: React.ReactNode;
         title: string;
         description: string;
 };
 
-const CareerReasonCard = ({ number, icon, title, description }: CareerReasonProps) => {
+const CareerReasonCard = ({ number, title, description }: CareerReasonProps) => {
         return (
                 <motion.div
                         initial="rest"
@@ -69,27 +68,6 @@ const CareerReasonCard = ({ number, icon, title, description }: CareerReasonProp
                         >
                                 {number}
                         </motion.span>
-
-                        {/* Icon */}
-                        <motion.div
-                                variants={{
-                                        rest: {
-                                                x: 0,
-                                                y: 0,
-                                        },
-                                        hover: {
-                                                x: 4,
-                                                y: -2,
-                                        },
-                                }}
-                                transition={{
-                                        duration: 0.35,
-                                        ease: [0.22, 1, 0.36, 1],
-                                }}
-                                className="relative mb-5 flex h-11.5 w-11.5 items-center justify-center rounded-none border border-white/14 bg-transparent text-white-01"
-                        >
-                                {icon}
-                        </motion.div>
 
                         {/* Title */}
                         <motion.h3

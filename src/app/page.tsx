@@ -55,10 +55,20 @@ const page = () => {
     <>
       <section id="top" className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden px-[clamp(20px,5vw,64px)] py-6 md:py-0 md:pb-16">
         <CircuitBackground className="-z-10" />
-        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div className="absolute right-[clamp(20px,5vw,64px)] top-30 hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">BUILD · DESIGN · AUTOMATE</div>
-        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">SOFTWARE THAT SHIPS</div>
+        <div
+          aria-hidden="true"
+          className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
+        />
+        <div className="absolute right-[clamp(20px,5vw,64px)] top-30 hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">
+          BUILD · DESIGN · AUTOMATE
+        </div>
+        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">
+          SOFTWARE THAT SHIPS
+        </div>
 
         <div className="relative mx-auto flex w-full max-w-360 flex-1 items-center justify-center py-12 md:py-16">
           <div className="flex w-full flex-col items-center justify-center">
@@ -69,7 +79,8 @@ const page = () => {
               engineered for real growth.
             </h1>
             <p className="mb-9 max-w-[900px] text-center text-[16px] leading-[1.65] text-gray-02 sm:text-[18px]">
-              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
+              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of
+              intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
             </p>
             <div className="flex flex-wrap gap-3.5 mb-7">
               <Button title="start a project" link="/contact" variant="primary" />
@@ -201,7 +212,10 @@ const page = () => {
             <div>
               <Badge label="our product" />
               <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Meet Verbosa.ai</h2>
-              <p className="my-6.5 text-[16px] text-gray-02">Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same team behind Intellix.</p>
+              <p className="my-6.5 text-[16px] text-gray-02">
+                Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same
+                team behind Intellix.
+              </p>
               <div className="mb-7.5 flex gap-5 flex-wrap">
                 <span className="text-[12px] text-gray-01">AI-Powered</span>
                 <span className="text-[12px] text-gray-01">Built by Intellix</span>
@@ -357,7 +371,10 @@ const page = () => {
       </section>
 
       <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
+        />
         <div aria-hidden="true" className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]">
           &lt;/&gt;
         </div>
@@ -470,9 +487,15 @@ const page = () => {
       </section>
 
       <section id="process" className="relative overflow-hidden px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div aria-hidden="true" className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]"
+        />
 
-        <div aria-hidden="true" className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]"
+        />
 
         <svg className="pointer-events-none absolute left-[8%] top-[300] hidden h-1 w-[84%] lg:block" viewBox="0 0 100 1" preserveAspectRatio="none">
           <line x1="0" y1="0.5" x2="100" y2="0.5" stroke="rgba(255,255,255,.08)" strokeWidth="0.6" strokeDasharray="2,2" />
@@ -522,13 +545,17 @@ const page = () => {
 
       <section id="about" className="relative mx-auto w-full  max-w-360 overflow-hidden px-[clamp(20px,5vw,64px)] py-12 md:py-[92px]">
         <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] items-center gap-11 overflow-hidden border border-white/[0.14] bg-[#141414] p-[clamp(32px,5vw,56px)]">
-          <div aria-hidden="true" className="pointer-events-none absolute -top-[60px] -right-[60px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)] blur-[50px] " />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-[60px] -right-[60px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)] blur-[50px] "
+          />
 
           <div
             aria-hidden="true"
             className="
         pointer-events-none
-        absolute -bottom-[70px] -left-[50px] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] "/>
+        absolute -bottom-[70px] -left-[50px] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] "
+          />
 
           {/* Left Content */}
           <div className="relative z-10">
@@ -536,11 +563,13 @@ const page = () => {
               <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
 
               <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">WHO WE ARE</p>
-       ``     </div>
+            </div>
 
             <h2 className="mb-4 font-display text-[clamp(1.625rem,4vw,2rem)] font-semibold text-white-01">A small, focused team building real products.</h2>
 
-            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.</p>
+            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">
+              Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.
+            </p>
 
             <div className="mb-7 flex flex-wrap gap-2.5">
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">Remote-First</span>
@@ -729,7 +758,9 @@ const page = () => {
               </button>
 
               <div className="overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.
+                </p>
               </div>
             </div>
 
@@ -762,7 +793,9 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.
+                </p>
               </div>
             </div>
 
@@ -795,7 +828,9 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.
+                </p>
               </div>
             </div>
 
@@ -828,7 +863,9 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.
+                </p>
               </div>
             </div>
 
@@ -861,7 +898,9 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.
+                </p>
               </div>
             </div>
 
@@ -894,7 +933,9 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.</p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
+                  Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.
+                </p>
               </div>
             </div>
           </div>
@@ -907,7 +948,9 @@ const page = () => {
             <div>
               <Badge label="WE are hiring" />
               <h2 className="mb-4 font-playfair text-[clamp(1.875rem,4vw,2.375rem)] font-semibold text-black-01bg-black-01">Build the future with us.</h2>
-              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.</p>
+              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">
+                We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.
+              </p>
               <Button title="Open Positions" link="/contact" />
             </div>
 

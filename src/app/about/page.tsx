@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
+import StatsSection from "@/components/about/StatsSection";
+import OurStorySection from "@/components/about/OurStorySection";
+import ValuesSection from "@/components/about/ValuesSection";
+import TeamSection from "@/components/about/TeamSection";
+import LifeAtIntellixSection from "@/components/about/LifeAtIntellixSection";
 
 export const metadata: Metadata = {
   title: "About | Intellix",
@@ -10,6 +15,11 @@ const page = () => {
   return (
     <>
       <AboutHero />
+      <OurStorySection />
+      <ValuesSection />
+      <StatsSection />
+      <TeamSection />
+      <LifeAtIntellixSection />
     </>
   );
 };

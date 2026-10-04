@@ -1,8 +1,9 @@
 import Badge from "../Badge";
 import Reveal from "../reveal";
+import CareerReasonCard from "./CareerReasonCard";
 import HiringCard from "./HiringCard";
 
-export const HiringData = [
+export const HiringProcessData = [
   {
     title: "Apply",
     description: "Send your CV and a couple of work samples through our page.",
@@ -38,8 +39,8 @@ const HiringProcessSection = () => {
         </div>
         <Reveal delay={0.3}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {CareerReasonData.map(({ title, description, icon }, index) => (
-              <CareerReasonCard key={title} number={String(index + 1)} title={title} description={description} icon={icon} />
+            {HiringProcessData.map(({ title, description }, index) => (
+              <CareerReasonCard key={index} number={String(index + 1)} title={title} description={description} />
             ))}
           </div>
         </Reveal>
