@@ -2,10 +2,6 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 
-/* ------------------------------------------------------------------ */
-/*  Config                                                             */
-/* ------------------------------------------------------------------ */
-
 type Point = [number, number];
 type Branch = { d: string; node: Point };
 type Trace = { d: string; end: Point; color: string; core: string; branches: Branch[] };
@@ -39,7 +35,6 @@ const DESKTOP: Layout = {
   ],
 };
 
-/** Mobile: traces drop in from the top/bottom edges so they stay visible on narrow screens. */
 const MOBILE: Layout = {
   viewBox: "0 0 400 800",
   traces: [

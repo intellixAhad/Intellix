@@ -4,8 +4,8 @@ import FooterLink from "./FooterLink";
 
 export default function Footer() {
   return (
-    <footer className="p-[0px_clamp(20px,5vw,64px)_64px]">
-      <div className="border-t border-white-00/14 mx-auto w-full max-w-360 pt-16">
+    <footer className="">
+      <div className="border-t border-white-00/14 mx-auto w-full p-[64px_clamp(20px,5vw,64px)_64px]">
         <div className="mb-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_0.8fr_0.8fr_0.8fr_0.8fr] lg:gap-8">
           <div>
             <div className="mb-4 flex items-center gap-2.5">

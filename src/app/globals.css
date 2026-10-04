@@ -52,32 +52,27 @@ html::-webkit-scrollbar {
 body {
   color: var(--white-00);
   font-family: var(--font-plex), sans-serif;
+  user-select: none;
 }
 
-@keyframes scrollx {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes scrollxrev {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+.marquee-wrap {
+  --fade: 12%; /* width of each edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+          mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
 }
 
 .marquee-track {
-  animation: scrollx 32s linear infinite;
+  animation: marquee 40s linear infinite;
 }
-.marquee-track-rev {
-  animation: scrollxrev 36s linear infinite;
-}
-.marquee-wrap:hover .marquee-track,
-.marquee-wrap:hover .marquee-track-rev {
+
+.marquee-wrap:hover .marquee-track {
   animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); } /* exactly one copy's width → seamless loop */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }

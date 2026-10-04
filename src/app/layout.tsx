@@ -5,6 +5,7 @@ import IntellixIntro from "@/components/IntellixIntro";
 import "@/components/intellix-intro.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { NavVisibilityProvider } from "@/components/NavVisibilityProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -33,14 +34,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="bg-black-01 text-white-01 antialiased">
         <div className="relative min-h-screen bg-black-01">
           <main className="relative z-10">
-            <Navbar />
-            <IntellixIntro>
-              <div
-                className="pointer-events-none fixed inset-0 -z-100 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1.5px)] bg-size-[40px_40px]"
-                aria-hidden="true"
-              />
+            {/* <IntellixIntro> */}
+              <NavVisibilityProvider>
+              <Navbar />
+              <div className="pointer-events-none fixed inset-0 -z-100 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1.5px)] bg-size-[40px_40px]" aria-hidden="true" />
               {children}
-            </IntellixIntro>
+              </NavVisibilityProvider>
+            {/* </IntellixIntro> */}
             <Footer />
           </main>
         </div>

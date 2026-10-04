@@ -1,35 +1,69 @@
+
 .intellix-intro {
+  /* Size tokens */
+  --logo-w: min(72vw, 52vh, 420px);
+  --logo-h: calc(var(--logo-w) * 1.1354); /* 478 / 421 */
+  --k: 0.46; /* final logo scale */
+  --gap: clamp(14px, 3.2vh, 32px); /* space between cube and wordmark */
+  --word-size: clamp(12px, min(3.6vw, 4.4vh), 28px);
+  --stroke: 3.2;
+
+  /* Motion tokens (timings come from the component as --t-*) */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
   position: fixed;
   inset: 0;
   z-index: 99999;
-  display: grid;
-  place-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.06), transparent 32%),
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.06), transparent 34%),
     #050505;
-  opacity: 1;
   isolation: isolate;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
-/* Soft ambient bloom behind the cube */
+/* Use the stable small-viewport height on mobile browsers that support it,
+   so the URL bar showing/hiding doesn't shift the lockup */
+@supports (height: 1svh) {
+  .intellix-intro {
+    --logo-w: min(72vw, 52svh, 420px);
+    --gap: clamp(14px, 3.2svh, 32px);
+    --word-size: clamp(12px, min(3.6vw, 4.4svh), 28px);
+  }
+}
+
+@media (max-width: 480px) {
+  .intellix-intro {
+    --stroke: 3.8; /* keep lines crisp once the cube is small */
+    --k: 0.5;
+  }
+}
+
+/* ---------- Backdrop ---------- */
+
 .intellix-intro__ambient {
   position: absolute;
-  width: min(70vw, 720px);
+  left: 50%;
+  top: 50%;
+  width: min(90vw, 90vh, 760px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(150, 190, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.035) 40%,
-    transparent 72%
+    rgba(150, 190, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    transparent 70%
   );
-  filter: blur(90px);
+  filter: blur(70px);
   pointer-events: none;
-  transition: transform 900ms cubic-bezier(0.65, 0, 0.35, 1), opacity 900ms ease;
+  opacity: 0.35;
+  transform: translate(-50%, -50%) scale(0.85);
+  animation: intellix-power-on 1400ms var(--ease-out) var(--t-sheen) forwards;
 }
 
-/* Fine film-grain texture for a premium, non-flat backdrop */
 .intellix-intro__noise {
   position: absolute;
   inset: -20%;
@@ -40,15 +74,28 @@
   background-size: 160px 160px;
 }
 
+/* ---------- Stage ---------- */
+
+.intellix-intro__stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* Outer wrapper: handles the collapse (shrink + lift) */
 .intellix-intro__logo {
-  position: relative;
-  width: min(68vw, 520px);
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  width: var(--logo-w);
   transform-origin: 50% 50%;
-  filter: drop-shadow(0 0 26px rgba(150, 190, 255, 0.16));
-  animation: intellix-logo-collapse 750ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  animation-delay: 1.35s;
+  will-change: transform;
+  animation: intellix-logo-collapse 850ms var(--ease-in-out) var(--t-collapse) forwards;
+}
+
+/* Inner wrapper: handles the entrance (so the two transforms don't fight) */
+.intellix-intro__logo-inner {
+  opacity: 0;
+  transform: scale(0.94);
+  animation: intellix-logo-enter 1100ms var(--ease-out) forwards;
 }
 
 .intellix-intro__logo svg {
@@ -58,61 +105,107 @@
   overflow: visible;
 }
 
-.intellix-intro__paths {
+/* ---------- Lines ---------- */
+
+.intellix-intro__ghost,
+.intellix-intro__paths,
+.intellix-intro__sheen {
   fill: none;
-  stroke: url(#intellix-line-gradient);
-  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.intellix-intro__ghost {
+  stroke: rgba(200, 220, 255, 0.07);
+  stroke-width: 1.2;
+}
+
+.intellix-intro__paths {
+  stroke: url(#intellix-line-gradient);
+  stroke-width: var(--stroke);
   filter: url(#intellix-glow);
 }
 
 .intellix-cube-line {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation:
-    intellix-draw-line 520ms cubic-bezier(0.22, 0.75, 0.2, 1) forwards;
-  animation-delay: calc(var(--line-index) * 58ms);
+  opacity: 0.4;
+  animation: intellix-draw-line 700ms var(--ease-out) forwards;
+  /* layers draw in sequence; paths inside a layer ripple in */
+  animation-delay: calc(var(--ring) * 140ms + var(--j) * 22ms + 120ms);
 }
+
+.intellix-intro__sheen {
+  stroke: #fff;
+  stroke-width: calc(var(--stroke) + 0.6);
+  filter: url(#intellix-glow);
+}
+
+.intellix-intro__sheen-band {
+  transform: translateX(0);
+  animation: intellix-sheen 1000ms var(--ease-in-out) var(--t-sheen) forwards;
+}
+
+/* ---------- Wordmark ---------- */
 
 .intellix-intro__wordmark {
   position: absolute;
   left: 50%;
-  top: calc(50% + min(20vw, 165px));
-  transform: translateX(-50%) translateY(46px) scale(0.97);
-  color: rgba(255, 255, 255, 0);
-  font-family: var(--font-jetbrain);
-  font-size: clamp(20px, 2vw, 40px);
+  /* Centre of the wordmark sits (kH + gap) / 2 below the viewport centre */
+  top: calc(50% + (var(--logo-h) * var(--k) + var(--gap)) / 2);
+  transform: translate(-50%, -50%);
+  display: flex;
+  max-width: calc(100vw - 32px);
+  padding-left: 0.42em; /* balances the trailing letter-spacing so it centres optically */
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-jetbrain, ui-monospace), SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: var(--word-size);
   font-weight: 800;
-  letter-spacing: 0.6em;
+  line-height: 1;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0;
-  animation: intellix-wordmark-pop 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  animation-delay: 1.95s;
 }
+
+.intellix-intro__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em);
+  filter: blur(8px);
+  animation: intellix-char-in 650ms var(--ease-out) forwards;
+  animation-delay: calc(var(--t-word) + var(--i) * 28ms);
+}
+
+.intellix-intro__char--space {
+  width: 0.4em;
+}
+
+/* ---------- Exit ---------- */
 
 .intellix-intro--exit {
-  animation: intellix-intro-exit 700ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
   pointer-events: none;
+  animation: intellix-intro-exit var(--t-exit) var(--ease-in-out) forwards;
 }
 
-.intellix-intro--exit .intellix-intro__logo,
-.intellix-intro--exit .intellix-intro__wordmark {
-  animation-play-state: paused;
+.intellix-intro--exit .intellix-intro__stage {
+  animation: intellix-stage-exit calc(var(--t-exit) * 0.8) var(--ease-in-out) forwards;
 }
 
-.intellix-intro--exit .intellix-intro__ambient {
-  opacity: 0;
-  transform: scale(1.06);
+/* ---------- Keyframes ---------- */
+
+@keyframes intellix-logo-enter {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes intellix-draw-line {
   0% {
     stroke-dashoffset: 1;
-    opacity: 0.35;
+    opacity: 0.4;
   }
-  35% {
+  30% {
     opacity: 1;
   }
   100% {
@@ -121,88 +214,90 @@
   }
 }
 
-/* Cube shrinks to 50% and glides up to top-center, freeing space below for the wordmark */
-@keyframes intellix-logo-collapse {
-  0% {
-    transform: translateY(0) scale(1);
+@keyframes intellix-sheen {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateY(min(-26vh, -220px)) scale(0.5);
+  to {
+    transform: translateX(860px);
   }
 }
 
-/* Wordmark rises from below into the space the cube just vacated */
-@keyframes intellix-wordmark-pop {
+@keyframes intellix-power-on {
   0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(46px) scale(0.97);
-    letter-spacing: 0.7em;
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(0.85);
   }
-  65% {
+  35% {
     opacity: 1;
-    transform: translateX(-50%) translateY(-4px) scale(1.015);
+    transform: translate(-50%, -50%) scale(1.05);
   }
   100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes intellix-logo-collapse {
+  to {
+    transform: translateY(calc((var(--gap) + var(--word-size)) / -2)) scale(var(--k));
+  }
+}
+
+@keyframes intellix-char-in {
+  to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-    letter-spacing: 0.42em;
-    color: rgba(255, 255, 255, 0.92);
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes intellix-stage-exit {
+  to {
+    opacity: 0;
+    transform: translateY(-3vh) scale(0.97);
+    filter: blur(6px);
   }
 }
 
 @keyframes intellix-intro-exit {
-  0% {
-    opacity: 1;
-  }
-  100% {
+  to {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-@media (max-width: 640px) {
-  .intellix-intro__logo {
-    width: min(84vw, 430px);
-  }
-
-  .intellix-intro__wordmark {
-    top: calc(50% + min(24vw, 150px));
-  }
-
-  .intellix-intro__paths {
-    stroke-width: 3.8;
-  }
-
-  @keyframes intellix-logo-collapse {
-    0% {
-      transform: translateY(0) scale(1);
-    }
-    100% {
-      transform: translateY(min(-24vh, -190px)) scale(0.5);
-    }
-  }
-}
+/* ---------- Reduced motion: show the final lockup, then fade ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .intellix-cube-line {
+  .intellix-intro__logo,
+  .intellix-intro__logo-inner,
+  .intellix-cube-line,
+  .intellix-intro__char,
+  .intellix-intro__ambient,
+  .intellix-intro__sheen-band,
+  .intellix-intro--exit .intellix-intro__stage {
     animation: none;
+  }
+
+  .intellix-intro__logo {
+    transform: translateY(calc((var(--gap) + var(--word-size)) / -2)) scale(var(--k));
+  }
+
+  .intellix-intro__logo-inner,
+  .intellix-cube-line,
+  .intellix-intro__char {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .intellix-cube-line {
     stroke-dashoffset: 0;
   }
 
-  .intellix-intro__logo {
-    animation: none;
-    transform: translateY(min(-26vh, -220px)) scale(0.5);
-  }
-
-  .intellix-intro__wordmark {
-    animation: none;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-    letter-spacing: 0.42em;
-    color: rgba(255, 255, 255, 0.92);
-  }
-
-  .intellix-intro {
-    animation: none;
+  .intellix-intro__ambient {
+    opacity: 0.7;
+    transform: translate(-50%, -50%);
   }
 }

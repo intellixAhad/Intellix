@@ -1,9 +1,20 @@
-const page = () => {
-  return (
-    <div className="h-screen flex flex-col gap-5 items-center justify-center">
-      <h1 className='text-9xl font-playfair font-bold'>Career</h1>
-    </div>
-  )
-}
+import CareerHero from "@/components/careers/CareerHero";
+import CareerReasonSection from "@/components/careers/CareerReasonSection";
+import CareersCTA from "@/components/careers/CareersCTA";
+import HiringProcessSection from "@/components/careers/HiringProcessSection";
+import OpenPositions from "@/components/careers/OpenPositions";
 
-export default page
+const page = () => {
+
+  return (
+    <>
+      <CareerHero />
+      <CareerReasonSection />
+      <OpenPositions />
+      <HiringProcessSection />
+      <CareersCTA />
+    </>
+  );
+};
+
+export default page;
