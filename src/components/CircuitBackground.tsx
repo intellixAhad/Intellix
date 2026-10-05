@@ -53,7 +53,7 @@ const MOBILE: Layout = {
   ],
 };
 
-const RUN_MS = 2000; // time for one pulse to travel the trace
+const RUN_MS = 1500; // time for one pulse to travel the trace
 const PAUSE_MS = 3000; // average pause between runs
 const JITTER_MS = 1500; // pause is randomised within PAUSE_MS ± JITTER_MS
 

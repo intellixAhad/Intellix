@@ -5,19 +5,17 @@ type ProjectCardProps = {
   category: string;
   title: string;
   description: string;
-  liveUrl: string; // live project URL, opens in a new tab
-  initials?: string; // fallback badge when there's no image
-  image?: string; // optional cover image
-  detailsHref?: string; // where the card itself links (case study page)
+  liveUrl: string;
+  initials?: string;
+  image: string;
+  detailsHref?: string;
   className?: string;
 };
 
 const ProjectCard = ({ category, title, description, liveUrl, initials, image, detailsHref = "/projects", className = "" }: ProjectCardProps) => {
   return (
-    <article className={`group relative block overflow-hidden border border-white/[0.14] bg-[#141414] transition-colors duration-300 hover:border-white/30 focus-within:border-white/30 ${className}`}>
-
-      <div className="relative flex h-[170px] items-center justify-center overflow-hidden border-b border-white/[0.14] bg-black-01">
-
+    <article className={`group relative block overflow-hidden border border-white/[0.14] bg-[#141414] transition-colors duration-300 focus-within:border-white/30 ${className}`}>
+      <div className="relative flex h-55 items-center justify-center overflow-hidden border-b border-white/[0.14] bg-black-01">
         <div
           className="flex h-full w-full items-center justify-center transition-all duration-500 ease-out
             group-hover:scale-105 group-hover:blur-[6px]
@@ -25,7 +23,7 @@ const ProjectCard = ({ category, title, description, liveUrl, initials, image, d
             motion-reduce:transition-none motion-reduce:group-hover:scale-100
             [@media(hover:none)]:blur-0"
         >
-          {image ? <Image src={image} alt="" className="h-full w-full object-cover" loading="lazy" /> : <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">{initials}</span>}
+          {image ? <Image src={image} alt="" className="h-full w-full object-cover" loading="lazy" width={400} height={400} /> : <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">{initials}</span>}
         </div>
 
         <div
@@ -54,15 +52,15 @@ const ProjectCard = ({ category, title, description, liveUrl, initials, image, d
       </div>
 
       <div className="p-5.5">
-        <span className="font-mono text-[11.5px] font-bold uppercase tracking-[0.08em] text-[#9A9A94]">{category}</span>
+        <span className="font-mono text-[11.5px] font-bold uppercase tracking-[0.08em] text-gray-00">{category}</span>
 
-        <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">
+        <h3 className="mb-2.5 mt-2 font-jetbrain tracking-tighter text-[18px] font-semibold text-white-01">
           <a href={detailsHref} className="after:absolute after:inset-0 focus-visible:outline-none">
             {title}
           </a>
         </h3>
 
-        <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">{description}</p>
+        <p className="m-0 text-[14px] leading-[1.6] text-gray-02 line-clamp-3">{description}</p>
       </div>
     </article>
   );

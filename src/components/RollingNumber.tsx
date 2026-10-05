@@ -40,7 +40,7 @@ const CountUpNumber = ({ prefix = "", number, suffix = "", className = "", forma
   const finalLabel = `${prefix}${format ? number.toLocaleString("en-US") : number}${suffix}`;
 
   return (
-    <div ref={ref} className={`flex items-center justify-center font-jetbrain italic text-[48px] md:text-[68px] font-bold leading-none text-white-01 tabular-nums ${className}`}>
+    <div ref={ref} className={`flex items-center justify-center font-jetbrain italic text-[48px] md:text-[68px] font-extrabold leading-none text-white-01 tabular-nums ${className}`}>
       <span className="sr-only">{finalLabel}</span>
       <span aria-hidden="true">
         {prefix}
