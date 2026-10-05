@@ -1,4 +1,5 @@
 import Badge from "@/components/Badge";
+import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
 import CircuitBackground from "@/components/CircuitBackground";
@@ -157,7 +158,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="border-t border-b border-white/14 py-[70px] px-[clamp(20px,5vw,64px)] z-1">
+      <section className="border-t border-b border-white/14 py-[70px] px-[clamp(20px,5vw,64px)] z-1 bg-white/3 backdrop-blur">
         <StaggerGroup className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <StaggerItem key={stat.label}>
@@ -442,7 +443,7 @@ const page = () => {
         </div>
       </section>
 
-      <section id="process" className="relative overflow-hidden px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
+      <section id="process" className="relative overflow-hidden p-[92px_clamp(20px,5vw,64px)_46px]">
         <div aria-hidden="true" className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
         <div aria-hidden="true" className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
@@ -493,85 +494,67 @@ const page = () => {
         </div>
       </section>
 
-      <section id="about" className="relative mx-auto w-full  max-w-360 overflow-hidden px-[clamp(20px,5vw,64px)] py-12 md:py-[92px]">
+      <section id="about" className="relative mx-auto w-full  max-w-360 overflow-hidden p-[46px_clamp(20px,5vw,64px)]">
         <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] items-center gap-11 overflow-hidden border border-white/[0.14] bg-[#141414] p-[clamp(32px,5vw,56px)]">
           <div aria-hidden="true" className="pointer-events-none absolute -top-[60px] -right-[60px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)] blur-[50px] " />
 
-          <div
-            aria-hidden="true"
-            className="
-        pointer-events-none
-        absolute -bottom-[70px] -left-[50px] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] "
-          />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-[70px] -left-[50px] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]"/>
 
           {/* Left Content */}
           <div className="relative z-10">
-            <div className="mb-[14px] inline-flex items-center gap-2.5">
-              <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
-
-              <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">WHO WE ARE</p>
+          
+            <div>
+              <Badge label="who we are" />
+              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A small, focused team building real products.</h2>
+              <p className="my-6.5 text-[16px] text-gray-02">Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.</p>
             </div>
-
-            <h2 className="mb-4 font-display text-[clamp(1.625rem,4vw,2rem)] font-semibold text-white-01">A small, focused team building real products.</h2>
-
-            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.</p>
 
             <div className="mb-7 flex flex-wrap gap-2.5">
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">Remote-First</span>
-
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">Based in Dhaka</span>
-
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">4 Core Service Lines</span>
             </div>
 
-            <a href="/about" className="inline-flex items-center gap-2 border-[1.5px] border-white/[0.34] px-5.5 py-3 font-mono text-[12.5px] font-semibold uppercase tracking-[0.04em] text-white-01">
-              Meet the Team
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#F5F5F2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
+            <Button title="Meet the Team" link="/about" variant="primary" />
+
           </div>
 
           {/* Team Photos */}
           <div className="relative z-10 grid grid-cols-3 gap-2.5">
             <div className="aspect-square overflow-hidden border border-white/[0.14]">
-              <img src="https://i.pravatar.cc/200?img=11" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
 
             <div className="mt-0 aspect-square overflow-hidden border border-white/[0.14] sm:mt-[18px]">
-              <img src="https://i.pravatar.cc/200?img=32" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
 
             <div className="aspect-square overflow-hidden border border-white/[0.14]">
-              <img src="https://i.pravatar.cc/200?img=47" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
 
             <div className="mt-0 aspect-square overflow-hidden border border-white/[0.14] sm:-mt-[18px]">
-              <img src="https://i.pravatar.cc/200?img=5" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
 
             <div className="aspect-square overflow-hidden border border-white/[0.14]">
-              <img src="https://i.pravatar.cc/200?img=22" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
 
             <div className="mt-0 aspect-square overflow-hidden border border-white/[0.14] sm:mt-[18px]">
-              <img src="https://i.pravatar.cc/200?img=14" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
+              <Image width={400} height={400} src="/default_image_02.jpg" alt="Portrait of a team member" className="block h-full w-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)]">
-        <div className="mb-14 max-w-[640px] text-left">
-          <div className="mb-[14px] inline-flex items-center gap-2.5">
-            <span className="h-[6px] w-[6px] bg-white" />
-            <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">CLIENT VOICES</p>
-          </div>
-          <h2 className="m-0 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-semibold text-white-01">What partners say about working with us.</h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <section className="p-[46px_clamp(20px,5vw,64px)]">
+        <div className="max-w-7xl mx-auto">
+            <div>
+              <Badge label="client voices" />
+              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">What partners say about working with us.</h2>
+            </div>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 mt-14">
           {/* Testimonial 1 */}
           <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
             <svg className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]" viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#F5F5F2" strokeWidth="1.4">
@@ -591,46 +574,7 @@ const page = () => {
               </div>
             </div>
           </div>
-
-          {/* Testimonial 2 */}
-          <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
-            <svg className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]" viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#F5F5F2" strokeWidth="1.4">
-              <path d="M7 15h3l2-4V7H5v6h3z" />
-              <path d="M15 15h3l2-4V7h-7v6h3z" />
-            </svg>
-
-            <p className="relative mb-5.5 text-[14.5px] leading-[1.7] text-gray-02">"[Add a short quote from your client about the results Intellix delivered.]"</p>
-
-            <div className="relative flex items-center gap-3">
-              <span className="flex h-[38px] w-[38px] items-center justify-center border border-white/[0.14] text-[12px] font-bold text-gray-02">[?]</span>
-
-              <div>
-                <div className="text-[14px] font-semibold text-white-01">[Client Name]</div>
-
-                <div className="text-[12.5px] text-gray-00">[Role, Company]</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 3 */}
-          <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-[26px]">
-            <svg className="pointer-events-none absolute right-4 top-[14px] opacity-[0.08]" viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#F5F5F2" strokeWidth="1.4">
-              <path d="M7 15h3l2-4V7H5v6h3z" />
-              <path d="M15 15h3l2-4V7h-7v6h3z" />
-            </svg>
-
-            <p className="relative mb-5.5 text-[14.5px] leading-[1.7] text-gray-02">"[Add a short quote from your client about the results Intellix delivered.]"</p>
-
-            <div className="relative flex items-center gap-3">
-              <span className="flex h-[38px] w-[38px] items-center justify-center border border-white/[0.14] text-[12px] font-bold text-gray-02">[?]</span>
-
-              <div>
-                <div className="text-[14px] font-semibold text-white-01">[Client Name]</div>
-
-                <div className="text-[12.5px] text-gray-00">[Role, Company]</div>
-              </div>
-            </div>
-          </div>
+        </div>
         </div>
       </section>
 
