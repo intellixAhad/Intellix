@@ -10,11 +10,6 @@ type StaggerGroupProps = {
   once?: boolean;
 };
 
-/**
- * Wrap a grid/list of cards with <StaggerGroup>, and wrap each individual
- * card with <StaggerItem>. The group controls timing (how far apart each
- * child's entrance is); each item just declares its own hidden/show state.
- */
 export function StaggerGroup({
   children,
   className,

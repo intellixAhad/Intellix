@@ -8,6 +8,23 @@ import { serviceIcons } from "@/data/serviceIcons";
 import IndustryCard from "@/components/IndustryCard";
 import { IndustryIcons } from "@/data/IndustryIcons";
 import ProductAnimation from "@/components/ProductAnimation";
+import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
+import RollingNumber from "@/components/RollingNumber";
+import Reveal from "@/components/reveal";
+import ProjectCard from "@/components/ProjectCard";
+import projectData from "@/data/projectData";
+
+const stats: {
+  prefix?: string;
+  number: number;
+  suffix?: string;
+  label: string;
+}[] = [
+  { number: 30, suffix: "+", label: "Projects Delivered" },
+  { number: 12, suffix: "+", label: "Clients Served" },
+  { number: 7, suffix: "+", label: "Team Members" },
+  { number: 4, label: "Core Service Line" },
+];
 
 const page = () => {
   const infoCards = [
@@ -55,20 +72,10 @@ const page = () => {
     <>
       <section id="top" className="relative flex min-h-[100svh] flex-col items-center justify-between overflow-hidden px-[clamp(20px,5vw,64px)] py-6 md:py-0 md:pb-16">
         <CircuitBackground className="-z-10" />
-        <div
-          aria-hidden="true"
-          className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
-        />
-        <div className="absolute right-[clamp(20px,5vw,64px)] top-30 hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">
-          BUILD · DESIGN · AUTOMATE
-        </div>
-        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">
-          SOFTWARE THAT SHIPS
-        </div>
+        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+        <div className="absolute right-[clamp(20px,5vw,64px)] top-30 hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">BUILD · DESIGN · AUTOMATE</div>
+        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">SOFTWARE THAT SHIPS</div>
 
         <div className="relative mx-auto flex w-full max-w-360 flex-1 items-center justify-center py-12 md:py-16">
           <div className="flex w-full flex-col items-center justify-center">
@@ -79,8 +86,7 @@ const page = () => {
               engineered for real growth.
             </h1>
             <p className="mb-9 max-w-[900px] text-center text-[16px] leading-[1.65] text-gray-02 sm:text-[18px]">
-              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of
-              intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
+              Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
             </p>
             <div className="flex flex-wrap gap-3.5 mb-7">
               <Button title="start a project" link="/contact" variant="primary" />
@@ -151,48 +157,42 @@ const page = () => {
         </div>
       </section>
 
-      <section className="px-[clamp(20px,5vw,64px)]">
-        <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 text-center sm:gap-8 md:grid-cols-4">
-          <div>
-            <div className="font-fraunces text-[42px] font-bold text-white">[XX]+</div>
-            <div className="text-[13.5px] text-gray-02 mt-2 tracking-[.02em]">Projects Delivered</div>
-          </div>
-          <div>
-            <div className="font-fraunces text-[42px] font-bold text-white">[XX]+</div>
-            <div className="text-[13.5px] text-gray-02 mt-2 tracking-[.02em]">Clients Served</div>
-          </div>
-          <div>
-            <div className="font-fraunces text-[42px] font-bold text-white">4</div>
-            <div className="text-[13.5px] text-gray-02 mt-2 tracking-[.02em]">Core Service Lines</div>
-          </div>
-          <div>
-            <div className="font-fraunces text-[42px] font-bold text-white">1</div>
-            <div className="text-[13.5px] text-gray-02 mt-2 tracking-[.02em]">In-House Product — Verbosa.ai</div>
-          </div>
-        </div>
+      <section className="border-t border-b border-white/14 py-[70px] px-[clamp(20px,5vw,64px)] z-1">
+        <StaggerGroup className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
+          {stats.map((stat) => (
+            <StaggerItem key={stat.label}>
+              <RollingNumber number={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
+              <div className="text-[14px] text-gray-02 mt-2 tracking-[0.02em] text-center">{stat.label}</div>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
       </section>
 
-      <section id="services" className="p-[92px_clamp(20px,5vw,64px)]">
+      <section id="services" className="p-[92px_clamp(20px,5vw,64px)_46px]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-15 text-left">
-            <Badge label="what we do" />
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Everything you need to launch, look great, and scale operations.</h2>
+            <Reveal y={12}>
+              <Badge label="what we do" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Everything you need to launch, look great, and scale operations.</h2>
+            </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <Reveal delay={0.2} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {serviceIcons.map(({ title, description, icon }, index) => (
               <ServiceCard key={title} number={String(index + 1)} title={title} description={description} icon={icon} />
             ))}
-          </div>
+          </Reveal>
 
-          <div className="flex justify-center mt-11">
+          <Reveal delay={0.3} className="flex justify-center mt-11">
             <Button title="Learn More" link="/services" variant="primary" />
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="max-w-360 mx-auto">
+      <section className="p-[46px_clamp(20px,5vw,64px)_46px]">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-15 text-left">
             <Badge label="industries we support" />
             <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Built for founders and teams across every sector.</h2>
@@ -206,16 +206,13 @@ const page = () => {
         </div>
       </section>
 
-      <section id="products" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+      <section id="products" className="p-[46px_clamp(20px,5vw,64px)_46px]">
+        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 rounded-none bg-transparent px-[clamp(28px,5vw,64px)] py-14">
             <div>
               <Badge label="our product" />
               <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Meet Verbosa.ai</h2>
-              <p className="my-6.5 text-[16px] text-gray-02">
-                Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same
-                team behind Intellix.
-              </p>
+              <p className="my-6.5 text-[16px] text-gray-02">Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It's built and maintained by the same team behind Intellix.</p>
               <div className="mb-7.5 flex gap-5 flex-wrap">
                 <span className="text-[12px] text-gray-01">AI-Powered</span>
                 <span className="text-[12px] text-gray-01">Built by Intellix</span>
@@ -232,8 +229,8 @@ const page = () => {
         </div>
       </section>
 
-      <section id="projects" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="max-w-360 mx-auto">
+      <section id="projects" className="p-[46px_clamp(20px,5vw,64px)_46px]">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
             <div>
               <Badge label="recent projects" />
@@ -243,53 +240,15 @@ const page = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-5.5 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">NW</span>
-              </div>
-
-              <div className="p-5.5">
-                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-white">E-COMMERCE</span>
-
-                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Northwind Retail Co.</h3>
-
-                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Rebuilt a slow storefront into a fast, mobile-first platform — a 42% lift in conversion.</p>
-              </div>
-            </a>
-
-            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">CO</span>
-              </div>
-
-              <div className="p-5.5">
-                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">E-COMMERCE</span>
-
-                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Cascade Outfitters</h3>
-
-                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">Stood up a dedicated support desk across chat, email, and order issues — 94% CSAT.</p>
-              </div>
-            </a>
-
-            <a href="/projects" className="block overflow-hidden border border-white/[0.14] bg-[#141414]">
-              <div className="flex h-[170px] items-center justify-center border-b border-white/[0.14] bg-black-01">
-                <span className="flex h-11 w-11 items-center justify-center border border-white/[0.14] font-display text-[13px] font-semibold text-white-01">MM</span>
-              </div>
-
-              <div className="p-5.5">
-                <span className="font-mono text-[11.5px] font-bold tracking-[0.08em] text-[#9A9A94]">MEDIA &amp; ENTERTAINMENT</span>
-
-                <h3 className="mb-[10px] mt-2 font-display text-[18px] font-semibold text-white-01">Meridian Media Group</h3>
-
-                <p className="m-0 text-[13.5px] leading-[1.6] text-gray-02">A six-video product launch series edited for social — 1.2M+ views to date.</p>
-              </div>
-            </a>
+            {projectData.slice(0, 3).map((projectData) => (
+              <ProjectCard key={projectData.title} category={projectData.category} title={projectData.title} description={projectData.description} liveUrl={projectData.liveUrl} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="why" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="max-w-360 mx-auto">
+      <section id="why" className="p-[46px_clamp(20px,5vw,64px)_92px]">
+        <div className="max-w-7xl mx-auto">
           <div>
             <Badge label="why intellix" />
             <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A team that thinks like a partner, not a vendor.</h2>
@@ -370,16 +329,13 @@ const page = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]"
-        />
+      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 p-[92px_clamp(20px,5vw,64px)]">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
         <div aria-hidden="true" className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]">
           &lt;/&gt;
         </div>
 
-        <div className="relative mx-auto max-w-360">
+        <div className="mx-auto max-w-7xl">
           <div className="max-w-360 mx-auto">
             <div>
               <Badge label="tools & technologies" />
@@ -487,21 +443,15 @@ const page = () => {
       </section>
 
       <section id="process" className="relative overflow-hidden px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute right-[-60px] top-[-50px] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-[-60px] left-[-50px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
         <svg className="pointer-events-none absolute left-[8%] top-[300] hidden h-1 w-[84%] lg:block" viewBox="0 0 100 1" preserveAspectRatio="none">
           <line x1="0" y1="0.5" x2="100" y2="0.5" stroke="rgba(255,255,255,.08)" strokeWidth="0.6" strokeDasharray="2,2" />
         </svg>
 
-        <div className="max-w-360 mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div>
             <Badge label="how we work" />
             <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A clear process, from first call to launch.</h2>
@@ -545,10 +495,7 @@ const page = () => {
 
       <section id="about" className="relative mx-auto w-full  max-w-360 overflow-hidden px-[clamp(20px,5vw,64px)] py-12 md:py-[92px]">
         <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] items-center gap-11 overflow-hidden border border-white/[0.14] bg-[#141414] p-[clamp(32px,5vw,56px)]">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-[60px] -right-[60px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)] blur-[50px] "
-          />
+          <div aria-hidden="true" className="pointer-events-none absolute -top-[60px] -right-[60px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.12),rgba(255,255,255,0)_65%)] blur-[50px] " />
 
           <div
             aria-hidden="true"
@@ -567,9 +514,7 @@ const page = () => {
 
             <h2 className="mb-4 font-display text-[clamp(1.625rem,4vw,2rem)] font-semibold text-white-01">A small, focused team building real products.</h2>
 
-            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">
-              Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.
-            </p>
+            <p className="mb-[26px] max-w-[520px] text-[15px] leading-[1.7] text-gray-02">Intellix is a remote-first team of developers, designers, and editors working out of Dhaka, Bangladesh — covering everything from client projects to our own product, Verbosa.ai.</p>
 
             <div className="mb-7 flex flex-wrap gap-2.5">
               <span className="border border-white/[0.14] px-[14px] py-[7px] text-[12.5px] font-semibold text-gray-02">Remote-First</span>
@@ -617,24 +562,12 @@ const page = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section
-        className="
-    mx-auto
-    w-full
-    max-w-360
-    px-[clamp(20px,5vw,64px)]
-    py-12
-    md:py-[92px]
-  "
-      >
+      <section className="mx-auto w-full max-w-360 px-[clamp(20px,5vw,64px)]">
         <div className="mb-14 max-w-[640px] text-left">
           <div className="mb-[14px] inline-flex items-center gap-2.5">
             <span className="h-[6px] w-[6px] bg-white" />
-
             <p className="m-0 font-mono text-[12px] font-semibold uppercase tracking-[0.1em] text-gray-02">CLIENT VOICES</p>
           </div>
-
           <h2 className="m-0 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-semibold text-white-01">What partners say about working with us.</h2>
         </div>
 
@@ -701,9 +634,8 @@ const page = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="relative mx-auto grid w-full max-w-300 grid-cols-1 items-start gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
+      <section id="faq" className="p-[46px_clamp(20px,5vw,64px)]">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
           <div className="lg:sticky lg:top-[100px]">
             <div className="mb-[14px] inline-flex items-center gap-2.5">
               <span className="h-[6px] w-[6px] bg-[#9A9A94]" />
@@ -758,9 +690,7 @@ const page = () => {
               </button>
 
               <div className="overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.</p>
               </div>
             </div>
 
@@ -793,9 +723,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.</p>
               </div>
             </div>
 
@@ -828,9 +756,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.</p>
               </div>
             </div>
 
@@ -863,9 +789,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.</p>
               </div>
             </div>
 
@@ -898,9 +822,7 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.</p>
               </div>
             </div>
 
@@ -933,24 +855,20 @@ const page = () => {
               </button>
 
               <div className="hidden overflow-hidden px-5.5 pb-5.5">
-                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">
-                  Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.
-                </p>
+                <p className="m-0 text-[14px] leading-[1.65] text-gray-02">Yes — our team stays engaged after launch for bug fixes, improvements, and ongoing support so your product keeps running smoothly.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="careers" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+      <section id="careers" className="p-[46px_clamp(20px,5vw,64px)]">
+        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
           <div className="grid grid-cols-1 items-center gap-8 bg-transparent px-[clamp(24px,5vw,64px)] py-10 md:gap-11 md:py-14 lg:grid-cols-[1.1fr_.9fr]">
             <div>
               <Badge label="WE are hiring" />
               <h2 className="mb-4 font-playfair text-[clamp(1.875rem,4vw,2.375rem)] font-semibold text-black-01bg-black-01">Build the future with us.</h2>
-              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">
-                We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.
-              </p>
+              <p className="text-[15.5px] leading-[1.7] text-gray-02 mb-7 max-w-[440px] font-plex">We&apos;re always looking for talented developers, designers, and editors to join our growing, remote-first team.</p>
               <Button title="Open Positions" link="/contact" />
             </div>
 
@@ -972,8 +890,8 @@ const page = () => {
         </div>
       </section>
 
-      <section id="contact" className="px-[clamp(20px,5vw,64px)] py-14 md:py-[92px]">
-        <div className="rounded-none bg-[#141414] max-w-360 mx-auto">
+      <section id="contact" className="p-[46px_clamp(20px,5vw,64px)_92px]">
+        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
           <div className="relative grid grid-cols-1 items-center gap-8 overflow-hidden rounded-none bg-transparent px-[clamp(24px,5vw,64px)] py-10 md:gap-13 md:py-14 lg:grid-cols-[1.1fr_.9fr]">
             <div className="relative">
               <Badge label="Get in touch" />

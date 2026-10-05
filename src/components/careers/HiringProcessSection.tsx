@@ -24,7 +24,7 @@ export const HiringProcessData = [
 
 const HiringProcessSection = () => {
   return (
-    <section id="services" className="p-[92px_clamp(20px,5vw,64px)]">
+    <section id="services" className="p-[46px_clamp(20px,5vw,64px)]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-15 gap-2 md:gap-4 w-full max-w-7xl mx-auto flex flex-col items-start justify-center text-center">
           <Reveal y={12}>

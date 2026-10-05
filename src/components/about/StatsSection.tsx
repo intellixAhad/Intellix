@@ -1,5 +1,3 @@
-"use client";
-
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import FloatingBlob from "@/components/motions/FloatingBlob";
 import RollingNumber from "@/components/RollingNumber";
@@ -18,7 +16,7 @@ const stats: {
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden border-t border-b border-white/14 py-[70px] px-[clamp(20px,5vw,64px)] z-1">
+    <section className="relative overflow-hidden border-t border-b border-white/14 p-[70px_clamp(20px,5vw,64px)] z-1">
       <FloatingBlob
         duration={12}
         range={16}
@@ -30,17 +28,15 @@ export default function StatsSection() {
         className="absolute -bottom-[90px] -right-[70px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_60%_60%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none"
       />
 
-      <StaggerGroup className="relative max-w-[1100px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <StaggerGroup className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
         {stats.map((stat) => (
           <StaggerItem key={stat.label}>
-            <div className="font-fraunces text-[28px] sm:text-[32px] lg:text-[38px] font-bold text-white">
               <RollingNumber
                 number={stat.number}
                 prefix={stat.prefix}
                 suffix={stat.suffix}
               />
-            </div>
-            <div className="text-[13px] text-[#A6A6A2] mt-2 tracking-[0.02em] text-center">
+            <div className="text-[14px] text-gray-02 mt-2 tracking-[0.02em] text-center">
               {stat.label}
             </div>
           </StaggerItem>

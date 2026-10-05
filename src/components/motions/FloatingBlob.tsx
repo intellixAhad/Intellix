@@ -8,11 +8,7 @@ type FloatingBlobProps = {
   range?: number;
 };
 
-/**
- * Ambient, infinitely-looping drift for decorative background blurs —
- * distinct from the entrance/stagger/hover effects: this one never stops,
- * so it should stay very slow and very subtle (small `range`, long `duration`).
- */
+
 export default function FloatingBlob({
   className,
   duration = 10,

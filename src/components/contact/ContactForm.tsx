@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SERVICES, validateContact, type ContactErrors, type ContactField } from "@/data/contact";
+import Button from "@/components/Button";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -88,29 +89,33 @@ export default function ContactForm() {
     <div className="border border-white/14 bg-[#141414] p-6 sm:p-10">
       <AnimatePresence mode="wait" initial={false}>
         {status === "success" ? (
-          <motion.div key="success" role="status" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="px-2.5 py-12 text-center">
+          <motion.div key="success" role="status" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="px-2.5 py-12 text-left">
             <span className="mb-5 inline-flex h-16 w-16 items-center justify-center border border-white/14 bg-[#141414]">
               <svg viewBox="0 0 24 24" width={30} height={30} fill="none" stroke="#F5F5F2" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                 <motion.polyline points="20 6 9 17 4 12" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }} />
               </svg>
             </span>
-            <h2 className="mb-2.5 font-fraunces text-[22px] font-bold text-white-01">Message sent.</h2>
-            <p className="mx-auto mb-6 max-w-[360px] text-[14.5px] leading-[1.7] text-gray-02">Thanks for reaching out — someone from our team will get back to you within one business day.</p>
+            <h2 className="mb-2.5 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic1 italic">Message sent.</h2>
+            <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-155 font-light tracking-wide text-left mb-5">Thanks for reaching out — someone from our team will get back to you within one business day.</p>
             <button
               type="button"
+              className="group inline-flex items-center justify-center w-full sm:w-fit gap-2 px-5 py-2.75 border-[1.5px] font-jetbrain uppercase tracking-[.04em] font-semibold text-[12.5px] whitespace-nowrap shrink-0 overflow-hidden transition-all duration-300 ease-out active:scale-[0.96] active:duration-150 bg-white border-white text-black-01 hover:bg-[#141414] hover:text-gray-03 cursor-pointer"
               onClick={() => {
                 setErrors({});
                 setStatus("idle");
               }}
-              className="cursor-pointer border-[1.5px] border-white/34 bg-transparent px-5.5 py-2.75 font-jetbrain text-[13px] font-semibold uppercase tracking-[0.04em] text-white-01 transition-colors duration-300 hover:border-white/70"
             >
-              Send another message
+              <span className="transition-transform duration-300 ease-out group-hover:-translate-x-0.5">Submite Another</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 transition-transform duration-300 ease-out group-hover:-rotate-45">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </button>
           </motion.div>
         ) : (
           <motion.div key="form" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
-            <h2 className="mb-1.5 text-2xl sm:text-[28px] font-bold text-white-01">Send us a message</h2>
-            <p className="mb-7 text-sm text-gray-00">Fields marked with * are required.</p>
+            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Send us a message</h2>
+            <p className="mt-2 mb-7 text-sm text-gray-00">Fields marked with * are required.</p>
 
             <form
               onSubmit={handleSubmit}
@@ -124,9 +129,6 @@ export default function ContactForm() {
               noValidate
               className="relative flex flex-col gap-5"
             >
-              {/* Honeypot: hidden from humans, irresistible to bots */}
-              {/* <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-2499.75 h-0 w-0 opacity-0" /> */}
-
               <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
                 <Field name="name" label="Full name" required error={errors.name}>
                   <input type="text" placeholder="Md. Rahman" autoComplete="name" {...a11y("name", errors.name)} className={inputCls(errors.name)} />

@@ -53,9 +53,9 @@ export const CareerReasonData = [
 
 const CareerReasonSection = () => {
   return (
-    <section id="services" className="p-[92px_clamp(20px,5vw,64px)]">
+    <section id="services" className="p-[92px_clamp(20px,5vw,64px)_46px]">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-15 gap-2 md:gap-4 w-full max-w-7xl mx-auto flex flex-col items-start justify-center text-center">
+        <div className="mb-15 gap-2 md:gap-4 w-full max-w-7xl mx-auto flex flex-col items-start">
           <Reveal y={12}>
             <Badge label="Our Perks" />
           </Reveal>
@@ -68,8 +68,8 @@ const CareerReasonSection = () => {
         </div>
         <Reveal delay={0.3}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {CareerReasonData.map(({ title, description, icon }, index) => (
-              <CareerReasonCard key={title} number={String(index + 1)} title={title} description={description} icon={icon} />
+            {CareerReasonData.map(({ title, description }, index) => (
+              <CareerReasonCard key={title} number={String(index + 1)} title={title} description={description} />
             ))}
           </div>
         </Reveal>
