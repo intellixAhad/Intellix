@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${playfair.variable} ${plex.variable} ${jetbrains.variable} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${playfair.variable} ${plex.variable} ${jetbrains.variable} h-full antialiased`}>
       <body className="bg-black-01 text-white-01 antialiased">
         <div className="relative min-h-screen bg-black-01">
           <main className="relative z-10">

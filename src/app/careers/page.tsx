@@ -1,7 +1,7 @@
 import CareerHero from "@/components/careers/CareerHero";
-import CareerReasonSection from "@/components/careers/CareerReasonSection";
-import CareersCTA from "@/components/careers/CareersCTA";
-import HiringProcessSection from "@/components/careers/HiringProcessSection";
+import PerksSection from "@/components/careers/PerksSection";
+import CtaSection from "@/components/careers/CtaSection";
+import HiringStepsSection from "@/components/careers/HiringStepsSection";
 import OpenPositions from "@/components/careers/OpenPositions";
 
 const page = () => {
@@ -9,10 +9,10 @@ const page = () => {
   return (
     <>
       <CareerHero />
-      <CareerReasonSection />
+      <PerksSection />
       <OpenPositions />
-      <HiringProcessSection />
-      <CareersCTA />
+      <HiringStepsSection />
+      <CtaSection />
     </>
   );
 };

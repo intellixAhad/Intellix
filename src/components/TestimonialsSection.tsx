@@ -1,4 +1,4 @@
-import Badge from "@/components/Badge"; // adjust to your Badge's actual path
+import Badge from "@/components/common/Badge"; // adjust to your Badge's actual path
 import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
 import Reveal from "./reveal";
 

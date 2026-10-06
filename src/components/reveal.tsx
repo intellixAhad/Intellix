@@ -6,9 +6,7 @@ import type { ReactNode } from "react";
 interface RevealProps {
   children: ReactNode;
   className?: string;
-  /** Seconds to wait before animating (use for staggering). */
   delay?: number;
-  /** Starting vertical offset in px. */
   y?: number;
 }
 

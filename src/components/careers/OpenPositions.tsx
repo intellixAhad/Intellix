@@ -7,7 +7,7 @@ import FadeIn from "@/components/motions/FadeIn";
 import HoverLift from "@/components/motions/HoverLift";
 import { EASE } from "@/components/motions/easing";
 import Reveal from "../reveal";
-import Badge from "../Badge";
+import Badge from "../common/Badge";
 
 type RoleTag = "eng" | "creative" | "ops";
 
@@ -85,7 +85,13 @@ export default function OpenPositions() {
               {filterOptions.map((opt) => {
                 const isActive = filter === opt.key;
                 return (
-                  <button key={opt.key} type="button" onClick={() => setFilter(opt.key)} aria-pressed={isActive} className="relative py-[9px] px-[2px] bg-transparent font-jetbrain uppercase tracking-[0.05em] font-semibold text-[12.5px] whitespace-nowrap rounded-none border-0 cursor-pointer hover:text-white-00">
+                  <button
+                    key={opt.key}
+                    type="button"
+                    onClick={() => setFilter(opt.key)}
+                    aria-pressed={isActive}
+                    className="relative py-[9px] px-[2px] bg-transparent font-jetbrain uppercase tracking-[0.05em] font-semibold text-[12.5px] whitespace-nowrap rounded-none border-0 cursor-pointer hover:text-white-00"
+                  >
                     <span className="transition-colors duration-200" style={{ color: isActive ? "white-01" : "gray-02" }}>
                       {opt.label}
                     </span>
@@ -141,7 +147,6 @@ export default function OpenPositions() {
             </motion.div>
           )}
         </AnimatePresence>
-
       </div>
     </section>
   );

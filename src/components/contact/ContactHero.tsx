@@ -1,5 +1,5 @@
-import Badge from "@/components/Badge";
-import Title from "../Title";
+import Badge from "@/components/common/Badge";
+import Title from "../common/HeroTitle";
 import Reveal from "../reveal";
 
 const GRID_LINES = "repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px), repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px)";
@@ -16,7 +16,7 @@ export default function ContactHero() {
           <Badge label="get in touch" />
         </Reveal>
         <Reveal delay={0.1}>
-          <Title title="Let&apos;s talk about your project." long={1000} />
+          <Title title="Let's talk about your project." long={1000} />
         </Reveal>
         <Reveal delay={0.2}>
           <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">Tell us a bit about what you need. We reply to every message personally, usually within one business day.</p>

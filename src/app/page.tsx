@@ -1,4 +1,4 @@
-import Badge from "@/components/Badge";
+import Badge from "@/components/common/Badge";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
@@ -14,7 +14,7 @@ import RollingNumber from "@/components/RollingNumber";
 import Reveal from "@/components/reveal";
 import ProjectCard from "@/components/ProjectCard";
 import projectData from "@/data/projectData";
-import Title from "@/components/Title";
+import Title from "@/components/common/HeroTitle";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Orb from "@/components/Orb";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";

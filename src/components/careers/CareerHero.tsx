@@ -1,6 +1,6 @@
-import Badge from "@/components/Badge";
+import Badge from "@/components/common/Badge";
 import Reveal from "../reveal";
-import Title from "../Title";
+import Title from "../common/HeroTitle";
 
 const GRID_LINES = "repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px), repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px)";
 
@@ -19,9 +19,7 @@ const CareerHero = () => {
           <Title title="Build the work, not just a job." long={700} />
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">
-            We are a small, remote-friendly team out of Dhaka shipping real products for real clients. If you like ownership over busywork, we would like to hear from you.
-          </p>
+          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">We are a small, remote-friendly team out of Dhaka shipping real products for real clients. If you like ownership over busywork, we would like to hear from you.</p>
         </Reveal>
       </div>
     </section>
