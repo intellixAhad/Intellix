@@ -25,9 +25,9 @@ const HeroStatCard = ({ value, tag, variant }: CardStat) => {
         height="15"
         fill="none"
         stroke="#F5F5F2"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <polyline points="8 6 2 12 8 18"></polyline>
         <polyline points="16 6 22 12 16 18"></polyline>

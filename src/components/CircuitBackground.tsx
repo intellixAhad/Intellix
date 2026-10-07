@@ -7,8 +7,8 @@ type Branch = { d: string; node: Point };
 type Trace = { d: string; end: Point; color: string; core: string; branches: Branch[] };
 type Layout = { viewBox: string; traces: Trace[] };
 
-const BLUE = { color: "#38bdf8", core: "#e0f2fe" };
-const GREEN = { color: "#34d399", core: "#d1fae5" };
+const BLUE = { color: "#a1a1aa", core: "#fafafa" };
+const GREEN = { color: "#d4d4d8", core: "#ffffff" };
 
 /** Desktop: traces enter from the left/right edges and converge on the headline. */
 const DESKTOP: Layout = {
@@ -25,11 +25,11 @@ const DESKTOP: Layout = {
     },
     {
       ...GREEN,
-      d: "M 1450 220 H 1290 L 1210 300 H 1110 L 1030 380 H 970",
-      end: [970, 380],
+      d: "M 1450 400 H 1290 L 1210 480 H 1130 L 1070 540 H 930",
+      end: [930, 540],
       branches: [
-        { d: "M 1360 220 V 160", node: [1360, 160] },
-        { d: "M 1160 300 V 240 H 1120", node: [1120, 240] },
+        { d: "M 1360 400 V 340", node: [1360, 340] },
+        { d: "M 1170 480 V 420 H 1130", node: [1130, 420] },
       ],
     },
   ],
@@ -53,7 +53,7 @@ const MOBILE: Layout = {
   ],
 };
 
-const RUN_MS = 2000; // time for one pulse to travel the trace
+const RUN_MS = 1500; // time for one pulse to travel the trace
 const PAUSE_MS = 3000; // average pause between runs
 const JITTER_MS = 1500; // pause is randomised within PAUSE_MS ± JITTER_MS
 

@@ -1,7 +1,7 @@
-import Badge from "@/components/Badge";
+import Badge from "@/components/common/Badge";
 import Reveal from "../reveal";
 import JumpSectionButton from "./JumpSectionButton";
-import Title from "../Title";
+import Title from "../common/HeroTitle";
 
 const GRID_LINES = "repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px), repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px)";
 
@@ -17,10 +17,12 @@ export default function ServiceHero() {
           <Badge label="what we offer" />
         </Reveal>
         <Reveal delay={0.1}>
-          <Title title="Everything your product needs, under one roof." long={1000}/>
+          <Title title="Everything your product needs, under one roof." long={1000} />
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">Intellix pairs full-stack web development with in-house design, video, and back-office support — so you can brief one team instead of coordinating five freelancers. Here's exactly what each service covers.</p>
+          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">
+            Intellix pairs full-stack web development with in-house design, video, and back-office support — so you can brief one team instead of coordinating five freelancers. Here's exactly what each service covers.
+          </p>
         </Reveal>
         <div className="mt-2 flex justify-center w-full">
           <JumpSectionButton />

@@ -266,7 +266,7 @@ export default function Orb({ hue = 0, saturation = 0, hoverIntensity = 0.2, rot
         const hoverIntensityLocation = gl.getUniformLocation(program, "hoverIntensity");
 
         function resize() {
-          if (!container) return;
+          if (!container || !gl) return;
           const dpr = window.devicePixelRatio || 1;
           const w = container.clientWidth;
           const h = container.clientHeight;

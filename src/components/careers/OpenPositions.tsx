@@ -3,67 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import FadeIn from "@/components/motions/FadeIn";
 import HoverLift from "@/components/motions/HoverLift";
 import { EASE } from "@/components/motions/easing";
 import Reveal from "../reveal";
-import Badge from "../Badge";
+import Badge from "../common/Badge";
+import { roles, RoleTag, filterOptions } from "@/data/CareerData";
+import SectionTitle from "../common/SectionTitle";
 
-type RoleTag = "eng" | "creative" | "ops";
-
-const filterOptions: { key: "all" | RoleTag; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "eng", label: "Engineering" },
-  { key: "creative", label: "Creative" },
-  { key: "ops", label: "Operations" },
-];
-
-const roles: {
-  tag: RoleTag;
-  title: string;
-  tags: string[];
-  icon: React.ReactNode;
-}[] = [
-  // {
-  //   tag: "eng",
-  //   title: "Frontend Developer",
-  //   tags: ["Engineering", "Remote · Full-time", "2+ yrs"],
-  //   icon: (
-  //     <>
-  //       <polyline points="16 18 22 12 16 6" />
-  //       <polyline points="8 6 2 12 8 18" />
-  //     </>
-  //   ),
-  // },
-  // {
-  //   tag: "creative",
-  //   title: "Graphic Designer",
-  //   tags: ["Creative", "Dhaka · Full-time", "1+ yrs"],
-  //   icon: (
-  //     <>
-  //       <circle cx={12} cy={12} r={10} />
-  //       <circle cx={12} cy={12} r={4} />
-  //     </>
-  //   ),
-  // },
-  // {
-  //   tag: "creative",
-  //   title: "Video Editor",
-  //   tags: ["Creative", "Remote · Full-time", "1+ yrs"],
-  //   icon: (
-  //     <>
-  //       <polygon points="23 7 16 12 23 17 23 7" />
-  //       <rect x={1} y={5} width={15} height={14} rx={2} />
-  //     </>
-  //   ),
-  // },
-  // {
-  //   tag: "ops",
-  //   title: "BPO Associate",
-  //   tags: ["Operations", "Dhaka · Full-time", "Entry-level"],
-  //   icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
-  // },
-];
 
 export default function OpenPositions() {
   const [filter, setFilter] = useState<"all" | RoleTag>("all");
@@ -77,7 +23,7 @@ export default function OpenPositions() {
             <Badge label="Available positions" />
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Currently we are recruiting</h2>
+            <SectionTitle title="Currently we are recruiting" />
           </Reveal>
 
           <Reveal delay={0.2}>
@@ -85,7 +31,13 @@ export default function OpenPositions() {
               {filterOptions.map((opt) => {
                 const isActive = filter === opt.key;
                 return (
-                  <button key={opt.key} type="button" onClick={() => setFilter(opt.key)} aria-pressed={isActive} className="relative py-[9px] px-[2px] bg-transparent font-jetbrain uppercase tracking-[0.05em] font-semibold text-[12.5px] whitespace-nowrap rounded-none border-0 cursor-pointer hover:text-white-00">
+                  <button
+                    key={opt.key}
+                    type="button"
+                    onClick={() => setFilter(opt.key)}
+                    aria-pressed={isActive}
+                    className="relative py-[9px] px-[2px] bg-transparent font-jetbrain uppercase tracking-[0.05em] font-semibold text-[12.5px] whitespace-nowrap rounded-none border-0 cursor-pointer hover:text-white-00"
+                  >
                     <span className="transition-colors duration-200" style={{ color: isActive ? "white-01" : "gray-02" }}>
                       {opt.label}
                     </span>
@@ -141,7 +93,6 @@ export default function OpenPositions() {
             </motion.div>
           )}
         </AnimatePresence>
-
       </div>
     </section>
   );
