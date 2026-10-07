@@ -418,7 +418,7 @@ const page = () => {
         </div>
       </section>
 
-      <section id="process" className="relative p-[92px_clamp(20px,5vw,64px)_46px]">
+      <section id="process" className="relative overflow-hidden p-[92px_clamp(20px,5vw,64px)_46px]">
         <div aria-hidden="true" className="pointer-events-none absolute -right-15 -top-12.5 h-90 w-90 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-15 -left-12.5 h-100 w-100 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
