@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "intellix-project-nextjs",
+  "compatibility_date": "2026-10-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "not_found_handling": "none",
+  },
+  "services": [
+    {
+      "binding": "RESPONSE_STORE",
+      "service": "intellix-project-nextjs-response-store",
+    },
+  ],
+}

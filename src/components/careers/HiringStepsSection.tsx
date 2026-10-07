@@ -10,7 +10,7 @@ const HiringStepsSection = () => {
   return (
     <section id="hiringprocess" className="p-[46px_clamp(20px,5vw,64px)]">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10 gap-2 md:gap-4 flex flex-col items-start">
+        <div className="mb-6 md:mb-10 gap-3 md:gap-4 flex flex-col items-start">
           <Reveal y={12}>
             <Badge label="Our Perks" />
           </Reveal>

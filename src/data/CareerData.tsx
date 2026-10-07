@@ -65,3 +65,59 @@ export const hiringStepsData = [
     description: "We move fast once there's match, with a clear offer and start date",
   },
 ];
+
+export type RoleTag = "eng" | "creative" | "ops";
+
+export const filterOptions: { key: "all" | RoleTag; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "eng", label: "Engineering" },
+  { key: "creative", label: "Creative" },
+  { key: "ops", label: "Operations" },
+];
+
+export const roles: {
+  tag: RoleTag;
+  title: string;
+  tags: string[];
+  icon: React.ReactNode;
+}[] = [
+  {
+    tag: "eng",
+    title: "Frontend Developer",
+    tags: ["Engineering", "Remote · Full-time", "2+ yrs"],
+    icon: (
+      <>
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </>
+    ),
+  },
+  {
+    tag: "creative",
+    title: "Graphic Designer",
+    tags: ["Creative", "Dhaka · Full-time", "1+ yrs"],
+    icon: (
+      <>
+        <circle cx={12} cy={12} r={10} />
+        <circle cx={12} cy={12} r={4} />
+      </>
+    ),
+  },
+  {
+    tag: "creative",
+    title: "Video Editor",
+    tags: ["Creative", "Remote · Full-time", "1+ yrs"],
+    icon: (
+      <>
+        <polygon points="23 7 16 12 23 17 23 7" />
+        <rect x={1} y={5} width={15} height={14} rx={2} />
+      </>
+    ),
+  },
+  {
+    tag: "ops",
+    title: "BPO Associate",
+    tags: ["Operations", "Dhaka · Full-time", "Entry-level"],
+    icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
+  },
+];

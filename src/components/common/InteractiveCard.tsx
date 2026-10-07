@@ -17,7 +17,7 @@ const InteractiveCard = ({ icon, number, title, description }: InteractiveCardPr
       whileHover="hover"
       variants={{ rest: { y: 0, borderColor: "rgba(255, 255, 255, 0.14)" }, hover: { y: -6, borderColor: "rgba(255, 255, 255, 0.28)" } }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden border bg-[#141414] rounded-none py-7 px-6"
+      className="group relative overflow-hidden border bg-[#141414] rounded-none p-5.5"
     >
       <motion.div variants={{ rest: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 1.15 } }} transition={{ duration: 0.5, ease: "easeOut" }} className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-white-01/6 blur-3xl" />
 

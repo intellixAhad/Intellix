@@ -7,9 +7,9 @@ import Reveal from "../reveal";
 export default function CtaSection() {
   return (
     <section className="p-[46px_clamp(20px,5vw,64px)_92px]">
-      <GlassBox className="gap-2 md:gap-4 flex flex-col items-center">
+      <GlassBox className="gap-3 md:gap-4 flex flex-col items-center">
         <Reveal delay={0.1}>
-          <SectionTitle title="Don't see the right role?" />
+          <SectionTitle title="Don't see the right role?" className="text-center" />
         </Reveal>
         <Reveal delay={0.2}>
           <SectionDescription description="We're growing quickly. Reach out anyway — tell us what you're good at and we'll keep you in mind." className="text-center" />
