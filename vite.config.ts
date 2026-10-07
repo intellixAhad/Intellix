@@ -19,13 +19,7 @@ export default defineConfig({
       },
       defineEncryptionKey: "process.env.VITE_RSC_ENCRYPTION_KEY",
     }),
-    cloudflare({
-      experimental: {
-        newConfig: {
-          cfBuildOutput: true,
-        },
-      },
-    }),
+    cloudflare(),
     tailwindcss(),
   ],
 });
