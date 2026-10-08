@@ -1,3 +1,5 @@
+import { type FaqItem } from "@/components/contact/ContactFaq";
+
 export const servicesData = [
   {
     title: "Web Development",
@@ -107,6 +109,70 @@ export const IndustryData = [
         <rect x="10" y="6" width="4" height="15"></rect>
         <rect x="17" y="9" width="4" height="12"></rect>
       </svg>
+    ),
+  },
+];
+
+export const FAQS: FaqItem[] = [
+  {
+    q: "What services does Intellix provide?",
+    a: "We offer web development, graphic design, video editing, and BPO (back-office) services, along with our own in-house products like Verbosa.ai.",
+  },
+  {
+    q: "Do you work with startups as well as established businesses?",
+    a: "Yes. We work with early-stage startups, growing businesses, and established companies — tailoring our process and team size to fit your budget and timeline.",
+  },
+  {
+    q: "What does your project process look like?",
+    a: "We follow four stages: Discover, Design, Build, and Launch &amp; Support — with regular check-ins so you always know where your project stands.",
+  },
+  {
+    q: "Do you work with clients outside Bangladesh?",
+    a: "Yes. We're a remote-first team based in Dhaka, and we regularly work with clients around the world over video calls, chat, and shared project boards.",
+  },
+  {
+    q: "How do I get a quote for my project?",
+    a: "Fill out the contact form below with a bit of detail about your project, and our team will get back to you with next steps and a proposal.",
+  },
+];
+
+export const IntellixDeteails = [
+  {
+    label: "EMAIL",
+    value: "hello@intellixsolutions.co",
+    icon: (
+      <>
+        <path d="M22 6c0 1.1-.9 2-2 2H4a2 2 0 0 1-2-2" />
+        <path d="M2 6l10 7L22 6" />
+        <rect x={2} y={4} width={20} height={16} rx={0} />
+      </>
+    ),
+  },
+  {
+    label: "PHONE",
+    value: "01973336001",
+    icon: (
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    ),
+  },
+  {
+    label: "LOCATION",
+    value: "Dhaka, Bangladesh",
+    icon: (
+      <>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx={12} cy={10} r={3} />
+      </>
+    ),
+  },
+  {
+    label: "RESPONSE TIME",
+    value: "Within 1 business day",
+    icon: (
+      <>
+        <circle cx={12} cy={12} r={10} />
+        <polyline points="12 6 12 12 16 14" />
+      </>
     ),
   },
 ];

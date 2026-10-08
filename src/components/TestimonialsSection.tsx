@@ -1,6 +1,8 @@
-import Badge from "@/components/common/Badge"; // adjust to your Badge's actual path
+import Badge from "@/components/common/Badge";
 import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
 import Reveal from "./motions/reveal";
+import SectionTitle from "./common/SectionTitle";
+import { StaggerGroup, StaggerItem } from "./motions/StaggerReveal";
 
 const testimonials: TestimonialCardProps[] = [
   {
@@ -26,21 +28,23 @@ const testimonials: TestimonialCardProps[] = [
 export default function TestimonialsSection() {
   return (
     <section className="p-[46px_clamp(20px,5vw,64px)]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
         <div className="flex flex-col items-start gap-2 md:gap-4">
           <Reveal y={12}>
             <Badge label="client voices" />
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">What partners say about working with us.</h2>
+            <SectionTitle title="What partners say about working with us." />
           </Reveal>
         </div>
 
-        <Reveal delay={0.2} className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 mt-14">
+        <StaggerGroup className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {testimonials.map((t) => (
-            <TestimonialCard key={t.name} {...t} />
+            <StaggerItem key={t.name} className="h-full">
+              <TestimonialCard {...t} />
+            </StaggerItem>
           ))}
-        </Reveal>
+        </StaggerGroup>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useId, useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { StaggerItem } from "../motions/StaggerReveal";
 
 export interface FaqItem {
   q: string;
@@ -19,7 +20,7 @@ export default function ContactFaq({ items }: { items: FaqItem[] }) {
         const panelId = `${baseId}-panel-${i}`;
 
         return (
-          <div key={item.q} className="border border-white/[0.14] bg-[#141414] px-5.5 py-5">
+          <StaggerItem key={item.q} className="border border-white/[0.14] bg-[#141414] px-5.5 py-5">
             <h3>
               <button type="button" onClick={() => setOpen(isOpen ? null : i)} aria-expanded={isOpen} aria-controls={panelId} className="group flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left">
                 <span className="font-jetbrain text-[17px] font-semibold text-white-01 tracking-tighter transition-colors group-hover:text-white">{item.q}</span>
@@ -36,7 +37,7 @@ export default function ContactFaq({ items }: { items: FaqItem[] }) {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </StaggerItem>
         );
       })}
     </div>

@@ -7,7 +7,7 @@ export interface TestimonialCardProps {
 
 export default function TestimonialCard({ quote, name, date, initials = "?" }: TestimonialCardProps) {
   return (
-    <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-6.5">
+    <div className="relative overflow-hidden border border-white/[0.14] bg-[#141414] px-6 py-6.5 h-full">
       <svg className="pointer-events-none absolute -right-9 -bottom-18 opacity-[0.02]" viewBox="0 0 26 26" width="200" height="200" fill="none" stroke="#F5F5F2" strokeWidth="1.4" aria-hidden="true">
         <path d="M7 15h3l2-4V7H5v6h3z" />
         <path d="M15 15h3l2-4V7h-7v6h3z" />
