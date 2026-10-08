@@ -1,5 +1,5 @@
 import Badge from "@/components/common/Badge";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 import JumpSectionButton from "./JumpSectionButton";
 import Title from "../common/HeroTitle";
 

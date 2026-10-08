@@ -1,22 +1,22 @@
 import Badge from "@/components/common/Badge";
 import Image from "next/image";
-import Button from "@/components/Button";
+import Button from "@/components/common/Button";
 import Link from "next/link";
-import CircuitBackground from "@/components/CircuitBackground";
-import ClientTicker from "@/components/ClientTicker";
+import CircuitBackground from "@/components/common/CircuitBackground";
+import ClientTicker from "@/components/home/ClientTicker";
 import ServiceCard from "@/components/ServiceCard";
 import { serviceIcons } from "@/data/serviceIcons";
-import IndustryCard from "@/components/IndustryCard";
+import IndustryCard from "@/components/home/IndustryCard";
 import { IndustryIcons } from "@/data/IndustryIcons";
-import ProductAnimation from "@/components/ProductAnimation";
+import ProductAnimation from "@/components/home/ProductAnimation";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
-import RollingNumber from "@/components/RollingNumber";
-import Reveal from "@/components/reveal";
-import ProjectCard from "@/components/ProjectCard";
+import RollingNumber from "@/components/common/RollingNumber";
+import Reveal from "@/components/motions/reveal";
+import ProjectCard from "@/components/home/ProjectCard";
 import projectData from "@/data/projectData";
 import Title from "@/components/common/HeroTitle";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Orb from "@/components/Orb";
+import Orb from "@/components/common/Orb";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";
 
 const stats: {

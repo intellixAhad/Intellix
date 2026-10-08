@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import BrandLogo from "./BrandLogo";
-import Button from "@/components/Button";
-import { useNavVisibility } from "@/components/NavVisibilityProvider";
+import Button from "@/components/common/Button";
+import { useNavVisibility } from "@/components/common/NavVisibilityProvider";
 
 interface NavLink {
   label: string;

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useNavVisibility } from "@/components/NavVisibilityProvider";
+import { useNavVisibility } from "@/components/common/NavVisibilityProvider";
 
 interface NavItem {
   id: string;

@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SERVICES, validateContact, type ContactErrors, type ContactField } from "@/data/contact";
-import Button from "@/components/Button";
+import Button from "@/components/common/Button";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
