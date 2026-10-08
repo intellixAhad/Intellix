@@ -33,16 +33,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" data-scroll-behavior="smooth" className={`${playfair.variable} ${plex.variable} ${jetbrains.variable} h-full antialiased`}>
       <body className="bg-black-01 text-white-01 antialiased">
         <div className="relative min-h-screen bg-black-01">
-          <main className="relative z-10">
-            {/* <IntellixIntro> */}
-            <NavVisibilityProvider>
-              <Navbar />
+          {/* <IntellixIntro> */}
+          <NavVisibilityProvider>
+            <Navbar />
+            <main className="relative z-10 overflow-hidden">
               <div className="pointer-events-none fixed inset-0 -z-100 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1.5px)] bg-size-[40px_40px]" aria-hidden="true" />
               {children}
-            </NavVisibilityProvider>
-            {/* </IntellixIntro> */}
-            <Footer />
-          </main>
+            </main>
+          </NavVisibilityProvider>
+          {/* </IntellixIntro> */}
+          <Footer />
         </div>
       </body>
     </html>

@@ -5,7 +5,7 @@ import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
 
 const WhyIntellixSection = () => {
   return (
-    <section id="why" className="p-[46px_clamp(20px,5vw,64px)_92px]">
+    <section id="why-intellix" className="p-[46px_clamp(20px,5vw,64px)_92px]">
       <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
         <div className="flex flex-col items-start gap-2 md:gap-4">
           <Reveal y={12}>
