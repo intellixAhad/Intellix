@@ -1,7 +1,7 @@
 import InfoRow from "@/components/about/InfoRow";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 const CALENDAR_ICON = (
   <>

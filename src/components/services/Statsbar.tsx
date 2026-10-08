@@ -1,4 +1,4 @@
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 interface Stat {
   value: string;

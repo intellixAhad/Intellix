@@ -5,11 +5,10 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import HoverLift from "@/components/motions/HoverLift";
 import { EASE } from "@/components/motions/easing";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 import Badge from "../common/Badge";
 import { roles, RoleTag, filterOptions } from "@/data/CareerData";
 import SectionTitle from "../common/SectionTitle";
-
 
 export default function OpenPositions() {
   const [filter, setFilter] = useState<"all" | RoleTag>("all");

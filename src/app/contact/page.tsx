@@ -4,8 +4,8 @@ import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";
-import Reveal from "@/components/reveal";
-import Orb from "@/components/Orb";
+import Reveal from "@/components/motions/reveal";
+import Orb from "@/components/common/Orb";
 
 export const metadata: Metadata = {
   title: "Contact | Intellix",

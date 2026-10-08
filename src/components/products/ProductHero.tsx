@@ -1,6 +1,6 @@
 import Badge from "@/components/common/Badge";
-import Reveal from "../reveal";
-import Button from "../Button";
+import Reveal from "../motions/reveal";
+import Button from "../common/Button";
 import Title from "../common/HeroTitle";
 
 const GRID_LINES = "repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px), repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px)";

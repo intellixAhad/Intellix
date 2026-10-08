@@ -1,10 +1,9 @@
 import Badge from "../common/Badge";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 import InteractiveCard from "../common/InteractiveCard";
 import { hiringStepsData } from "@/data/CareerData";
 import SectionTitle from "../common/SectionTitle";
 import SectionDescription from "../common/SectionDescription";
-
 
 const HiringStepsSection = () => {
   return (
@@ -15,16 +14,16 @@ const HiringStepsSection = () => {
             <Badge label="Our Perks" />
           </Reveal>
           <Reveal delay={0.1}>
-            <SectionTitle title="Why people stay"/>
+            <SectionTitle title="Why people stay" />
           </Reveal>
           <Reveal delay={0.2}>
-            <SectionDescription description="No layers of process between you and the work. Small teams, direct client exposure, and room to grow past your job title."/>
+            <SectionDescription description="No layers of process between you and the work. Small teams, direct client exposure, and room to grow past your job title." />
           </Reveal>
         </div>
         <Reveal delay={0.3} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {hiringStepsData.map(({ title, description }, index) => (
-              <InteractiveCard key={index} title={title} description={description} />
-            ))}
+          {hiringStepsData.map(({ title, description }, index) => (
+            <InteractiveCard key={index} title={title} description={description} />
+          ))}
         </Reveal>
       </div>
     </section>

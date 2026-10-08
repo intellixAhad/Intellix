@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 export interface ServiceFeature {
   label: string;
@@ -24,37 +24,14 @@ interface ServiceSectionProps {
 
 function CheckIcon() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      width={18}
-      height={18}
-      fill="none"
-      stroke="#9A9A94"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="mt-0.5 shrink-0"
-    >
+    <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="#9A9A94" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
       <circle cx={12} cy={12} r={9} />
       <polyline points="8 12 11 15 16 9" />
     </svg>
   );
 }
 
-export default function ServiceSection({
-  id,
-  index,
-  icon,
-  title,
-  description,
-  features,
-  tags,
-  ctaLabel,
-  ctaHref = "/contact",
-  visual,
-  reverse = false,
-  withGridTexture = false,
-}: ServiceSectionProps) {
+export default function ServiceSection({ id, index, icon, title, description, features, tags, ctaLabel, ctaHref = "/contact", visual, reverse = false, withGridTexture = false }: ServiceSectionProps) {
   const content = (
     <div>
       <Reveal y={16}>
@@ -100,10 +77,7 @@ export default function ServiceSection({
       )}
 
       <Reveal delay={0.25}>
-        <a
-          href={ctaHref}
-          className="group inline-flex items-center gap-2 border-[1.5px] border-white bg-white px-6 py-3.5 font-jetbrain text-[13.5px] font-semibold uppercase tracking-[.04em] text-black-01 transition-all duration-300 hover:bg-transparent hover:text-white"
-        >
+        <a href={ctaHref} className="group inline-flex items-center gap-2 border-[1.5px] border-white bg-white px-6 py-3.5 font-jetbrain text-[13.5px] font-semibold uppercase tracking-[.04em] text-black-01 transition-all duration-300 hover:bg-transparent hover:text-white">
           {ctaLabel}
           <svg viewBox="0 0 24 24" width={15} height={15} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
             <line x1={5} y1={12} x2={19} y2={12} />
@@ -127,16 +101,11 @@ export default function ServiceSection({
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
           style={{
-            backgroundImage:
-              "repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 64px)",
+            backgroundImage: "repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 64px)",
           }}
         />
       )}
-      <div
-        className={`relative grid grid-cols-1 items-center gap-10 lg:gap-14 ${
-          reverse ? "lg:grid-cols-[0.95fr_1.05fr]" : "lg:grid-cols-[1.05fr_0.95fr]"
-        }`}
-      >
+      <div className={`relative grid grid-cols-1 items-center gap-10 lg:gap-14 ${reverse ? "lg:grid-cols-[0.95fr_1.05fr]" : "lg:grid-cols-[1.05fr_0.95fr]"}`}>
         {reverse ? (
           <>
             {visualBlock}

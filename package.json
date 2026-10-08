@@ -4,44 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "vite build",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "dev:vinext": "vite dev --port 3001",
-    "build:vinext": "vite build",
-    "start:vinext": "vite preview",
-    "deploy:vinext": "vinext-cloudflare deploy --warm-cache",
-    "deploy:response-store": "cf deploy --prebuilt --mode production --worker intellix-project-nextjs-response-store"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@cloudflare/workers-response-store": "^1.0.1",
-    "@vinext/cloudflare": "^1.0.1",
-    "cf": "^1.0.0-beta.12",
     "framer-motion": "^13.4.4",
     "next": "16.3.5",
     "nodemailer": "^10.0.11",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "react-server-dom-webpack": "19.2.8",
-    "vinext": "^1.0.1"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.63.0",
     "@tailwindcss/postcss": "^4",
-    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^6.1.2",
-    "@vitejs/plugin-rsc": "^0.5.36",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "vite": "^8.3.3",
-    "wrangler": "^4.148.0"
+    "typescript": "^5"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "main": "index.js",

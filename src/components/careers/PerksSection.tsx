@@ -1,5 +1,5 @@
 import Badge from "@/components/common/Badge";
-import Reveal from "@/components/reveal";
+import Reveal from "@/components/motions/reveal";
 import InteractiveCard from "@/components/common/InteractiveCard";
 import { PerksData } from "@/data/CareerData";
 import SectionTitle from "../common/SectionTitle";

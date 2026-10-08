@@ -2,7 +2,7 @@
 
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import FloatingBlob from "@/components/motions/FloatingBlob";
-import RollingNumber from "@/components/RollingNumber";
+import RollingNumber from "@/components/common/RollingNumber";
 
 const stats: {
   prefix?: string;

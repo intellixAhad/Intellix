@@ -1,35 +1,21 @@
 import Badge from "@/components/common/Badge";
 import Image from "next/image";
-import Button from "@/components/Button";
+import Button from "@/components/common/Button";
 import Link from "next/link";
-import CircuitBackground from "@/components/CircuitBackground";
-import ClientTicker from "@/components/ClientTicker";
-import ServiceCard from "@/components/ServiceCard";
-import { serviceIcons } from "@/data/serviceIcons";
-import IndustryCard from "@/components/IndustryCard";
-import { IndustryIcons } from "@/data/IndustryIcons";
-import ProductAnimation from "@/components/ProductAnimation";
-import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
-import RollingNumber from "@/components/RollingNumber";
-import Reveal from "@/components/reveal";
-import ProjectCard from "@/components/ProjectCard";
-import projectData from "@/data/projectData";
-import Title from "@/components/common/HeroTitle";
+import Reveal from "@/components/motions/reveal";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Orb from "@/components/Orb";
+import Orb from "@/components/common/Orb";
 import ContactFaq, { type FaqItem } from "@/components/contact/ContactFaq";
-
-const stats: {
-  prefix?: string;
-  number: number;
-  suffix?: string;
-  label: string;
-}[] = [
-  { number: 30, suffix: "+", label: "Projects Delivered" },
-  { number: 12, suffix: "+", label: "Clients Served" },
-  { number: 7, suffix: "+", label: "Team Members" },
-  { number: 4, label: "Core Service Line" },
-];
+import Hero from "@/components/home/Hero";
+import StatisticsBox from "@/components/common/StatisticsBox";
+import ServiceSection from "@/components/home/ServiceSection";
+import IndustryFieldsSections from "@/components/home/IndustryFieldsSections";
+import ProductSection from "@/components/home/ProductSection";
+import ProjectSection from "@/components/home/ProjectSection";
+import SectionTitle from "@/components/common/SectionTitle";
+import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
+import WhyIntellixSection from "@/components/home/WhyIntellixSection";
+import TechnologySection from "@/components/home/TechnologySection";
 
 const FAQS: FaqItem[] = [
   {
@@ -98,327 +84,23 @@ const page = () => {
 
   return (
     <>
-      <section id="top" className="relative flex min-h-svh flex-col items-center justify-between overflow-hidden px-[clamp(20px,5vw,64px)] py-6 md:py-0 md:pb-16">
-        <CircuitBackground className="-z-10" />
-        <div aria-hidden="true" className="absolute -top-17.5 -right-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.14),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div aria-hidden="true" className="absolute -bottom-20 -left-22.5 h-120 w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-        <div className="absolute right-[clamp(20px,5vw,64px)] top-30 hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">BUILD · DESIGN · AUTOMATE</div>
-        <div className="absolute bottom-10 right-[clamp(20px,5vw,64px)] hidden [writing-mode:vertical-rl] font-jetbrain text-[11px] font-semibold tracking-[0.35em] text-gray-01 lg:block">SOFTWARE THAT SHIPS</div>
+      <Hero />
 
-        <div className="mx-auto flex w-full max-w-7xl flex-1 items-center justify-center py-12 md:py-16">
-          <div className="flex w-full flex-col items-center justify-center">
-            <Reveal y={12}>
-              <Badge label="Full-service software Agency" />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <Title title="Software, design & media engineered for real growth." long={1000} />
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mb-9 max-w-225 text-center text-[16px] leading-[1.65] text-gray-02 sm:text-[18px]">
-                Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including <strong className="text-white-01">Verbosa.ai</strong>
-              </p>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="flex flex-wrap gap-3.5 mb-7">
-                <Button title="start a project" link="/contact" variant="primary" />
-                <Button title="explore Verbosa.ai" link="/contact" variant="secondary" />
-              </div>
-            </Reveal>
-          </div>
-        </div>
+      <StatisticsBox N1={28} P1="+" T1="Projects Delivered" N2={12} P2="+" T2="Clients Served" N3={10} P3="+" T3="Team Members" N4={4} T4="Core Service Line" />
 
-        <div className="mx-auto w-full max-w-360 py-5 sm:py-8.5">
-          <p className="mb-5.5 text-center text-sm font-semibold tracking-[.15em] text-gray-02 sm:text-base font-jetbrain">Our Trusted Partners</p>
-          <ClientTicker />
-        </div>
-      </section>
+      <ServiceSection />
 
-      <section className="border-t border-b border-white/14 py-17.5 px-[clamp(20px,5vw,64px)] z-1 bg-white/3 backdrop-blur">
-        <StaggerGroup className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <StaggerItem key={stat.label}>
-              <RollingNumber number={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
-              <div className="text-[14px] text-gray-02 mt-2 tracking-[0.02em] text-center font-jetbrain">{stat.label}</div>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </section>
+      <IndustryFieldsSections />
 
-      <section id="services" className="p-[92px_clamp(20px,5vw,64px)_46px]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-15 text-left">
-            <Reveal y={12}>
-              <Badge label="what we do" />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Everything you need to launch, look great, and scale operations.</h2>
-            </Reveal>
-          </div>
+      <ProductSection />
 
-          <Reveal delay={0.2} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {serviceIcons.map(({ title, description, icon }, index) => (
-              <ServiceCard key={title} number={String(index + 1)} title={title} description={description} icon={icon} />
-            ))}
-          </Reveal>
+      <ProjectSection />
 
-          <Reveal delay={0.3} className="flex justify-center mt-11">
-            <Button title="Learn More" link="/services" variant="primary" />
-          </Reveal>
-        </div>
-      </section>
+      <WhyIntellixSection />
 
-      <section className="p-[46px_clamp(20px,5vw,64px)_46px]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-15 text-left">
-            <Badge label="industries we support" />
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Built for founders and teams across every sector.</h2>
-          </div>
+      <TechnologySection />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-            {IndustryIcons.map(({ title, icon }, index) => (
-              <IndustryCard key={index} title={title} icon={icon} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="products" className="p-[46px_clamp(20px,5vw,64px)_46px]">
-        <div className="rounded-none bg-[#141414] max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 rounded-none bg-transparent px-[clamp(28px,5vw,64px)] py-14">
-            <div>
-              <Badge label="our product" />
-              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Meet Verbosa.ai</h2>
-              <p className="my-6.5 text-[16px] text-gray-02">Verbosa.ai is our in-house AI sales automation platform — voice calls, chat, email, and lead generation working together as one AI sales team. It&apos;s built and maintained by the same team behind Intellix.</p>
-              <div className="mb-7.5 flex gap-5 flex-wrap">
-                <span className="text-[12px] text-gray-01">AI-Powered</span>
-                <span className="text-[12px] text-gray-01">Built by Intellix</span>
-                <span className="text-[12px] text-gray-01">Made in Bangladesh</span>
-              </div>
-              <div className="flex flex-wrap gap-3.5">
-                <Button title="Visit Verbosa.ai" link="https://verbosa.ai/" variant="primary" />
-                <Button title="Full Product Page" link="/contact" variant="secondary" />
-              </div>
-            </div>
-
-            <ProductAnimation />
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="p-[46px_clamp(20px,5vw,64px)_46px]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-11 flex flex-wrap items-end justify-between gap-5">
-            <div>
-              <Badge label="recent projects" />
-              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A look at what we&apos;ve been building.</h2>
-            </div>
-            <Button title="view all project" link="/projects" variant="primary" />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5.5 sm:grid-cols-2 lg:grid-cols-3">
-            {projectData.slice(0, 6).map((projectData) => (
-              <ProjectCard key={projectData.title} category={projectData.category} title={projectData.title} description={projectData.description} liveUrl={projectData.liveUrl} image={projectData.image} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="why" className="p-[46px_clamp(20px,5vw,64px)_92px]">
-        <div className="max-w-7xl mx-auto">
-          <div>
-            <Badge label="why intellix" />
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">A team that thinks like a partner, not a vendor.</h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 mt-12">
-            <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
-              <span className="absolute right-[18px] top-4 font-mono text-[12px] text-gray-00">01</span>
-
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-white-01">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                  <polyline points="2 17 12 22 22 17" />
-                  <polyline points="2 12 12 17 22 12" />
-                </svg>
-              </div>
-
-              <div>
-                <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-white-01">Full-Stack Expertise</h3>
-
-                <p className="m-0 text-[14px] leading-[1.6] text-gray-02">From front-end interfaces to back-end systems, our team covers the entire product lifecycle in-house.</p>
-              </div>
-            </div>
-
-            <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
-              <span className="absolute right-[18px] top-4 font-mono text-[12px] text-gray-00">02</span>
-
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-white-01">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
-                </svg>
-              </div>
-
-              <div>
-                <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-white-01">Design-Led Approach</h3>
-
-                <p className="m-0 text-[14px] leading-[1.6] text-gray-02">Every project starts with thoughtful design, because how it looks is as important as how it works.</p>
-              </div>
-            </div>
-
-            <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
-              <span className="absolute right-[18px] top-4 font-mono text-[12px] text-gray-00">03</span>
-
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-white-01">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-
-              <div>
-                <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-white-01">Dedicated Teams</h3>
-
-                <p className="m-0 text-[14px] leading-[1.6] text-gray-02">You get a consistent team that understands your product, not a rotating cast of freelancers.</p>
-              </div>
-            </div>
-
-            <div className="relative flex gap-[18px] border border-white/[0.14] bg-[#141414] p-[26px]">
-              <span className="absolute right-[18px] top-4 font-mono text-[12px] text-gray-00">04</span>
-
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/[0.14] text-white-01">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                  <polyline points="17 6 23 6 23 12" />
-                </svg>
-              </div>
-
-              <div>
-                <h3 className="mb-2 mt-0 font-display text-[17px] font-semibold text-white-01">Built to Scale</h3>
-
-                <p className="m-0 text-[14px] leading-[1.6] text-gray-02">We build on modern, scalable architecture so your product grows without being rebuilt from scratch.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden border-y border-white/[0.14] bg-black-01 p-[92px_clamp(20px,5vw,64px)]">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.035)_0px,rgba(255,255,255,0.035)_1px,transparent_1px,transparent_64px)]" />
-        <div aria-hidden="true" className="pointer-events-none absolute bottom-[-30px] left-[clamp(0px,4vw,48px)] font-mono text-[200px] font-bold leading-none text-white/[0.04]">
-          &lt;/&gt;
-        </div>
-
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-360 mx-auto">
-            <div>
-              <Badge label="tools & technologies" />
-              <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">The stack behind every build.</h2>
-            </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 mt-12">
-              {/* Frontend */}
-              <div className="relative border border-white/[0.14] bg-[#141414] px-5.5 py-7">
-                <span className="absolute right-5 top-[18px] font-mono text-[12px] text-gray-00">01</span>
-
-                <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-white-01">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                </div>
-
-                <h3 className="mb-3.5 mt-0 font-display text-[16.5px] font-semibold text-white-01">Frontend &amp; Web</h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {["React", "Next.js", "TypeScript"].map((item) => (
-                    <span key={item} className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-gray-02">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Backend */}
-              <div className="relative border border-white/[0.14] bg-[#141414] px-5.5 py-7">
-                <span className="absolute right-5 top-[18px] font-mono text-[12px] text-gray-00">02</span>
-
-                <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-white-01">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="6" rx="1" />
-                    <rect x="2" y="15" width="20" height="6" rx="1" />
-                    <line x1="6" y1="6" x2="6.01" y2="6" />
-                    <line x1="6" y1="18" x2="6.01" y2="18" />
-                  </svg>
-                </div>
-
-                <h3 className="mb-3.5 mt-0 font-display text-[16.5px] font-semibold text-white-01">Backend &amp; Infrastructure</h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {["Node.js", "Laravel", "Django"].map((item) => (
-                    <span key={item} className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-gray-02">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Design */}
-              <div className="relative border border-white/[0.14] bg-[#141414] px-5.5 py-7">
-                <span className="absolute right-5 top-[18px] font-mono text-[12px] text-gray-00">03</span>
-
-                <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-white-01">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2a9 9 0 1 0 0 18c1.1 0 2-.7 2-1.8 0-.5-.2-1-.5-1.3-.3-.3-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z" />
-                    <circle cx="7.5" cy="10.5" r="1.1" />
-                    <circle cx="10" cy="7" r="1.1" />
-                    <circle cx="14.5" cy="7.5" r="1.1" />
-                    <circle cx="17" cy="11" r="1.1" />
-                  </svg>
-                </div>
-
-                <h3 className="mb-3.5 mt-0 font-display text-[16.5px] font-semibold text-white-01">Design &amp; Creative</h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {["Figma", "Premiere Pro", "After Effects"].map((item) => (
-                    <span key={item} className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-gray-02">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* CMS */}
-              <div className="relative border border-white/[0.14] bg-[#141414] px-5.5 py-7">
-                <span className="absolute right-5 top-[18px] font-mono text-[12px] text-gray-00">04</span>
-
-                <div className="mb-5 flex h-[46px] w-[46px] items-center justify-center border border-white/[0.14] text-white-01">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="7" height="7" rx="1" />
-                    <rect x="14" y="3" width="7" height="7" rx="1" />
-                    <rect x="3" y="14" width="7" height="7" rx="1" />
-                    <rect x="14" y="14" width="7" height="7" rx="1" />
-                  </svg>
-                </div>
-
-                <h3 className="mb-3.5 mt-0 font-display text-[16.5px] font-semibold text-white-01">CMS &amp; Platforms</h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {["WordPress", "Webflow", "Framer"].map((item) => (
-                    <span key={item} className="border border-white/[0.14] px-3 py-[6px] font-mono text-[12px] text-gray-02">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="process" className="relative p-[92px_clamp(20px,5vw,64px)_46px]">
+      <section id="process" className="relative overflow-hidden p-[92px_clamp(20px,5vw,64px)_46px]">
         <div aria-hidden="true" className="pointer-events-none absolute -right-15 -top-12.5 h-90 w-90 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
 
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-15 -left-12.5 h-100 w-100 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />

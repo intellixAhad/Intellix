@@ -1,8 +1,8 @@
-import Button from "../Button";
+import Button from "../common/Button";
 import GlassBox from "../common/GlassBox";
 import SectionDescription from "../common/SectionDescription";
 import SectionTitle from "../common/SectionTitle";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 export default function CtaSection() {
   return (

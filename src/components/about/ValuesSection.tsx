@@ -2,7 +2,7 @@ import ValueCard from "@/components/about/ValueCard";
 import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 const COMPASS_ICON = (
   <>

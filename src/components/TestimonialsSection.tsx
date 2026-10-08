@@ -1,6 +1,6 @@
 import Badge from "@/components/common/Badge"; // adjust to your Badge's actual path
 import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
-import Reveal from "./reveal";
+import Reveal from "./motions/reveal";
 
 const testimonials: TestimonialCardProps[] = [
   {

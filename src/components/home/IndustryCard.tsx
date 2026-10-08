@@ -26,7 +26,7 @@ const IndustryCard = ({ title, icon }: IndustryCardProps) => {
                                 duration: 0.35,
                                 ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="group relative overflow-hidden border bg-[#141414] rounded-none py-7 px-6 flex flex-col items-center gap-4 justify-center"
+                        className="group relative overflow-hidden border bg-[#141414] rounded-none py-7 px-6 flex flex-col items-center gap-4 justify-center h-full"
                 >
                         <motion.div
                                 variants={{

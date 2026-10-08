@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Reveal from "../reveal";
+import Reveal from "../motions/reveal";
 
 interface Model {
   icon: ReactNode;
