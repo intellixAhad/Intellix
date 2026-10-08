@@ -2,6 +2,7 @@ import Badge from "@/components/common/Badge";
 import Reveal from "../motions/reveal";
 import JumpSectionButton from "./JumpSectionButton";
 import Title from "../common/HeroTitle";
+import SectionDescription from "../common/SectionDescription";
 
 const GRID_LINES = "repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px), repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, transparent 1px, transparent 64px)";
 
@@ -12,7 +13,7 @@ export default function ServiceHero() {
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -left-22.5 h-80 w-80 md:h-120 md:w-120 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.09),rgba(255,255,255,0)_65%)] blur-[50px]" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ backgroundImage: GRID_LINES }} />
 
-      <div className="relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 md:gap-4 text-center">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 md:gap-4 text-center">
         <Reveal y={12}>
           <Badge label="what we offer" />
         </Reveal>
@@ -20,11 +21,9 @@ export default function ServiceHero() {
           <Title title="Everything your product needs, under one roof." long={1000} />
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">
-            Intellix pairs full-stack web development with in-house design, video, and back-office support — so you can brief one team instead of coordinating five freelancers. Here's exactly what each service covers.
-          </p>
+          <SectionDescription description="Intellix pairs full-stack web development with in-house design, video, and back-office support — so you can brief one team instead of coordinating five freelancers. Here's exactly what each service covers." long={1200}/>
         </Reveal>
-        <div className="mt-2 flex justify-center w-full">
+        <div className="flex justify-center w-full">
           <JumpSectionButton />
         </div>
       </div>

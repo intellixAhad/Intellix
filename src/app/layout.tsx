@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import IntellixIntro from "@/components/common/IntellixIntro";
 import "@/components/common/intellix-intro.css";
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components//common/Navbar";
@@ -33,15 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" data-scroll-behavior="smooth" className={`${playfair.variable} ${plex.variable} ${jetbrains.variable} h-full antialiased`}>
       <body className="bg-black-01 text-white-01 antialiased">
         <div className="relative min-h-screen bg-black-01">
-          {/* <IntellixIntro> */}
-          <NavVisibilityProvider>
-            <Navbar />
-            <main className="relative z-10 overflow-hidden">
+          <main className="relative z-10">
+            {/* <IntellixIntro> */}
+            <NavVisibilityProvider>
+              <Navbar />
               <div className="pointer-events-none fixed inset-0 -z-100 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1.5px)] bg-size-[40px_40px]" aria-hidden="true" />
               {children}
-            </main>
-          </NavVisibilityProvider>
-          {/* </IntellixIntro> */}
+            </NavVisibilityProvider>
+            {/* </IntellixIntro> */}
+          </main>
           <Footer />
         </div>
       </body>

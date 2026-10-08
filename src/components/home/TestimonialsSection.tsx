@@ -1,8 +1,8 @@
 import Badge from "@/components/common/Badge";
 import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
-import Reveal from "./motions/reveal";
-import SectionTitle from "./common/SectionTitle";
-import { StaggerGroup, StaggerItem } from "./motions/StaggerReveal";
+import Reveal from "../motions/reveal";
+import SectionTitle from "../common/SectionTitle";
+import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
 
 const testimonials: TestimonialCardProps[] = [
   {
@@ -27,7 +27,7 @@ const testimonials: TestimonialCardProps[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="p-[46px_clamp(20px,5vw,64px)]">
+    <section id="reviews" className="p-[46px_clamp(20px,5vw,64px)]">
       <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
         <div className="flex flex-col items-start gap-2 md:gap-4">
           <Reveal y={12}>

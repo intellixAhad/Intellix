@@ -5,10 +5,10 @@ import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
 
 const ProcessSection = () => {
   return (
-    <section id="our-process" className="relative p-[92px_clamp(20px,5vw,64px)]">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-15 -top-12.5 h-90 w-90 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_65%)] blur-[50px]" />
+    <section id="process" className="relative p-[92px_clamp(20px,5vw,64px)] overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-15 -top-12.5 h-90 w-90 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.11),rgba(255,255,255,0)_25%)] blur-[50px]" />
 
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-15 -left-12.5 h-100 w-100 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-15 -left-12.5 h-100 w-100 rounded-full bg-[radial-gradient(circle_at_40%_40%,rgba(255,255,255,0.08),rgba(255,255,255,0)_45%)] blur-[50px]" />
 
       <svg className="pointer-events-none absolute left-[8%] top-[305] hidden h-1 w-[84%] lg:block" viewBox="0 0 100 1" preserveAspectRatio="none">
         <line x1="0" y1="0.5" x2="100" y2="0.5" stroke="rgba(255,255,255,.08)" strokeWidth="0.6" strokeDasharray="2,2" />

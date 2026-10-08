@@ -8,7 +8,7 @@ import WhyIntellixSection from "@/components/home/WhyIntellixSection";
 import TechnologySection from "@/components/home/TechnologySection";
 import ProcessSection from "@/components/home/ProcessSection";
 import TeamSection from "@/components/home/TeamSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FaqSection from "@/components/home/FaqSection";
 import CareerSection from "@/components/home/CareerSection";
 import ContactSection from "@/components/home/ContactSection";

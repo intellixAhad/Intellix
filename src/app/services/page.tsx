@@ -5,9 +5,9 @@ import ServiceSubNav from "@/components/services/Servicesubnav";
 import ServiceTabs from "@/components/services/Servicetabs";
 import ComparisonTable from "@/components/services/Comparisontable";
 import EngagementModels from "@/components/services/Engagementmodels";
-import ProcessTimeline from "@/components/services/Processtimeline";
-import TestimonialStrip from "@/components/services/Testimonialstrip";
 import ServiceCta from "@/components/services/Servicecta";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import ProcessSection from "@/components/home/ProcessSection";
 
 export const metadata: Metadata = {
   title: "Services | Intellix",
@@ -23,8 +23,8 @@ const page = () => {
       <ServiceTabs />
       <ComparisonTable />
       <EngagementModels />
-      <ProcessTimeline />
-      <TestimonialStrip />
+      <ProcessSection />
+      <TestimonialsSection />
       <ServiceCta />
     </>
   );

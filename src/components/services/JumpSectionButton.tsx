@@ -50,7 +50,7 @@ const JumpSectionButton = () => {
     <Reveal delay={0.3} className="w-full max-w-3xl">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 w-full">
         {JUMP_LINKS.map((link) => (
-          <a key={link.href} href={link.href} className="group flex items-center justify-center gap-2 border border-white/14 bg-[#141414] px-3.5 py-3 transition-colors duration-300 hover:border-white/30">
+          <a key={link.href} href={link.href} className="group flex items-center justify-center gap-2 border border-white/14 bg-white/3 backdrop-blur-md px-3.5 py-3 transition-colors duration-300 hover:border-white/30">
             <svg viewBox="0 0 24 24" width={15} height={15} fill="none" stroke="#F5F5F2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
               {link.icon}
             </svg>
