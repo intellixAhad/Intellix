@@ -15,7 +15,7 @@ const ServiceSection = () => {
             <Badge label="what we do" />
           </Reveal>
           <Reveal delay={0.1}>
-            <SectionTitle title="Everything you need to launch, look great, and scale operations." />
+            <SectionTitle title="Technology that solves problems. Intelligence that drives growth." />
           </Reveal>
         </div>
         <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

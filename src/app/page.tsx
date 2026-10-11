@@ -17,31 +17,18 @@ const page = () => {
   return (
     <>
       <Hero />
-
-      <StatisticsBox N1={28} P1="+" T1="Projects Delivered" N2={12} P2="+" T2="Clients Served" N3={10} P3="+" T3="Team Members" N4={4} T4="Core Service Line" />
-
+      <StatisticsBox N1={75} P1="+" T1="Projects Delivered" N2={50} P2="+" T2="Clients Served" N3={14} P3="+" T3="Team Members" N4={24} P4="h" T4="Support Period" />
       <ServiceSection />
-
-      <IndustryFieldsSections />
-
-      <ProductSection />
-
-      <ProjectSection />
-
       <WhyIntellixSection />
-
       <TechnologySection />
-
       <ProcessSection />
-
-      <TeamSection />
-
+      <IndustryFieldsSections />
+      <ProductSection />
+      <ProjectSection />
+      {/* <TeamSection /> */}
       <TestimonialsSection />
-
       <FaqSection />
-
-      <CareerSection />
-
+      {/* <CareerSection /> */}
       <ContactSection />
     </>
   );

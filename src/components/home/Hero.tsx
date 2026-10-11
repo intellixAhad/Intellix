@@ -17,21 +17,21 @@ const Hero = () => {
 
       <div className="mx-auto flex flex-col w-full max-w-7xl flex-1 items-center justify-center py-8 md:py-12 gap-3 md:gap-4">
         <Reveal y={12}>
-          <Badge label="Full-service software Agency" />
+          <Badge label="SOFTWARE ENGINEERING & AI SOLUTIONS" />
         </Reveal>
         <Reveal delay={0.1}>
-          <Title title="Software, design & media engineered for real growth." long={1000} />
+          <Title title="Build smarter. Automate more. Grow faster." long={1000} />
         </Reveal>
         <Reveal delay={0.2}>
           <SectionDescription
-            description="Intellix is a full-service software agency helping startups and businesses with web development, graphic design, video production, and back-office support — plus our own suite of intelligent products, including Verbosa.ai"
+            description="From custom software and web applications to AI-powered automation and intelligent voice solutions, Intellix helps businesses solve real problems, work smarter, and scale with confidence. We bring technology, creativity, and reliable execution together to turn ideas into practical solutions."
             className="text-center max-w-5xl"
             long={1200}
           />
         </Reveal>
         <Reveal delay={0.3} className="flex flex-wrap gap-3.5 mb-7">
           <Button title="start a project" link="/contact" variant="primary" />
-          <Button title="explore Verbosa.ai" link="/contact" variant="secondary" />
+          <Button title="explore our Product" link="/contact" variant="secondary" />
         </Reveal>
       </div>
 
