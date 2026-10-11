@@ -13,7 +13,7 @@ export default function TestimonialCard({ quote, name, date, initials = "?" }: T
         <path d="M15 15h3l2-4V7h-7v6h3z" />
       </svg>
 
-      <p className="relative mb-5.5 text-[14.5px] leading-[1.7] text-gray-02">{quote}</p>
+      <p className="relative mb-5.5 text-[14.5px] leading-[1.7] text-gray-02 italic">{quote}</p>
 
       <div className="relative flex items-center gap-3">
         <span className="flex h-9.5 w-9.5 items-center justify-center border border-white/[0.14] text-[12px] font-bold text-gray-02">{initials}</span>

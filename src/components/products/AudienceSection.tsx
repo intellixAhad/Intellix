@@ -4,6 +4,8 @@ import AudienceChip from "@/components/products/AudienceChip";
 import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
+import Reveal from "../motions/reveal";
+import SectionTitle from "../common/SectionTitle";
 
 const PHONE_ICON = (
   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z" />
@@ -32,12 +34,16 @@ const audiences = [
 
 export default function AudienceSection() {
   return (
-    <section className="section-pad relative z-1 px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
-      <div className="relative max-w-[1240px] mx-auto">
-        <FadeIn className="max-w-[640px] mb-12 text-left">
-          <Badge label="Who it's for" />
-          <h2 className="font-fraunces text-[34px] font-bold tracking-[-0.01em] text-[#F5F5F2] m-0">Built for teams that live in outbound.</h2>
-        </FadeIn>
+    <section className="p-[46px_clamp(20px,5vw,64px)_46px]">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
+        <div className="flex flex-col items-start gap-2 md:gap-4">
+          <Reveal y={12}>
+            <Badge label="Who it's for" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <SectionTitle title="Built for teams that live in outbound." />
+          </Reveal>
+        </div>
 
         <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {audiences.map((audience) => (

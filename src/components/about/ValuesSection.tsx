@@ -1,8 +1,8 @@
 import ValueCard from "@/components/about/ValueCard";
-import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
 import Reveal from "../motions/reveal";
+import SectionTitle from "../common/SectionTitle";
 
 const COMPASS_ICON = (
   <>
@@ -46,14 +46,14 @@ const values = [
 
 export default function ValuesSection() {
   return (
-    <section className="p-[46px_clamp(20px,5vw,64px)_92px]">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-15 gap-2 md:gap-4 w-full mx-auto flex flex-col">
+    <section className="p-[0px_clamp(20px,5vw,64px)_46px]">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
+        <div className="gap-2 md:gap-4 w-full mx-auto flex flex-col">
           <Reveal y={12}>
             <Badge label="What we value" />
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">The principles behind how we work.</h2>
+            <SectionTitle title="The principles behind how we work." />
           </Reveal>
         </div>
 

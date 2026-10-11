@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import ServiceHero from "@/components/services/ServiceHero";
 import StatsBar from "@/components/services/Statsbar";
-import ServiceSubNav from "@/components/services/Servicesubnav";
 import ServiceTabs from "@/components/services/Servicetabs";
 import ComparisonTable from "@/components/services/Comparisontable";
 import EngagementModels from "@/components/services/Engagementmodels";
-import ProcessTimeline from "@/components/services/Processtimeline";
-import TestimonialStrip from "@/components/services/Testimonialstrip";
 import ServiceCta from "@/components/services/Servicecta";
+import ProcessSection from "@/components/home/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "Services | Intellix",
@@ -19,12 +18,11 @@ const page = () => {
     <>
       <ServiceHero />
       <StatsBar />
-      <ServiceSubNav />
       <ServiceTabs />
       <ComparisonTable />
       <EngagementModels />
-      <ProcessTimeline />
-      <TestimonialStrip />
+      <ProcessSection />
+      <TestimonialsSection />
       <ServiceCta />
     </>
   );

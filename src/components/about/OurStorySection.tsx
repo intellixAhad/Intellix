@@ -2,6 +2,8 @@ import InfoRow from "@/components/about/InfoRow";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
 import Reveal from "../motions/reveal";
+import SectionTitle from "../common/SectionTitle";
+import SectionDescription from "../common/SectionDescription";
 
 const CALENDAR_ICON = (
   <>
@@ -52,21 +54,17 @@ export default function OurStorySection() {
             <Badge label="Our Story" />
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="m-0 max-w-2xl font-playfair text-[clamp(2rem,5vw,3rem)] font-bold leading-[1.05] text-white-01 italic">Built by engineers who got tired of outbound that doesn&apos;t scale.</h2>
+            <SectionTitle title="Built by engineers who got tired of outbound that doesn't scale." />
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-155 font-light tracking-wide text-start">
-              Intellix started as a small software studio in Dhaka, building automation tools for teams drowning in manual outreach. We kept running into the same wall: every sales and support team wanted to sound human at scale, and nothing on the market did that well.
-            </p>
+            <SectionDescription description="Intellix started as a small software studio in Dhaka, building automation tools for teams drowning in manual outreach. We kept running into the same wall: every sales and support team wanted to sound human at scale, and nothing on the market did that well." />
           </Reveal>
           <Reveal delay={0.3}>
-            <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-155 font-light tracking-wide text-start">
-              That problem became Verbosa.ai — our AI voice product — and it is now the core of everything we build. Today we are a distributed team shipping voice, chat, and outbound infrastructure for companies across the US, MENA, and South Asia.
-            </p>
+            <SectionDescription description="That problem became Verbosa.ai — our AI voice product — and it is now the core of everything we build. Today we are a distributed team shipping voice, chat, and outbound infrastructure for companies across the US, MENA, and South Asia." />
           </Reveal>
         </div>
 
-        <StaggerGroup className="grid grid-cols-1 gap-8 p-10 border border-white/14 bg-[#141414] rounded-none">
+        <StaggerGroup className="grid grid-cols-1 gap-8 p-5 md:p-10 border border-white/14 bg-[#141414] rounded-none">
           {facts.map((fact) => (
             <StaggerItem key={fact.label}>
               <InfoRow icon={fact.icon} label={fact.label} value={fact.value} />

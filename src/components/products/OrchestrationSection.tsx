@@ -5,6 +5,10 @@ import FadeIn from "@/components/motions/FadeIn";
 import FloatingBlob from "@/components/motions/FloatingBlob";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
+import GlassBox from "../common/GlassBox";
+import Reveal from "../motions/reveal";
+import SectionTitle from "../common/SectionTitle";
+import SectionDescription from "../common/SectionDescription";
 
 const VOICE_ICON = (
   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92z" />
@@ -35,20 +39,24 @@ const channels = [
 
 export default function OrchestrationSection() {
   return (
-    <section className="section-pad relative overflow-hidden z-1 px-[clamp(20px,5vw,64px)] pt-5 pb-[110px]">
-      <FloatingBlob duration={13} range={16} className="absolute -top-[50px] -right-[100px] w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle_at_45%_35%,rgba(255,255,255,0.1),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
-      <FloatingBlob duration={15} range={18} className="absolute -bottom-[60px] -left-[80px] w-[340px] h-[340px] rounded-full bg-[radial-gradient(circle_at_40%_60%,rgba(255,255,255,0.08),rgba(255,255,255,0)_65%)] blur-[50px] pointer-events-none" />
+    <section className="p-[46px_clamp(20px,5vw,64px)]">
+      <GlassBox>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <div className="relative max-w-[1240px] mx-auto bg-white p-px rounded-none">
-        <div className="bg-[#141414] rounded-none py-14 px-[clamp(28px,5vw,64px)] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <FadeIn>
-            <Badge label="Orchestration" />
-            <h2 className="font-fraunces text-[32px] font-bold tracking-[-0.01em] text-[#F5F5F2] mb-4.5">One brain behind every channel.</h2>
-            <p className="text-[15.5px] leading-[1.7] text-[#A6A6A2]">Voice, chat, email, and lead generation don&apos;t run in silos — a central orchestration layer coordinates every channel, so a prospect who&apos;s called today gets the right follow-up email tomorrow, automatically.</p>
-          </FadeIn>
+          <div className="flex flex-col items-start gap-2 md:gap-4">
+            <Reveal y={12}>
+              <Badge label="Orchestration" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <SectionTitle title="One brain behind every channel." />
+            </Reveal>
+            <Reveal delay={0.2}>
+              <SectionDescription description="Voice, chat, email, and lead generation don&apos;t run in silos — a central orchestration layer coordinates every channel, so a prospect who&apos;s called today gets the right follow-up email tomorrow, automatically." />
+            </Reveal>
+          </div>
 
-          <FadeIn delay={0.1}>
-            <div className="relative min-h-[220px] flex items-center justify-center">
+          <Reveal delay={0.1}>
+            <div className="relative min-h-55 flex items-center justify-center">
               <div className="relative w-full max-w-[320px]">
                 <div className="w-16 h-16 rounded-none bg-white flex items-center justify-center mx-auto">
                   <svg viewBox="0 0 24 24" width={28} height={28} fill="none" stroke="#0A0A0A" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -66,9 +74,9 @@ export default function OrchestrationSection() {
                 </StaggerGroup>
               </div>
             </div>
-          </FadeIn>
+          </Reveal>
         </div>
-      </div>
+      </GlassBox>
     </section>
   );
 }

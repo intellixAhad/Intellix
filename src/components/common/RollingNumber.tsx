@@ -17,15 +17,10 @@ const CountUpNumber = ({ prefix = "", number, suffix = "", className = "", forma
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const reduceMotion = useReducedMotion();
 
-  const [value, setValue] = useState(reduceMotion ? number : 0);
+  const [value, setValue] = useState<number>(() => (reduceMotion ? number : 0));
 
   useEffect(() => {
-    if (!inView) return;
-
-    if (reduceMotion) {
-      setValue(number);
-      return;
-    }
+    if (!inView || reduceMotion) return;
 
     const controls = animate(0, number, {
       duration,
@@ -40,7 +35,7 @@ const CountUpNumber = ({ prefix = "", number, suffix = "", className = "", forma
   const finalLabel = `${prefix}${format ? number.toLocaleString("en-US") : number}${suffix}`;
 
   return (
-    <div ref={ref} className={`flex items-center justify-center font-jetbrain italic text-[48px] md:text-[68px] font-extrabold leading-none text-white-01 tabular-nums ${className}`}>
+    <div ref={ref} className={`flex items-center justify-center font-jetbrain italic text-[42px] md:text-[68px] font-extrabold leading-none text-white-01 tabular-nums ${className}`}>
       <span className="sr-only">{finalLabel}</span>
       <span aria-hidden="true">
         {prefix}

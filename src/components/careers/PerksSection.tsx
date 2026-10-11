@@ -8,8 +8,8 @@ import SectionDescription from "../common/SectionDescription";
 const CareerReasonSection = () => {
   return (
     <section id="careerperks" className="p-[92px_clamp(20px,5vw,64px)_46px]">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-10 gap-2 md:gap-4 flex flex-col items-start">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
+        <div className="gap-2 md:gap-4 flex flex-col items-start">
           <Reveal y={12}>
             <Badge label="Our Perks" />
           </Reveal>

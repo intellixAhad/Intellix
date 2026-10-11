@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavVisibility } from "@/components/common/NavVisibilityProvider";
 
-interface NavItem {
+type NavItem = {
   id: string;
   label: string;
-}
+};
 
 const ITEMS: NavItem[] = [
   { id: "services", label: "Services" },
@@ -55,8 +55,8 @@ export default function ServiceSubNav() {
   };
 
   return (
-    <div className="sticky top-0 z-40 w-full border-b border-white/14 bg-[#0A0A0A]/90 backdrop-blur-sm transition-transform duration-300 ease-out" style={{ transform: `translateY(${hidden ? 0 : headerHeight}px)` }}>
-      <nav className="mx-auto flex max-w-[1240px] gap-1 overflow-x-auto px-[clamp(20px,5vw,64px)] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="fixed top-0 z-40 w-full border-b border-white/14 bg-[#0A0A0A]/90 backdrop-blur-sm transition-transform duration-300 ease-out" style={{ transform: `translateY(${hidden ? 0 : headerHeight}px)` }}>
+      <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
         {ITEMS.map((item) => (
           <a
             key={item.id}
@@ -65,7 +65,7 @@ export default function ServiceSubNav() {
             className={`relative shrink-0 whitespace-nowrap px-4 py-3.5 font-jetbrain text-[12px] font-semibold uppercase tracking-[.04em] transition-colors duration-300 ${active === item.id ? "text-white-01" : "text-gray-00 hover:text-gray-02"}`}
           >
             {item.label}
-            {active === item.id && <motion.span layoutId="subnav-underline" className="absolute inset-x-4 -bottom-px h-[2px] bg-white" transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} />}
+            {active === item.id && <motion.span layoutId="subnav-underline" className="absolute inset-x-4 -bottom-px h-0.5 bg-white" transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} />}
           </a>
         ))}
       </nav>
