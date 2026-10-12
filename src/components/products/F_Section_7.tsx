@@ -5,7 +5,7 @@ import SectionTitle from "../common/SectionTitle";
 import Reveal from "../motions/reveal";
 import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
 import { Landmark, Shield, Eye, Building2 } from "lucide-react";
-import AudienceChip from "./AudienceChip";
+import HoverLift from "../motions/HoverLift";
 
 const audiences = [
   { label: "Government ministries", icon: Landmark },
@@ -28,11 +28,22 @@ const F_Section_7 = () => {
         </div>
 
         <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {audiences.map((audience) => (
-            <StaggerItem key={audience.label} className="h-full">
-              <AudienceChip icon={audience.icon} label={audience.label} />
-            </StaggerItem>
-          ))}
+          {audiences.map((audience) => {
+            const Icon = audience.icon;
+
+            return (
+              <StaggerItem key={audience.label} className="h-full">
+                <HoverLift lift={3} className="h-full">
+                  <div className="h-full border border-white/14 bg-[#141414] rounded-none py-6.5 px-4 text-center">
+                    <div className="text-[#F5F5F2] mx-auto mb-3 w-[26px] h-[26px]">
+                      <Icon />
+                    </div>
+                    <span className="text-[13.5px] font-semibold text-[#A6A6A2]">{audience.label}</span>
+                  </div>
+                </HoverLift>
+              </StaggerItem>
+            );
+          })}
         </StaggerGroup>
       </div>
     </section>
