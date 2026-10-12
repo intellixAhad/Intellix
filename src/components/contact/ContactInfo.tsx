@@ -11,8 +11,8 @@ interface InfoItem {
 const INFO: InfoItem[] = [
   {
     label: "EMAIL",
-    value: "hello@intellixsolutions.co",
-    href: "mailto:hello@intellixsolutions.co",
+    value: "intellixsolutionsltd@gmail.com",
+    href: "mailto:intellixsolutionsltd@gmail.com",
     icon: (
       <>
         <path d="M22 6c0 1.1-.9 2-2 2H4a2 2 0 0 1-2-2" />

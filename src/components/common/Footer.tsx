@@ -27,7 +27,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              <a href="mailto:intellixsolutions@gmail.com" aria-label="email" className="flex h-9 w-9 items-center justify-center hover:bg-white-01/12 rounded-md">
+              <a href="mailto:intellixsolutionsltd@gmail.com" aria-label="email" className="flex h-9 w-9 items-center justify-center hover:bg-white-01/12 rounded-md">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <rect x="3" y="5" width="18" height="14" rx="2" stroke="#f5f5f5" strokeWidth="2.5" />
                   <path d="M4 7L12 13L20 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />

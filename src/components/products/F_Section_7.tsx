@@ -11,7 +11,7 @@ const audiences = [
   { label: "Government ministries", icon: Landmark },
   { label: "Defense & military", icon: Shield },
   { label: "Intelligence agencies", icon: Eye },
-  { label: "Intelligence agencies", icon: Building2 },
+  { label: "Public-sector departments", icon: Building2 },
 ];
 
 const F_Section_7 = () => {
