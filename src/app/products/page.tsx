@@ -10,6 +10,7 @@ import F_Section_3 from "@/components/products/F_Section_3";
 import F_Section_4 from "@/components/products/F_Section_4";
 import F_Section_5 from "@/components/products/F_Section_5";
 import F_Section_6 from "@/components/products/F_Section_6";
+import F_Section_7 from "@/components/products/F_Section_7";
 
 const page = () => {
   return (
@@ -27,6 +28,7 @@ const page = () => {
       <F_Section_4 />
       <F_Section_5 />
       <F_Section_6 />
+      <F_Section_7 />
     </>
   );
 };
