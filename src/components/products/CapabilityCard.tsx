@@ -23,9 +23,6 @@ export default function CapabilityCard({
   return (
     <HoverLift lift={3} className="h-full">
       <div className="h-full border border-white/14 bg-[#141414] rounded-none py-8 px-7 relative">
-        <div className="font-jetbrain text-[11px] text-[#6E6E6A] tracking-[.05em] mb-4">
-          {index}
-        </div>
         <div className="w-[46px] h-[46px] rounded-none bg-[#141414] border border-white/14 flex items-center justify-center text-[#F5F5F2] mb-5">
           <svg
             viewBox="0 0 24 24"

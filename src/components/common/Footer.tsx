@@ -70,7 +70,7 @@ export default function Footer() {
             <FooterLinkHeader title="contact" />
             <div className="flex flex-col gap-2">
               <span className="text-[13px] text-gray-01 font-jetbrain">intellixsolutions@gmail.com</span>
-              <span className="text-[13px] text-gray-01 font-jetbrain">+8801973336001</span>
+              <span className="text-[13px] text-gray-01 font-jetbrain">+8801817128134</span>
               <span className="text-[13px] text-gray-01 font-jetbrain">Dhaka, Bangladesh</span>
             </div>
           </div>

@@ -2,7 +2,6 @@
 
 import LanguagePill from "@/components/products/LanguagePill";
 import MarketRow from "@/components/products/MarketRow";
-import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
 import Reveal from "../motions/reveal";
@@ -29,7 +28,7 @@ const markets = [
   },
 ];
 
-export default function LanguagesSection() {
+export default function V_Section_5() {
   return (
     <section className="p-[46px_clamp(20px,5vw,64px)]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -17,7 +17,7 @@ export default function ComparisonTable() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="overflow-x-auto border border-white/14">
+          <div className="overflow-x-auto border border-white/14 backdrop-blur-md">
             <table className="w-full min-w-160 border-collapse text-left">
               <thead>
                 <tr className="border-b border-white/14 bg-[#141414]">
@@ -32,11 +32,11 @@ export default function ComparisonTable() {
               <tbody>
                 {ROWS.map((row, i) => (
                   <tr key={row.label} className={i !== ROWS.length - 1 ? "border-b border-white/14" : ""}>
-                    <th scope="row" className="px-5 py-4 align-top font-jetbrain text-[12px] font-semibold uppercase tracking-[.03em] text-gray-00 sm:px-6">
+                    <th scope="row" className="px-5 py-4 align-top font-jetbrain text-[12px] font-semibold uppercase tracking-[.03em] text-white-01 sm:px-6 bg-[#141414] border-r border-white/14">
                       {row.label}
                     </th>
                     {row.values.map((value, j) => (
-                      <td key={j} className="px-5 py-4 align-top text-sm text-gray-02 sm:px-6">
+                      <td key={j} className={`px-5 py-4 align-top text-sm text-gray-02 sm:px-6 ${j%2 != 0 ? "bg-white-00/2" : ""}`}>
                         {value}
                       </td>
                     ))}

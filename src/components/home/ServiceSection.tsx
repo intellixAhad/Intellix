@@ -3,7 +3,7 @@ import Badge from "../common/Badge";
 import SectionTitle from "../common/SectionTitle";
 import InteractiveCard from "../common/InteractiveCard";
 import Button from "../common/Button";
-import { servicesData } from "@/data/HomePageData";
+import { rawServicesData } from "@/data/HomePageData";
 import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
 
 const ServiceSection = () => {
@@ -19,7 +19,7 @@ const ServiceSection = () => {
           </Reveal>
         </div>
         <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {servicesData.map(({ title, description, icon }, index) => (
+          {rawServicesData.map(({ title, description, icon }, index) => (
             <StaggerItem key={index} className="h-full">
               <InteractiveCard icon={icon} number={String(index + 1)} title={title} description={description} />
             </StaggerItem>

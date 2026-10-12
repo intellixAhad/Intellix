@@ -1,7 +1,6 @@
 "use client";
 
 import AudienceChip from "@/components/products/AudienceChip";
-import FadeIn from "@/components/motions/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
 import Reveal from "../motions/reveal";
@@ -32,7 +31,7 @@ const audiences = [
   { label: "Cold Outreach Teams", icon: SEARCH_ICON },
 ];
 
-export default function AudienceSection() {
+export default function V_Section_6() {
   return (
     <section className="p-[46px_clamp(20px,5vw,64px)_46px]">
       <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">

@@ -14,19 +14,17 @@ const ProductHero = () => {
 
       <div className="relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 md:gap-4 text-center">
         <Reveal y={12}>
-          <Badge label="our product" />
+          <Badge label="our products" />
         </Reveal>
         <Reveal delay={0.1}>
-          <Title title="Meet Verbosa.ai — your AI sales team." long={1000} />
+          <Title title="Software we build for ourselves, and for you." long={1000} />
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">
-            Verbosa.ai is Intellix's in-house AI sales automation platform — an all-in-one workforce that finds leads, calls and messages them, and follows up over email, so sales teams can focus on closing instead of chasing.
-          </p>
+          <p className="text-base md:text-[20px] leading-[1.7] text-gray-02 max-w-190 font-light tracking-wide">Beyond client work, Intellix designs and maintains its own products. One automates outbound sales. The other keeps government communication private and provable.</p>
         </Reveal>
         <Reveal delay={0.3} className="mt-2 flex gap-4 justify-center w-full flex-wrap">
-          <Button title="visit verbosa.ai" link="/contact" variant="primary" />
-          <Button title="talk to us" link="/contact" variant="secondary" />
+          <Button title="visit verbosa.ai" link="https://verbosa.ai/" variant="primary" />
+          <Button title="Visit FreeNation" link="#" variant="secondary" />
         </Reveal>
       </div>
     </section>

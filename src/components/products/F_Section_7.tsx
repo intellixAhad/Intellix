@@ -1,0 +1,42 @@
+"use client";
+
+import Badge from "../common/Badge";
+import SectionTitle from "../common/SectionTitle";
+import Reveal from "../motions/reveal";
+import { StaggerGroup, StaggerItem } from "../motions/StaggerReveal";
+import { Landmark, Shield, Eye, Building2 } from "lucide-react";
+import AudienceChip from "./AudienceChip";
+
+const audiences = [
+  { label: "Government ministries", icon: Landmark },
+  { label: "Defense & military", icon: Shield },
+  { label: "Intelligence agencies", icon: Eye },
+  { label: "Intelligence agencies", icon: Building2 },
+];
+
+const F_Section_7 = () => {
+  return (
+    <section className="p-[46px_clamp(20px,5vw,64px)_46px]">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-10">
+        <div className="flex flex-col items-start gap-2 md:gap-4">
+          <Reveal y={12}>
+            <Badge label="Who it's for" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <SectionTitle title="Built for teams that live in outbound." />
+          </Reveal>
+        </div>
+
+        <StaggerGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {audiences.map((audience) => (
+            <StaggerItem key={audience.label} className="h-full">
+              <AudienceChip icon={audience.icon} label={audience.label} />
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </div>
+    </section>
+  );
+};
+
+export default F_Section_7;

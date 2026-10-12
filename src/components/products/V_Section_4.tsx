@@ -1,8 +1,6 @@
 "use client";
 
 import ChannelChip from "@/components/products/ChannelChip";
-import FadeIn from "@/components/motions/FadeIn";
-import FloatingBlob from "@/components/motions/FloatingBlob";
 import { StaggerGroup, StaggerItem } from "@/components/motions/StaggerReveal";
 import Badge from "../common/Badge";
 import GlassBox from "../common/GlassBox";
@@ -37,7 +35,7 @@ const channels = [
   { label: "Leads", icon: LEADS_ICON },
 ];
 
-export default function OrchestrationSection() {
+export default function V_Section_4() {
   return (
     <section className="p-[46px_clamp(20px,5vw,64px)]">
       <GlassBox>

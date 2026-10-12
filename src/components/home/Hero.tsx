@@ -20,11 +20,11 @@ const Hero = () => {
           <Badge label="SOFTWARE ENGINEERING & AI SOLUTIONS" />
         </Reveal>
         <Reveal delay={0.1}>
-          <Title title="Build smarter. Automate more. Grow faster." long={1000} />
+          <Title title="Building a More Intelligent World." long={1000} />
         </Reveal>
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="mb-4">
           <SectionDescription
-            description="From custom software and web applications to AI-powered automation and intelligent voice solutions, Intellix helps businesses solve real problems, work smarter, and scale with confidence. We bring technology, creativity, and reliable execution together to turn ideas into practical solutions."
+            description="From custom software and web applications to AI-powered automation and intelligent voice solutions, we turn complex challenges into practical technology that helps businesses work smarter, solve meaningful problems, and unlock new possibilities for growth."
             className="text-center max-w-5xl"
             long={1200}
           />
